@@ -1,13 +1,26 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <!-- 头部区域 -->
+  <view class="top-area display-flex">
+    <!-- 搜索区域 -->
+    <view class="search-area">
+      <view class="search-icon">
+      <image class="search-img" src="/images/icons/search.png"></image>
+      </view>
+      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search"></input>
+    </view>
+    
+    
+    <!-- /首页轮播图/ -->
+    <swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="5000" duration="500" indicator-active-color="rgba(245,204,204,0.8)" indicator-color="rgba(245,126,126,0.5)"> 
+      <block wx:for="{{bannerList}}" wx:key="banner" >
+        <navigator url='{{item.url}}'>
+          <swiper-item>
+            <image src="{{item.img}}" id="{{item.id}}" class="slide-image" width="100%" height="200"  />
+          </swiper-item>
+        </navigator>
+      </block>
+    </swiper>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+
 </view>

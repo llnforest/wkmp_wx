@@ -1,13 +1,54 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/user/index"
+    "pages/prize/prize",
+    "pages/cate/cate",
+    "pages/cart/cart",
+    "pages/user/user"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d00912",
+    "navigationBarTitleText": "悟空名品",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#FF6347",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/nav/home.png",
+        "selectedIconPath": "images/nav/home_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/cate/cate",
+        "iconPath": "images/nav/cate.png",
+        "selectedIconPath": "images/nav/cate_active.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/prize/prize",
+        "iconPath": "images/nav/prize.png",
+        "selectedIconPath": "images/nav/prize_active.png",
+        "text": "奖励中心"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "images/nav/cart.png",
+        "selectedIconPath": "images/nav/cart_active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/nav/user.png",
+        "selectedIconPath": "images/nav/user_active.png",
+        "text": "个人中心"
+      }
+    ]
   }
 }
