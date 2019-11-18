@@ -1,10 +1,9 @@
 /**index.wxss**/
 .top-area{
-  background-color: #d00912;
-  height: 250rpx;
+  height: 320rpx;
   width:100%;
 }
-.search-area{
+.top-area .search-area{
   height:70rpx;
   width:95%;
   background-color:#fff;
@@ -12,7 +11,7 @@
   position: relative;
   border-radius: 30rpx;
 }
-.search-icon{
+.top-area .search-icon{
   width:120rpx;
   position:absolute;
   top:10rpx;
@@ -21,7 +20,7 @@
   height:50rpx;
   padding:5rpx 0;
 }
-.search-img{
+.top-area .search-img{
   width:40rpx;
   height:40rpx;
   margin:auto;
@@ -31,14 +30,158 @@
 .top-area .search-input{
   text-align: center;
   height:100%;
-  font-size:12px;
+  font-size:24rpx;
 }
-.swiper-box{
+.top-area .swiper-box{
   width: 95%;
   margin-top: 40rpx;
-  height:400rpx;
+  height:432.5rpx;
+  position:relative;
 }
-.slide-image{
+.top-area .slide-image{
   width:100%;
   height:100%;
+}
+/* 标签样式 */
+.label-area{
+  margin-top:270rpx;
+  width:97%;
+}
+.label-item{
+  width:19%;
+  margin:3%;
+  float:left;
+}
+.label-img{
+  width:100%;
+  height:136.225rpx;
+}
+.label-name{
+  text-align:center;
+  font-size:32rpx;
+}
+/* 中间banner样式 */
+.banner-area{
+  width:95%;
+  margin-top:30rpx;
+}
+.center-img{
+  width:100%;
+  height:180rpx;
+}
+
+/* 爆款热推 */
+.hot-area{
+  margin-top:60rpx;
+  width:95%;
+}
+.area-title{
+  font-size:40rpx;
+  width:300rpx;
+  font-weight: 700;
+  text-align:center;
+  position:relative;
+  margin:0 auto 50rpx;
+
+}
+.area-title-img{
+  width:100%;
+  height:50rpx;
+  position:absolute;
+  left:0;
+  top:5rpx;
+}
+.hot-list{
+  font-size:24rpx;
+}
+.hot-item{
+  width:225rpx;
+  margin-right:2.5%;
+  border:1px solid #ddd;
+  border-radius:10rpx;
+  padding:0 10rpx 10rpx 10rpx;
+  position:relative;
+  float:left;
+  margin-bottom:16rpx;
+}
+.wine-img{
+  width:100%;
+  height:225rpx;
+}
+.hot-title{
+  height:64rpx;
+  margin-top:5rpx;
+  margin-bottom:5rpx;
+}
+
+/* 精选品牌 */
+.brand-area{
+  margin-top:44rpx;
+}
+.brand-item{
+  width:100rpx;
+  margin:0 25rpx 25rpx;
+  font-size:24rpx;
+  float:left;
+}
+.brand-img{
+  width:100%;
+  height:100rpx;
+}
+/**官网信息**/
+.site-area{
+  margin-top:60rpx;
+  width:95%;
+}
+.site-title{
+  text-align:center;
+  font-size:40rpx;
+  margin-bottom:20rpx;
+}
+.site-title-sub{
+  text-align:center;
+  font-size:24rpx;
+  margin-bottom:30rpx;
+}
+.site-center{
+  position:relative;
+  padding-left:480rpx;
+  height:300rpx;
+  margin-bottom:20rpx;
+}
+.site_img{
+  width:468.75rpx;
+  height:300rpx;
+  position:absolute;
+  left:0;
+  top:0;
+  border-radius:30rpx;
+}
+.site-content{
+  overflow: hidden;
+  font-size:28rpx;
+  text-indent: 2em;
+  text-align:justify; 
+}
+.site-item{
+  width:225rpx;
+  margin-right:2.5%;
+  border:1px solid #ddd;
+  border-radius:10rpx;
+  position:relative;
+  float:left;
+  margin-bottom:16rpx;
+  text-align:center;
+  
+}
+.sub-img{
+  width:100%;
+  height:225rpx;
+}
+.bottom-title-sub{
+  font-size:24rpx;
+  margin-bottom:10rpx;
+}
+.bottom-title{
+  font-size:26rpx;
 }

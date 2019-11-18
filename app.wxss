@@ -16,3 +16,43 @@ view{
   align-items: center;
   justify-content: space-between;
 }
+.common-color{
+  color:#d00912;
+}
+.common-bg{
+  background-color: #d00912;
+}
+.line-limit{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.lines-limit{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.grey-color{
+  color:#666;
+}
+.icon-cate{
+  position:absolute;
+  width:120rpx;
+  height:120rpx;
+  left:0;
+  top:0;
+}
+.no-margin{
+  margin-right:0 !important;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

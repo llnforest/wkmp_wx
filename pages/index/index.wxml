@@ -1,7 +1,8 @@
 <!--index.wxml-->
 <view class="container">
+
   <!-- 头部区域 -->
-  <view class="top-area display-flex">
+  <view class="top-area display-flex common-bg">
     <!-- 搜索区域 -->
     <view class="search-area">
       <view class="search-icon">
@@ -23,4 +24,120 @@
     </swiper>
   </view>
 
+<!-- 标签区域 -->
+  <view class="label-area">
+    <navigator class="label-item" url='{{item.url}}'  wx:for="{{labelList}}" wx:key="label">
+ 
+      <image class="label-img" src="{{item.img}}"></image>
+      <view class="label-name">{{item.title}}</view>
+
+    </navigator>
+  </view>
+<!-- 中间广告 -->
+  <view class="banner-area">
+    <navigator url="{{centerBanner.url}}">
+    <image class="center-img" src="{{centerBanner.img}}"></image>
+    </navigator>
+  </view>
+<!-- 爆款热推 -->
+  <view class="hot-area">
+    <view class="area-title common-color">
+      <image class="area-title-img" src="/images/icons/title.png"></image>
+      <text>爆款热推</text>
+    </view>
+    <view class="hot-list clearfix">
+      <view class="hot-item">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        
+        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="mall-price grey-color">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color">会员价：<text class="common-color">¥90</text></view>
+      </view>
+      <view class="hot-item">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        
+        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="mall-price grey-color">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color">会员价：<text class="common-color">¥90</text></view>
+      </view>
+      <view class="hot-item no-margin">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        
+        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="mall-price grey-color">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color">会员价：<text class="common-color">¥90</text></view>
+      </view>
+      <view class="hot-item">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        
+        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="mall-price grey-color">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color">会员价：<text class="common-color">¥90</text></view>
+      </view>
+    </view>
+  </view>
+<!-- 精选品牌 -->
+  <view class="brand-area">
+    <view class="area-title common-color">
+      <image class="area-title-img" src="/images/icons/title.png"></image>
+      <view class="area-title"><text>精选品牌</text></view>
+    </view>
+    <view class="brand-list clearfix">
+      <view class="brand-item">
+        <image class="brand-img" src="/images/img/wine_brand.png"></image>
+        <view class="brand-name limit-text">古井贡酒</view>
+      </view>
+      <view class="brand-item">
+        <image class="brand-img" src="/images/img/wine_brand.png"></image>
+        <view class="brand-name limit-text">古井贡酒</view>
+      </view>
+      <view class="brand-item">
+        <image class="brand-img" src="/images/img/wine_brand.png"></image>
+        <view class="brand-name limit-text">古井贡酒</view>
+      </view>
+      <view class="brand-item">
+        <image class="brand-img" src="/images/img/wine_brand.png"></image>
+        <view class="brand-name limit-text">古井贡酒</view>
+      </view>
+      <view class="brand-item">
+        <image class="brand-img" src="/images/img/wine_brand.png"></image>
+        <view class="brand-name limit-text">古井贡酒</view>
+      </view>
+      <view class="brand-item">
+        <image class="brand-img" src="/images/img/wine_brand.png"></image>
+        <view class="brand-name limit-text">古井贡酒</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 官网信息 -->
+  <view class="site-area">
+    <view class="site-title">生活的多种味道，名品汇里来寻找</view>
+    <view class="site-title-sub">带来不经意的生活品味，提升美好生活品质</view>
+    <view class="site-center">
+      <image class="site_img" src="/images/img/site_img.png"></image>
+      <view class="site-content">生活的多种味道，名品汇里来寻找，带来不经意的生活品味，提升美好生活品质         </view>
+    </view>
+    <view class="site-bottom clearfix">
+      <view class="site-item">
+        <image class="sub-img" src="/images/img/site_sub.png"></image>
+        <view class="bottom-title">办公室</view>
+        <view class="bottom-title-sub">OFFICE</view>
+      </view>
+      <view class="site-item">
+        <image class="sub-img" src="/images/img/site_sub.png"></image>
+        <view class="bottom-title">办公室</view>
+        <view class="bottom-title-sub">OFFICE</view>
+      </view>
+      <view class="site-item no-margin">
+        <image class="sub-img" src="/images/img/site_sub.png"></image>
+        <view class="bottom-title">办公室</view>
+        <view class="bottom-title-sub">OFFICE</view>
+      </view>
+    </view>
+  </view>
 </view>

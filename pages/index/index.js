@@ -5,6 +5,8 @@ const app = getApp()
 Page({
   data: {
     bannerList: [],
+    labelList:[],
+    centerBanner:{},
   },
   onLoad: function () {
     var that = this;
@@ -22,7 +24,8 @@ Page({
         if(res.data.code == 0){
           that.setData({
             bannerList: _data.bannerList,
-
+            labelList:_data.labelList,
+            centerBanner:_data.centerBanner,
           });
         }else{
           console.log('error')
