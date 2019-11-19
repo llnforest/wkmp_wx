@@ -1,2 +1,63 @@
 <!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view class="top-area common-bg clearfix">
+  <view class="opreate-gl top-item">管理</view>
+</view>
+<!-- 酒品列表 -->
+<view class="wine-area">
+  <view class="wine-item">
+    <view class="select-icon">
+      <image src="/images/icons/selected.png"></image>
+    </view>
+    <view class="img-area">
+      <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+      <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+    </view>
+    <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+    <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
+    <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥120</text></view>
+    <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥90</text></view>
+    <view class="num-area clearfix">
+      <view class="o-inc num-item">
+      <image class="o-img-item" src="/images/icons/jia.png"></image>
+      </view>
+      <view class="cart-num num-item">2</view>
+      <view class="o-dec num-item">
+      <image class="o-img-item " src="/images/icons/jian.png"></image></view>
+    </view>
+  </view>
+  <view class="wine-item">
+    <view class="select-icon active">
+      <image src="/images/icons/selected.png"></image>
+    </view>
+    <view class="img-area">
+      <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+      <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+    </view>
+    <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+    <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
+    <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥120</text></view>
+    <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥90</text></view>
+    <view class="num-area clearfix">
+      <view class="o-inc num-item">
+      <image class="o-img-item" src="/images/icons/jia.png"></image>
+      </view>
+      <view class="cart-num num-item">2</view>
+      <view class="o-dec num-item">
+      <image class="o-img-item " src="/images/icons/jian.png"></image></view>
+    </view>
+  </view>
+</view>
+<!-- 底部导航 -->
+<view class="bottom-nav cart-nav">
+  <view class="select-all">
+    <view class="select-icon active">
+      <image src="/images/icons/selected.png"></image>
+      
+    </view>
+    <text class="all-text">全选</text>
+  </view>
+  <view class="total-dec">
+  合计：<text class="total-info common-color">¥<text class="total-money">120</text></text>
+  </view>
+  <view class="go-pay common-bg">去结算</view>
+</view>

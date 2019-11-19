@@ -17,7 +17,7 @@
       <block wx:for="{{bannerList}}" wx:key="banner" >
         <navigator url='{{item.url}}'>
           <swiper-item>
-            <image src="{{item.img}}" id="{{item.id}}" class="slide-image" width="100%" height="200"  />
+            <image src="{{item.img}}" id="{{item.id}}" class="slide-image" width="100%" />
           </swiper-item>
         </navigator>
       </block>
@@ -51,32 +51,32 @@
         <image class="wine-img" src="/images/img/wine_img.jpg"></image>
         
         <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color">会员价：<text class="common-color">¥90</text></view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
       </view>
       <view class="hot-item">
         <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
         <image class="wine-img" src="/images/img/wine_img.jpg"></image>
         
         <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color">会员价：<text class="common-color">¥90</text></view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
       </view>
       <view class="hot-item no-margin">
         <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
         <image class="wine-img" src="/images/img/wine_img.jpg"></image>
         
         <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color">会员价：<text class="common-color">¥90</text></view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
       </view>
       <view class="hot-item">
         <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
         <image class="wine-img" src="/images/img/wine_img.jpg"></image>
         
         <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color">会员价：<text class="common-color">¥90</text></view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
       </view>
     </view>
   </view>

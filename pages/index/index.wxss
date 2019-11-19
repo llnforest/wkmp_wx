@@ -106,11 +106,14 @@
 }
 .wine-img{
   width:100%;
-  height:225rpx;
+  height:200rpx;
 }
 .hot-title{
   height:64rpx;
   margin-top:5rpx;
+  margin-bottom:10rpx;
+}
+.mall-price{
   margin-bottom:5rpx;
 }
 
@@ -121,12 +124,15 @@
 .brand-item{
   width:100rpx;
   margin:0 25rpx 25rpx;
-  font-size:24rpx;
   float:left;
 }
 .brand-img{
   width:100%;
   height:100rpx;
+}
+.brand-name{
+  font-size:24rpx;
+  text-align: center;
 }
 /**官网信息**/
 .site-area{

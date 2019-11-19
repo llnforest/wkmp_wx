@@ -1,0 +1,84 @@
+/* pages/index/detail.wxss */
+page{
+  background:#efefef;
+}
+.top-area{
+  background:#fff;
+  padding-bottom:10rpx;
+  margin-bottom:14rpx;
+}
+.swiper-box{
+  height:500rpx;
+}
+.slide-image{
+  height:100%;
+}
+.wine-name{
+  font-size:28rpx;
+  margin:20rpx auto;
+}
+.mall-price{
+  margin: 0 auto 10rpx;
+}
+.vip-price{
+  margin: 0 auto 10rpx;
+}
+.detail-item{
+  position: relative;
+  padding-left:150rpx;
+  border-bottom: 1px solid #ddd;
+  height:71rpx;
+}
+
+/* 详情介绍 */
+.detail-area{
+  margin-bottom:14rpx;
+}
+.detail-item:last-child{
+  border-bottom: none;
+}
+.item-name{
+  position:absolute;
+  left:2.5%;
+  line-height: 70rpx;
+  color:#666;
+}
+.detail-name{
+  line-height: 70rpx;
+}
+.img-area{
+  margin-bottom:100rpx;
+}
+
+/* 底部导航 */
+.go-cart{
+  width:150rpx;
+  background:#fff;
+  height:100rpx;
+}
+.go-cart-icon{
+  width:60rpx;
+  height:60rpx;
+  margin:20rpx auto 20rpx;
+  position:relative;
+}
+.cart-num{
+  position:absolute;
+  height:35rpx;
+  width: 35rpx;
+  border-radius:50%;
+  line-height:35rpx;
+  top:-10rpx;
+  font-size: 24rpx;
+  right:-7rpx;
+}
+.add-cart{
+  width:300rpx;
+  background:#f39800;
+}
+.go-buy{
+  width:300rpx;
+}
+.bottom-item{
+  float:left;
+}

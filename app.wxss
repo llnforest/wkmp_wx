@@ -1,6 +1,22 @@
 /**app.wxss**/
+
 view{
   box-sizing: border-box;
+  width:100%;
+  font-size:26rpx;
+}
+image{
+  width:100%;
+  display: block;
+}
+.sm-tx{
+  font-size: 24rpx;
+}
+.lg-tx{
+  font-size: 28rpx;
+}
+.bg-white{
+  background: #fff;
 }
 .container {
   height: 100%;
@@ -9,6 +25,9 @@ view{
   align-items: center;
   justify-content: space-between;
   padding: 0;
+}
+.lb-width{
+  width:95%;
 }
 .display-flex{
   display: flex;
@@ -45,6 +64,7 @@ view{
   height:120rpx;
   left:0;
   top:0;
+  z-index:999;
 }
 .no-margin{
   margin-right:0 !important;
@@ -55,4 +75,15 @@ view{
   height: 0;
   clear: both;
   visibility: hidden;
+}
+.bottom-nav{
+  position:fixed;
+  height:100rpx;
+  bottom:0;
+  left:0;
+  background:#d00912;
+  text-align:center;
+  
+  color:#fff;
+  line-height:100rpx;
 }

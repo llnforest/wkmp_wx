@@ -1,11 +1,19 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/prize/prize",
-    "pages/cate/cate",
     "pages/cart/cart",
-    "pages/user/user"
+    "pages/index/detail",
+    "pages/index/index",
+
+    
+    "pages/user/user",
+    
+    "pages/prize/prize",
+    
+    
+    "pages/cate/cate",
+    
+    
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -50,5 +58,6 @@
         "text": "个人中心"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

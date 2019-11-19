@@ -1,7 +1,7 @@
 //app.js
 App({
   data:{
-    url:'http://admin.99wukong.test'
+    url:'http://admin.99wukong.test',
   },
   onLaunch: function () {
     // 展示本地存储能力
