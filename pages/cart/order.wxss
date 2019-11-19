@@ -1,0 +1,198 @@
+/* pages/cart/order.wxss */
+page{
+  background:#efefef;
+}
+/* 地址 */
+.address-wrap{
+  padding:40rpx 80rpx 40rpx 120rpx;
+  position:relative;
+  background:#fff;
+  margin-bottom:14rpx;
+}
+.address-left{
+  position:absolute;
+  width:40rpx;
+  height:40rpx;
+  left:40rpx;
+  margin:auto;
+  top:0;
+  bottom:0;
+}
+.address-icon{
+  height : 100%;
+}
+.address-right{
+  position:absolute;
+  right:30rpx;
+  width:20rpx;
+  height:40rpx;
+  margin:auto;
+  top:0;
+  bottom:0;
+}
+.right-icon{
+  height : 100%;
+}
+.address-title-item{
+  width:50%;
+  float:left;
+  font-size:28rpx;
+  text-align:right;
+  margin-bottom:20rpx;
+  font-weight: 700;
+}
+.contact-name{
+  text-align:left;
+}
+.address-info{
+  color:#666;
+}
+/* 酒品列表 */
+.wine-item{
+  position:relative;
+  border-bottom:1px solid #ddd;
+  padding:20rpx 2.5% 20rpx 240rpx;
+  height:242rpx;
+}
+.img-area{
+  position:absolute;
+  width:200rpx;
+  height:200rpx;
+  top:0;
+  bottom:0;
+  margin:auto;
+  left:20rpx;
+}
+.wine-img{
+  height:100%;
+  border:1px solid #ddd;
+  border-radius:5rpx;
+}
+.wine-title{
+  height:80rpx;
+  line-height:40rpx;
+  margin-bottom:5rpx;
+}
+.wine-style{
+  margin-bottom:20rpx;
+  color:#aaa;
+}
+.item-tx{
+  height:30rpx;
+  line-height:30rpx;
+}
+.mall-price{
+  margin-bottom:5rpx;
+}
+.num-area{
+  height:65rpx;
+  line-height:65rpx;
+  width:184rpx;
+  bottom:20rpx;
+  right:2.5%;
+  border:1px solid #ddd;
+  text-align:center;
+  position: absolute;
+  
+}
+.num-area image{
+  width:40rpx;
+  height:40rpx;
+  margin:10rpx auto;
+}
+.num-item{
+  height:100%;
+  width:55rpx;
+  float:left;
+}
+.cart-num{
+  border-left:1px solid #ddd;
+  border-right:1px solid #ddd;
+  width:70rpx;
+}
+.wine-item:last-child{
+  border:none;
+}
+/* 订单 */
+.order-item{
+  position: relative;
+  padding-left:200rpx;
+  border-bottom: 1px solid #ddd;
+  height:102rpx;
+}
+.order-item:last-child{
+  border-bottom: none;
+}
+.item-name{
+  position:absolute;
+  left:2.5%;
+  line-height: 100rpx;
+  font-weight:700;
+}
+.order-remark{
+  height:100%;
+}
+.select-type{
+  width:250rpx;
+  padding-right:55rpx;
+  position:relative;
+  float:right;
+  height:100rpx;
+  text-align:right;
+  line-height:100rpx;
+  color:#666;
+}
+
+.select-area{
+  padding-left:10%;
+  border-bottom:1px solid #ddd;
+}
+.select-area .item-name{
+  font-weight:100;
+}
+.select-area .common-right-icon{
+  right:58rpx;
+}
+.select-icon{
+  width:30rpx;
+  height:30rpx;
+  position:absolute;
+  right:50rpx;
+  margin:auto;
+  top:0;
+  bottom:0;
+  border:1px solid #aaa;
+  border-radius:50%;
+}
+.select-icon image{
+  height:100%;
+}
+.select-icon.active{
+  border:1px solid #d00912;
+  background:#d00912;
+}
+.notice-wrap{
+  position:relative;
+  height:100rpx;
+  padding:0 55rpx 0 80rpx;
+  line-height:100rpx;
+}
+.notice-icon{
+  width:40rpx;
+  height:40rpx;
+  margin:auto;
+  top:0;
+  bottom:0;
+  left:20rpx;
+  position: absolute;
+}
+.common-right-icon{
+  width:15rpx;
+  height:30rpx;
+  margin:auto;
+  top:0;
+  bottom:0;
+  right:20rpx;
+  position: absolute;
+}
+

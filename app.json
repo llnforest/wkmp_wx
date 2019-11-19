@@ -1,19 +1,15 @@
 {
   "pages": [
+    "pages/cart/shop",
+    "pages/cart/order",
     "pages/cart/cart",
     "pages/index/detail",
     "pages/index/index",
-
-    
     "pages/user/user",
-    
     "pages/prize/prize",
-    
-    
     "pages/cate/cate",
-    
-    
     "pages/logs/logs"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

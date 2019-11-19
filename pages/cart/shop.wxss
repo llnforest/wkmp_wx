@@ -1,0 +1,70 @@
+/* pages/cart/shop.wxss */
+/* 酒品列表 */
+.shop-item{
+  position:relative;
+  border-bottom:1px solid #ddd;
+  padding:30rpx 2.5% 30rpx 310rpx;
+  /* height:242rpx; */
+}
+
+.img-area{
+  position:absolute;
+  width:200rpx;
+  height:160rpx;
+  top:0;
+  bottom:0;
+  margin:auto;
+  left:80rpx;
+}
+.shop-img{
+  height:100%;
+  border:1px solid #ddd;
+  border-radius:5rpx;
+}
+.shop-title{
+  font-size:28rpx;
+  font-weight:700;
+  height:60rpx;
+  line-height:40rpx;
+  margin-bottom:5rpx;
+}
+.shop-style{
+  margin-bottom:5rpx;
+  color:#666;
+  line-height:32rpx;
+  position:relative;
+  padding-left:40rpx;
+  font-size:24rpx;
+}
+.shop-style:last-child{
+  margin-bottom:0rpx;
+}
+.item-icon{
+  position:absolute;
+  width:24rpx;
+  height:24rpx;
+  top:5rpx;
+  left:2rpx;
+}
+
+.mall-price{
+  margin-bottom:5rpx;
+}
+.select-icon{
+  width:30rpx;
+  height:30rpx;
+  position:absolute;
+  left:25rpx;
+  margin:auto;
+  top:0;
+  bottom:0;
+  border:1px solid #aaa;
+  border-radius:50%;
+}
+.select-icon image{
+  height:100%;
+}
+.select-icon.active{
+  border:1px solid #d00912;
+  background:#d00912;
+}

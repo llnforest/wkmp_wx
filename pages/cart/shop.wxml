@@ -1,0 +1,55 @@
+<!--pages/cart/shop.wxml-->
+<view class="container">
+  <view class="shop-area">
+    <view class="shop-item">
+      <view class="select-icon">
+        <image src="/images/icons/selected.png"></image>
+      </view>
+      <view class="img-area">
+        <image class="shop-img" src="/images/img/wine_img.jpg"></image>
+      </view>
+      <view class="shop-title line-limit">悟空名品高新分店</view>
+      <view class="shop-style line-limit">
+        <image class="item-icon" src="/images/icons/shop_phone.png"></image>
+      0551-8782123
+      </view>
+      <view class="shop-style lines-limit">
+        <image class="item-icon" src="/images/icons/shop_address.png"></image>
+      安徽省合肥市蜀山区东流路与南二环交口西南角</view>
+    </view>
+    
+    <view class="shop-item">
+      <view class="select-icon">
+        <image src="/images/icons/selected.png"></image>
+      </view>
+      <view class="img-area">
+        <image class="shop-img" src="/images/img/wine_img.jpg"></image>
+      </view>
+      <view class="shop-title line-limit">悟空名品高新分店</view>
+      <view class="shop-style line-limit">
+        <image class="item-icon" src="/images/icons/shop_phone.png"></image>
+      0551-8782123
+      </view>
+      <view class="shop-style lines-limit">
+        <image class="item-icon" src="/images/icons/shop_address.png"></image>
+      安徽省合肥市蜀山区东流路与南二环交口西南角</view>
+    </view>
+
+    <view class="shop-item">
+      <view class="select-icon active">
+        <image src="/images/icons/selected.png"></image>
+      </view>
+      <view class="img-area">
+        <image class="shop-img" src="/images/img/wine_img.jpg"></image>
+      </view>
+      <view class="shop-title line-limit">悟空名品高新分店</view>
+      <view class="shop-style line-limit">
+        <image class="item-icon" src="/images/icons/shop_phone.png"></image>
+      0551-8782123
+      </view>
+      <view class="shop-style lines-limit">
+        <image class="item-icon" src="/images/icons/shop_address.png"></image>
+      安徽省合肥市蜀山区东流路与南二环交口西南角</view>
+    </view>
+    </view>
+</view>

@@ -16,6 +16,9 @@ page{
 .wine-name{
   font-size:28rpx;
   margin:20rpx auto;
+  height: 90rpx;
+  line-height: 45rpx;
+
 }
 .mall-price{
   margin: 0 auto 10rpx;
@@ -23,16 +26,17 @@ page{
 .vip-price{
   margin: 0 auto 10rpx;
 }
-.detail-item{
-  position: relative;
-  padding-left:150rpx;
-  border-bottom: 1px solid #ddd;
-  height:71rpx;
-}
+
 
 /* 详情介绍 */
 .detail-area{
   margin-bottom:14rpx;
+}
+.detail-item{
+  position: relative;
+  padding-left:150rpx;
+  border-bottom: 1px solid #ddd;
+  height:72rpx;
 }
 .detail-item:last-child{
   border-bottom: none;

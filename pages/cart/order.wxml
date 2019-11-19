@@ -1,0 +1,97 @@
+<!--pages/cart/order.wxml-->
+<view class="container">
+<!-- 地址 -->
+  <view class="address-wrap">
+    <view class="address-left">
+    <image class="address-icon" src="/images/icons/order_address.png"></image>
+    </view>
+    
+    <view class="contact-name address-title-item">周子馨</view>
+    <view class="contact-phone address-title-item">13223123463</view>
+    <view class="cf"></view>
+    <view class="address-info">
+    安徽省合肥市蜀山区东流路32号鑫海大厦1409室
+    </view>
+    <view class="address-right">
+    <image class="right-icon" src="/images/icons/right.png"></image>
+    </view>
+  </view>
+<!-- 酒品 -->
+  <view class="wine-wrap bg-white m-b-7">
+   <view class="wine-item">
+      <view class="img-area">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+      </view>
+      <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+      <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
+      <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
+      <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
+      <view class="num-area clearfix">
+        <view class="o-inc num-item">
+        <image class="o-img-item" src="/images/icons/jia.png"></image>
+        </view>
+        <view class="cart-num num-item">2</view>
+        <view class="o-dec num-item">
+        <image class="o-img-item " src="/images/icons/jian.png"></image></view>
+      </view>
+    </view>
+    <view class="wine-item">
+      <view class="img-area">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+      </view>
+      <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+      <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
+      <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
+      <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
+      <view class="num-area clearfix">
+        <view class="o-inc num-item">
+        <image class="o-img-item" src="/images/icons/jia.png"></image>
+        </view>
+        <view class="cart-num num-item">2</view>
+        <view class="o-dec num-item">
+        <image class="o-img-item " src="/images/icons/jian.png"></image></view>
+      </view>
+    </view>
+  </view>
+
+<!-- 订单 -->
+  <view class="order-wrap bg-white m-b-7">
+    <view class="order-item">
+      <view class="item-name">配送方式</view>
+      <view class="select-type">
+        <text>请选择</text>
+        <image  class="common-right-icon" src="/images/icons/right.png"></image>
+      </view>
+    </view>
+    <view class="select-area">
+      <view class="order-item">
+        <view class="item-name">快递邮寄</view>
+        <view class="select-icon">
+          <image src="/images/icons/selected.png"></image>
+        </view>
+      </view>
+      <view class="order-item">
+        <view class="item-name">门店自提</view>
+        <image  class="common-right-icon" src="/images/icons/right.png"></image>
+      </view>
+    </view>
+
+    <view class="order-item">
+      <view class="item-name">买家留言</view>
+      <input class="order-remark" type="text" placeholder="选填，可填写您与卖家达成一致的要求"></input>
+    </view>
+  </view>
+
+  <view class="notice-wrap bg-white m-b-50">
+    <image class="notice-icon" src="/images/icons/notice.png"></image>
+  总计<text class="common-color"><text class="total-money m-l-5">550</text>元</text>，成为会员下单返现    <text class="common-color"><text class="back-money m-l-5">550</text>元</text>
+    <image class="common-right-icon" src="/images/icons/right.png"></image>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="bottom-nav">
+  提交订单
+  </view>
+</view>

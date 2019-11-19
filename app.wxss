@@ -9,8 +9,26 @@ image{
   width:100%;
   display: block;
 }
+.cf{
+  clear:both;
+}
+.m-l-5{
+  margin-left:10rpx;
+}
+.m-b-7{
+  margin-bottom:14rpx;
+}
+.m-b-50{
+  margin-bottom:100rpx;
+}
+.blod{
+  font-weight: 700;
+}
 .sm-tx{
   font-size: 24rpx;
+}
+.cm-tx{
+  font-size:26rpx;
 }
 .lg-tx{
   font-size: 28rpx;
