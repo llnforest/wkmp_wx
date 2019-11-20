@@ -84,8 +84,8 @@ image{
 }
 .icon-cate{
   position:absolute;
-  width:120rpx;
-  height:120rpx;
+  width:100rpx;
+  height:100rpx;
   left:0;
   top:0;
   z-index:999;

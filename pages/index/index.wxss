@@ -110,8 +110,9 @@
 }
 .hot-title{
   height:64rpx;
-  margin-top:5rpx;
-  margin-bottom:10rpx;
+  margin-top:8rpx;
+  margin-bottom:14rpx;
+  line-height: 32rpx;
 }
 .mall-price{
   margin-bottom:5rpx;
@@ -190,4 +191,5 @@
 }
 .bottom-title{
   font-size:26rpx;
+  margin:5rpx 0;
 }

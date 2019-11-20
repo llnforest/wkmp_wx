@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/user/user",
     "pages/cart/addressAdd",
     "pages/cart/address",
     "pages/cart/order",
@@ -8,7 +9,7 @@
     "pages/cart/shop",
     "pages/index/detail",
     "pages/index/index",
-    "pages/user/user",
+    
     "pages/prize/prize",
     "pages/cate/cate",
     "pages/logs/logs"
@@ -18,11 +19,12 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#d00912",
     "navigationBarTitleText": "悟空名品",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "default"
   },
   "tabBar": {
     "color": "#666666",
-    "selectedColor": "#FF6347",
+    "selectedColor": "#d00912",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
