@@ -1,0 +1,57 @@
+/* pages/cart/address.wxss */
+
+page{
+  background:#efefef;
+}
+/* 地址 */
+.address-wrap{
+  padding:40rpx 40rpx 40rpx 80rpx;
+  position:relative;
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+.address-wrap:last-child{
+  border-bottom:none;
+}
+.address-title-item{
+  width:50%;
+  float:left;
+  text-align:right;
+  margin-bottom:10rpx;
+  font-weight: 700;
+}
+.contact-name{
+  text-align:left;
+}
+.address-info{
+  color:#666;
+}
+.select-icon{
+  width:30rpx;
+  height:30rpx;
+  position:absolute;
+  left:25rpx;
+  margin:auto;
+  top:0;
+  bottom:0;
+  border:1px solid #aaa;
+  border-radius:50%;
+}
+.select-icon image{
+  height:100%;
+}
+.select-icon.active{
+  border:1px solid #d00912;
+  background:#d00912;
+}
+.remove{  
+  width: 160rpx;  
+  height: 100%;
+  color: white; 
+  position: absolute;  
+  top: 0;  
+  right: -160rpx;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+}  

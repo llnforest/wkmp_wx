@@ -1,8 +1,11 @@
 {
   "pages": [
-    "pages/cart/shop",
+    "pages/cart/addressAdd",
+    "pages/cart/address",
     "pages/cart/order",
+    "pages/cart/pay",
     "pages/cart/cart",
+    "pages/cart/shop",
     "pages/index/detail",
     "pages/index/index",
     "pages/user/user",

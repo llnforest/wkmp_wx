@@ -195,4 +195,7 @@ page{
   right:20rpx;
   position: absolute;
 }
+.bottom-nav{
+  font-size:32rpx;
+}
 

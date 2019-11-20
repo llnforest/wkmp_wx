@@ -1,0 +1,22 @@
+/* pages/cart/addressAdd.wxss */
+.order-item{
+  position: relative;
+  padding:50rpx 2.5% 10rpx 200rpx;
+  border-bottom: 1px solid #ddd;
+  line-height:40rpx;
+  min-height:102rpx;
+}
+
+.item-name{
+  position:absolute;
+  left:2.5%;
+  width:150rpx;
+  font-weight:700;
+  height:25rpx;
+  line-height:25rpx;
+  bottom:25rpx;
+}
+.item-dec{
+  text-align:right;
+  line-height:25rpx;
+}

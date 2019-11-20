@@ -15,6 +15,9 @@ image{
 .m-l-5{
   margin-left:10rpx;
 }
+.m-l-10{
+  margin-left:20rpx;
+}
 .m-b-7{
   margin-bottom:14rpx;
 }
@@ -32,6 +35,9 @@ image{
 }
 .lg-tx{
   font-size: 28rpx;
+}
+.llg-tx{
+  font-size:32rpx;
 }
 .bg-white{
   background: #fff;

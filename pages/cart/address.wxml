@@ -1,0 +1,21 @@
+<!--pages/cart/address.wxml-->
+<view class="container">
+<!-- 地址 -->
+<scroll-view scroll-y="{{isScroll}}" style='height:{{windowHeight}}px;margin-bottom:100rpx'>
+  <block wx:key="item" wx:for="{{data}}">
+  <view data-index='{{index}}' class="address-wrap" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx">
+    <view class="select-icon">
+      <image src="/images/icons/selected.png"></image>
+    </view>
+    <view class="contact-name address-title-item line-limit">周子馨</view>
+    <view class="contact-phone address-title-item line-limit">13223123463</view>
+    <view class="cf"></view>
+    <view class="address-info">
+    安徽省合肥市蜀山区东流路32号鑫海大厦1409室
+    </view>
+    <view class="remove common-bg" bindtap="delItem">删除 </view>
+  </view>
+  </block>
+</scroll-view>
+  <view class="bottom-nav llg-tx">添加地址</view>
+</view>

@@ -91,7 +91,7 @@
   </view>
 
   <!-- 底部导航 -->
-  <view class="bottom-nav">
+  <view class="bottom-nav bg-tx">
   提交订单
   </view>
 </view>
