@@ -1,5 +1,10 @@
 {
   "pages": [
+    "pages/prize/prize",
+    "pages/user/userinfo",
+    
+    "pages/user/userinfoEdit",
+    
     "pages/user/user",
     "pages/cart/addressAdd",
     "pages/cart/address",
@@ -9,8 +14,6 @@
     "pages/cart/shop",
     "pages/index/detail",
     "pages/index/index",
-    
-    "pages/prize/prize",
     "pages/cate/cate",
     "pages/logs/logs"
     

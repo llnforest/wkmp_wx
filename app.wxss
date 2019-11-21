@@ -111,3 +111,7 @@ image{
   color:#fff;
   line-height:100rpx;
 }
+.line-shadow{
+  border-bottom: 1px solid #e3eaef;
+  box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
+}

@@ -1,0 +1,16 @@
+<!--pages/user/userinfo.wxml-->
+<view class="order-wrap bg-white m-b-7">
+  <view class="order-item">
+    <view class="item-name">我的头像</view>
+    <image class="head-img" src="/images/icons/head_img.png"></image>
+  </view>
+  <view class="order-item">
+    <view class="item-name">真实姓名</view>
+    <view class="item-dec">周子欣</view>
+  </view>
+  <view class="order-item">
+    <view class="item-name">手机号码</view>
+    <view class="item-dec">19215439283</view>
+  </view>
+</view>
+<view class="bottom-nav llg-tx">修改信息</view>

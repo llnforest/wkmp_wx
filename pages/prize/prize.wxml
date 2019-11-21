@@ -1,2 +1,79 @@
 <!--pages/prize/prize.wxml-->
-<text>pages/prize/prize.wxml</text>
+<view class="container">
+<!-- 顶部 -->
+  
+  <view class="top-area m-b-7 bg-white">
+    <image class="top-bg" src="/images/icons/prize_bg.png" mode="widthFix"></image>
+    <view class="user-info">
+      <image class="vip-head" src="/images/icons/prize_head.png"></image>
+      <image class="head-img" src="/images/icons/head_img.png"></image>
+      
+      <view class="nick-name">
+      周子欣
+      <text class="user-level">高级顾问</text>
+      </view>
+      <view class="user-team">
+      <image class="team-icon" src="/images/icons/team_icon.png"  mode="widthFix"></image>
+      团队：5个
+      </view>
+      <view class="tixian">
+        <view class="user-money">¥
+        <text class="money">3000</text>
+        </view>
+        <view class="go-apply common-color">去提现</view>
+      </view>
+    </view>
+
+    <view class="money-wrap clearfix">
+      <view class="money-item">
+        <view class="money-text">团队销售总额</view>
+        <view class="money-text show-money">22900</view>
+      </view>
+      <view class="money-item">
+        <view class="money-text">个人销售总额</view>
+        <view class="money-text show-money">22900</view>
+      </view>
+      <view class="money-item">
+        <view class="money-text">已提现总额</view>
+        <view class="money-text show-money">22900</view>
+      </view>
+    </view>
+
+    <view class="vip-area">
+      <view class="vip-text1">邀请好友成为您团队的一员</view>
+      <view class="vip-text2">请填写您的手机号 15693279539</view>
+    </view>
+
+    
+    <view class="status-wrap clearfix">
+      <view class="status-item">
+        <view class="img-bg">
+          <image class="item-img" src="/images/icons/my_team.png" mode="widthFix"></image>
+        </view>
+        <view class="item-text">我的团队</view>
+      </view>
+    
+      <view class="status-item">
+        <view class="img-bg">
+          <image class="item-img" src="/images/icons/my_profit.png" mode="widthFix"></image>
+        </view>
+        <view class="item-text">我的收益</view>
+      </view>
+      <view class="status-item">
+        <view class="img-bg">
+          <image class="item-img" src="/images/icons/apply_record.png" mode="widthFix"></image>
+        </view>
+        <view class="item-text">提现记录</view>
+      </view>
+      <view class="status-item">
+        <view class="img-bg">
+          <image class="item-img" src="/images/icons/my_service.png"  mode="widthFix"></image>
+        </view>
+        <view class="item-text">专属客服</view>
+      </view>
+    </view>
+  </view>
+  
+ 
+</view>
+

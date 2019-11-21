@@ -1,1 +1,179 @@
 /* pages/prize/prize.wxss */
+/* 顶部 */
+.top-area{
+  position:relative;
+}
+.top-bg{
+  position:absolute;
+}
+.user-info{
+  padding:50rpx 0rpx 30rpx 230rpx;
+  position:relative;
+  height:150rpx;
+  margin-top:70rpx;
+}
+.nick-name{
+  color:#fff;
+  line-height:60rpx;
+  font-weight: 700;
+  font-size:40rpx;
+}
+.user-team{
+  color:#e9e9e9;
+  line-height:40rpx;
+  position:relative;
+  padding-left:42rpx
+}
+.team-icon{
+  width:32rpx;
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+
+}
+.head-img{
+  width:120rpx;
+  height:120rpx;
+  border-radius:50%;
+  left:80rpx;
+  position:absolute;
+  top:0;
+  border:1px solid #ddd;
+  bottom:0;
+  margin:auto;
+}
+
+.vip-head{
+  position:absolute;
+  height: 70rpx;
+  width: 70rpx;
+  left: 65rpx;
+  top: -20rpx;
+  z-index: 999;
+
+}
+.user-level{
+  font-size: 24rpx;
+  border: 1px solid #e9e9e9;
+  font-weight: 100;
+  padding: 10rpx;
+  display: inline-block;
+  border-radius: 8rpx;
+  line-height: 18rpx;
+  margin-left: 10rpx;
+  color:#e9e9e9;
+}
+.tixian{
+  position: absolute;
+  right: 0;
+  width: 200rpx;
+  
+  text-align: center;
+  height:93rpx;
+  top:0;
+  bottom:0;
+  
+  margin:auto;
+
+}
+.user-money{
+  line-height:35rpx;
+  color: #f39800;
+  margin-bottom:8rpx;
+}
+.money{
+  font-weight: 700;
+  font-size:40rpx;
+}
+.go-apply{
+  background:#f39800;
+  border-radius:8rpx;
+  line-height:50rpx;
+  width:120rpx;
+  margin:auto;
+  font-size:24rpx;
+}
+/**黑框区域**/
+.vip-area{
+  width:90%;
+  margin:10rpx 5%;
+  height:100rpx;
+  background:rgba(0,0,0,0.85);
+  border-radius:20rpx;
+  box-shadow:0 1rpx 20rpx  2rpx rgba(1, 1, 1, 0.1);
+  text-align:center;
+  position:relative;
+  line-height: 35rpx;
+}
+.vip-text1{
+  color: #f39800;
+  
+  font-size: 28rpx;
+  padding-top:15rpx;
+
+}
+.vip-text2{
+  color:#e9e9e9;
+  font-size:24rpx;
+}
+/**金额区域**/
+.money-wrap{
+  width:95%;
+  margin:0 auto;
+  padding:25rpx 0;
+  color:#e9e9e9;
+}
+.money-item{
+  width:29.3%;
+  margin:0 2%;
+  float:left;
+  position:relative;
+}
+.money-text{
+  margin-top:10rpx;
+  font-size:24rpx;
+  text-align:center;
+  line-height:30rpx;
+}
+.show-money{
+  font-size:40rpx;
+  line-height:50rpx;
+  margin-top:0;
+}
+/**下方区域**/
+.status-wrap{
+  width:95%;
+  margin:0 auto 0;
+  padding:30rpx 0;
+}
+.status-item{
+  width:25.33%;
+  margin:60rpx 4% 0;
+  float:left;
+  position:relative;
+}
+.item-img{
+  width:70rpx;
+  margin:auto;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+.item-text{
+  margin-top:10rpx;
+  font-size:28rpx;
+  text-align:center;
+}
+.img-bg{
+  background:rgba(241,154,150,  0.67);
+  width:120rpx;
+  height:120rpx;
+  margin:0 auto 10rpx;
+  border-radius:50%;
+  position:relative;
+
+}

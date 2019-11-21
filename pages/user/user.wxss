@@ -19,9 +19,10 @@ page{
   color:#fff;
   line-height:60rpx;
   font-weight: 700;
+  font-size:40rpx;
 }
 .user-level{
-  color:#fff;
+  color:#e9e9e9;
   line-height:40rpx;
 }
 .head-img{
@@ -60,6 +61,15 @@ page{
   float:right;
   color:#666;
   width:67%;
+  position:relative;
+}
+.ti-bg{
+  height: 120rpx;
+  position: absolute;
+  top: 0;
+  width: 430rpx;
+  right: 0;
+
 }
 .go-gift{
   text-align: center;
@@ -118,7 +128,8 @@ page{
 .order-item{
   position: relative;
   padding-left:200rpx;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #e3eaef;
+  box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
   height:102rpx;
 }
 .order-item:last-child{
