@@ -1,0 +1,135 @@
+/* pages/prize/team.wxss */
+/* pages/prize/prize.wxss */
+/* 顶部 */
+.top-area{
+  position:relative;
+  height:250rpx;
+}
+.top-bg{
+  position:absolute;
+  height:250rpx;
+}
+.user-info{
+  padding-left:80rpx;
+  position:relative;
+  height:150rpx;
+  margin-top:50rpx;
+}
+.nick-name{
+  color:#fff;
+  line-height:60rpx;
+  
+}
+.user-team{
+  color:#e9e9e9;
+  line-height:60rpx;
+  position:relative;
+  font-size:60rpx;
+}
+
+/**团队人数区域**/
+.money-wrap{
+  margin:0 auto;
+  padding:10rpx 2.5% 30rpx;
+color:#e9e9e9;
+
+}
+.money-item{
+  width:29.3%;
+  margin:0 2%;
+  float:left;
+  position:relative;
+}
+.money-text{
+  
+  font-size:24rpx;
+  text-align:center;
+  line-height:30rpx;
+}
+.show-money{
+  font-size:35rpx;
+  line-height:50rpx;
+}
+.sanjiao{
+  width:28rpx;
+  height:28rpx;
+  position: absolute;
+  margin:0 auto;
+  left:0;
+  right:0;
+  bottom:-38rpx;
+  display:none;
+}
+.sanjiao.active{
+  display:inline-block;
+}
+/* 列表区域 */
+.num-wrap{
+  margin:0 auto;
+  padding:10rpx 2.5%;
+  
+
+}
+.num-item{
+  width:29.3%;
+  margin:0 2%;
+  float:left;
+  position:relative;
+}
+.num-text{
+  
+  font-size:24rpx;
+  text-align:center;
+  line-height:30rpx;
+}
+.show-num{
+  font-size:35rpx;
+  line-height:50rpx;
+}
+.list-wrap{
+  padding:40rpx 0;
+  margin-top:20rpx;
+  position:relative;
+}
+.head-img{
+  position:absolute;
+  height:120rpx;
+  width:120rpx;
+  left:50rpx;
+  top:40rpx;
+  border-radius:50%;
+}
+.vip-quan{
+  border:2px solid #afd544
+}
+.tui-quan{
+  border:2px solid #ffad03
+}
+.gao-quan{
+  border:2px solid #804dbc
+}
+.level-img{
+  position:absolute;
+  width:120rpx;
+  left:52rpx;
+  top:130rpx;
+}
+.list-top{
+  height:160rpx;
+  padding-left:200rpx;
+}
+.bottom-item{
+  color:#666;
+  margin-top:10rpx;
+}
+.top-item{
+  padding-top: 35rpx;
+
+}
+.num-team{
+  font-size:34rpx;
+  margin-right:5rpx;
+}
+.num-money{
+  margin-bottom:8rpx;
+}

@@ -117,6 +117,7 @@
 .vip-text2{
   color:#e9e9e9;
   font-size:24rpx;
+  margin-top: 5rpx;
 }
 /**金额区域**/
 .money-wrap{
@@ -140,7 +141,6 @@
 .show-money{
   font-size:40rpx;
   line-height:50rpx;
-  margin-top:0;
 }
 /**下方区域**/
 .status-wrap{

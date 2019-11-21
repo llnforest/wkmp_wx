@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/prize/team",
     "pages/prize/prize",
+    
+    
     "pages/user/userinfo",
-    
     "pages/user/userinfoEdit",
-    
     "pages/user/user",
     "pages/cart/addressAdd",
     "pages/cart/address",
@@ -20,14 +21,14 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#d00912",
+    "navigationBarBackgroundColor": "#dc0011",
     "navigationBarTitleText": "悟空名品",
     "navigationBarTextStyle": "white",
     "navigationStyle": "default"
   },
   "tabBar": {
     "color": "#666666",
-    "selectedColor": "#d00912",
+    "selectedColor": "#dc0011",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [

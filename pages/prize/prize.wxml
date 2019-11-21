@@ -26,16 +26,16 @@
 
     <view class="money-wrap clearfix">
       <view class="money-item">
-        <view class="money-text">团队销售总额</view>
+        <view class="money-text">团队销售总额(元)</view>
         <view class="money-text show-money">22900</view>
       </view>
       <view class="money-item">
-        <view class="money-text">个人销售总额</view>
+        <view class="money-text">个人销售总额(元)</view>
         <view class="money-text show-money">22900</view>
       </view>
       <view class="money-item">
-        <view class="money-text">已提现总额</view>
-        <view class="money-text show-money">22900</view>
+        <view class="money-text">已提现总额(元)</view>
+        <view class="money-text show-money">222900</view>
       </view>
     </view>
 

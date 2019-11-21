@@ -63,7 +63,7 @@ image{
   color:#d00912;
 }
 .common-bg{
-  background-color: #d00912;
+  background-color: #dc0011;
 }
 .line-limit{
   overflow:hidden;
