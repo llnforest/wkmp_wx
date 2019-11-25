@@ -1,0 +1,100 @@
+<!--pages/prize/profit.wxml-->
+<view class="container">
+  <!-- 金额区域 -->
+  <view class="money-wrap clearfix common-bg">
+    <view class="money-item">
+      <view class="money-text show-money">总收益（元）</view>
+      <view class="money-text">10000</view>
+    </view>
+    <view class="money-item">
+      <view class="money-text show-money">可提现（元）</view>
+      <view class="money-text">5000</view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class="list-wrap bg-white">
+    <view class="list-title line-shadow">
+      <image class="title-img" src="/images/icons/profit_liutong.png"  mode="widthFix"></image>
+      <text class="item-title">流通酒奖励</text>
+      <text class="item-time">2019-11-21 08:21:44</text>
+    </view>
+    <view class="list-top">
+      <image class="head-img vip-quan" src="/images/icons/head_img.png"></image>
+      <image class="level-img" src="/images/icons/vip_icon.png"  mode="widthFix"></image>
+      <view class="top-item llg-tx blod">周子欣</view>
+      <view class="bottom-item">
+        <image class="phone-icon" src="/images/icons/profit_phone.png" mode="widthFix"></image>
+        13492049535
+      </view>
+      <view class="money-area">
+      +<text class="money common-color">100</text>元
+      </view>
+    </view>
+    <view class="remark-item">
+    <text class="remark-title">奖励原因：</text>
+    购买流通酒返佣
+    </view>
+    <view class="remark-item">
+    <text class="remark-title">贡献来源：</text>
+    李成 13892124369
+    </view>
+  </view>
+
+  <view class="list-wrap bg-white">
+    <view class="list-title line-shadow">
+      <image class="title-img" src="/images/icons/profit_gift.png"  mode="widthFix"></image>
+      <text class="item-title">礼包奖励</text>
+      <text class="item-time">2019-11-21 08:21:44</text>
+    </view>
+    <view class="list-top">
+      <image class="head-img vip-quan" src="/images/icons/head_img.png"></image>
+      <image class="level-img" src="/images/icons/vip_icon.png"  mode="widthFix"></image>
+      <view class="top-item llg-tx blod">周子欣</view>
+      <view class="bottom-item">
+        <image class="phone-icon" src="/images/icons/profit_phone.png" mode="widthFix"></image>
+        13492049535
+      </view>
+      <view class="money-area">
+      +<text class="money common-color">100</text>元
+      </view>
+    </view>
+    <view class="remark-item">
+    <text class="remark-title">奖励原因：</text>
+    销售一个会员礼包
+    </view>
+    <view class="remark-item">
+    <text class="remark-title">贡献来源：</text>
+    李成 13892124369
+    </view>
+  </view>
+
+  <view class="list-wrap bg-white">
+    <view class="list-title line-shadow">
+      <image class="title-img" src="/images/icons/profit_sale.png"  mode="widthFix"></image>
+      <text class="item-title">销售额奖励</text>
+      <text class="item-time">2019-11-21 08:21:44</text>
+    </view>
+    <view class="list-top">
+      <image class="head-img vip-quan" src="/images/icons/head_img.png"></image>
+      <image class="level-img" src="/images/icons/vip_icon.png"  mode="widthFix"></image>
+      <view class="top-item llg-tx blod">周子欣</view>
+      <view class="bottom-item">
+        <image class="phone-icon" src="/images/icons/profit_phone.png" mode="widthFix"></image>
+        13492049535
+      </view>
+      <view class="money-area">
+      +<text class="money common-color">100</text>元
+      </view>
+    </view>
+    <view class="remark-item">
+    <text class="remark-title">奖励原因：</text>
+    团队销售额满200元
+    </view>
+    <view class="remark-item">
+    <text class="remark-title">贡献来源：</text>
+    李成 13892124369
+    </view>
+  </view>
+  
+ 
+</view>

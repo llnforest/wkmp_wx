@@ -1,9 +1,8 @@
 {
   "pages": [
+    "pages/prize/profit",
     "pages/prize/team",
     "pages/prize/prize",
-    
-    
     "pages/user/userinfo",
     "pages/user/userinfoEdit",
     "pages/user/user",

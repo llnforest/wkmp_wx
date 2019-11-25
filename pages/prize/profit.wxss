@@ -1,0 +1,114 @@
+/* pages/prize/profit.wxss */
+/**金额区域**/
+page{
+  background:#efefef;
+}
+.money-wrap{
+  margin:0 auto;
+  padding:40rpx 2.5%;
+  color:#e9e9e9;
+}
+.money-item{
+  width:46%;
+  margin:0 2%;
+  float:left;
+  position:relative;
+}
+.money-text{
+  
+  font-size:40rpx;
+  text-align:center;
+  line-height:30rpx;
+}
+.show-money{
+  font-size:35rpx;
+  line-height:50rpx;
+  margin-bottom: 12rpx;
+}
+
+/* 列表区域 */
+.list-wrap{
+  padding:10rpx 2.5% 30rpx;
+  margin-bottom:14rpx;
+}
+.list-wrap:last-child{
+  margin-bottom:0;
+}
+.list-title{
+  padding:20rpx 2.5% 20rpx 100rpx;
+  position:relative;
+  height:90rpx;
+  line-height:55rpx;
+}
+.title-img{
+  width:60rpx;
+  position:absolute;
+  top:20rpx;
+  left:2.5%;
+}
+.item-title{
+  float:left;
+  font-size: 30rpx;
+  font-weight: 700;
+  
+}
+.item-time{
+  float:right;
+  color:#666;
+}
+.phone-icon{
+  width:25rpx;
+  display:inline-block;
+}
+.head-img{
+  position:absolute;
+  height:120rpx;
+  width:120rpx;
+  left:50rpx;
+  top:40rpx;
+  border-radius:50%;
+}
+.vip-quan{
+  border:2px solid #afd544
+}
+.tui-quan{
+  border:2px solid #ffad03
+}
+.gao-quan{
+  border:2px solid #804dbc
+}
+.level-img{
+  position:absolute;
+  width:120rpx;
+  left:52rpx;
+  top:130rpx;
+}
+.list-top{
+  height:200rpx;
+  padding-left:200rpx;
+  padding-right:150rpx;
+  position:relative;
+}
+.money-area{
+  position: absolute;
+  right:2.5%;
+  width:150rpx;
+  text-align:right;
+  font-size:32rpx;
+  top:60rpx;
+}
+.bottom-item{
+  color:#666;
+  margin-top:10rpx;
+}
+.top-item{
+  padding-top: 60rpx;
+
+}
+.remark-title{
+  font-weight: 700;
+}
+.remark-item{
+  margin-bottom:10rpx;
+  padding-left:40rpx;
+}
