@@ -1,4 +1,4 @@
-<!--pages/cate/cate.wxml-->
+<!--pages/index/searchlist.wxml-->
 <view class="container">
 
   <!-- 头部区域 -->

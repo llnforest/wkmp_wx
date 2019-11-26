@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/index/search",
+    "pages/prize/takelist",
     "pages/prize/profit",
     "pages/prize/team",
     "pages/prize/prize",
@@ -15,8 +17,8 @@
     "pages/index/detail",
     "pages/index/index",
     "pages/cate/cate",
-    "pages/logs/logs"
-    
+    "pages/logs/logs",
+    "pages/index/searchlist"
   ],
   "window": {
     "backgroundTextStyle": "light",

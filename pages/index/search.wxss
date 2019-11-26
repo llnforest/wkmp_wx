@@ -1,0 +1,79 @@
+/* pages/index/search.wxss */
+.top-area{
+  width:100%;
+  padding-bottom: 20rpx;
+
+}
+.top-area .search-area{
+  height:70rpx;
+  width:95%;
+  background-color:#fff;
+  padding-left:120rpx;
+  position: relative;
+  border-radius: 30rpx;
+}
+.top-area .search-icon{
+  width:120rpx;
+  position:absolute;
+  top:10rpx;
+  left:0;
+  border-right: 1px solid #ddd;
+  height:50rpx;
+  padding:5rpx 0;
+}
+.top-area .search-img{
+  width:40rpx;
+  height:40rpx;
+  margin:auto;
+  display: block;
+
+}
+.top-area .search-input{
+  text-align: center;
+  height:100%;
+  font-size:24rpx;
+}
+/* 列表区域 */
+.list-wrap{
+  
+}
+.list-wrap:last-child{
+  margin-bottom:0;
+}
+.list-title{
+  padding:30rpx 2.5% 30rpx 70rpx;
+  position:relative;
+  height:110rpx;
+  line-height:50rpx;
+}
+.title-img{
+  width:35rpx;
+  position:absolute;
+  margin:auto;
+  top:0rpx;
+  bottom:0;
+  left:2.5%;
+}
+.item-title{
+  float:left;
+  
+}
+.del-img{
+  float:right;
+  width:35rpx;
+}
+
+.list-area{
+  padding:0rpx 2.5% 40rpx;
+}
+.search-item{
+  padding:20rpx 40rpx;
+  line-height:20rpx;
+  font-size:24rpx;
+  float:left;
+  background:#efefef;
+  margin-right:40rpx;
+  display:inline-block;
+  border-radius:30rpx;
+  margin-bottom:40rpx;
+}

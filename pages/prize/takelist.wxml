@@ -1,0 +1,36 @@
+<!--pages/prize/takelist.wxml-->
+<view class="container">
+  <!-- 金额区域 -->
+  <view class="money-wrap clearfix common-bg">
+    <view class="money-item">
+      <view class="money-text">您已成功提现<text class="show-money">10000</text>元</view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class="list-wrap bg-white">
+    <view class="list-title line-shadow">
+      <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
+      <text class="item-title common-color">1000元</text>
+      <text class="item-time">2019-11-21 08:21:44</text>
+    </view>
+    <view class="list-title line-shadow">
+      <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
+      <text class="item-title common-color">1000元</text>
+      <text class="item-time">2019-11-21 08:21:44</text>
+    </view>
+    <view class="list-title line-shadow">
+      <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
+      <text class="item-title common-color">1000元</text>
+      <text class="item-time">2019-11-21 08:21:44</text>
+    </view>
+    <view class="list-title line-shadow">
+      <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
+      <text class="item-title common-color">1000元</text>
+      <text class="item-time">2019-11-21 08:21:44</text>
+    </view>
+  </view>
+
+  
+  
+ 
+</view>

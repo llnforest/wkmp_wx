@@ -1,0 +1,42 @@
+<!--pages/index/search.wxml-->
+<view class="container">
+
+  <!-- 头部区域 -->
+  <view class="top-area display-flex common-bg">
+    <!-- 搜索区域 -->
+    <view class="search-area">
+      <view class="search-icon">
+      <image class="search-img" src="/images/icons/search.png"></image>
+      </view>
+      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search"></input>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class="list-wrap bg-white">
+    <view class="list-title">
+      <image class="title-img" src="/images/icons/search_time.png"  mode="widthFix"></image>
+      <text class="item-title">最近搜索</text>
+      <image class="del-img" src="/images/icons/search_del.png"  mode="widthFix"></image>
+    </view>
+    <view class="list-area clearfix">
+    <text class="search-item">gujing</text>
+    <text class="search-item">飞天茅台</text>
+    <text class="search-item">老八大</text>
+    <text class="search-item">gujing</text>
+    <text class="search-item">飞天茅台</text>
+    <text class="search-item">老八大</text>
+    <text class="search-item">gujing</text>
+    <text class="search-item">飞天茅台</text>
+    <text class="search-item">老八大</text>
+    </view>
+    <view class="list-title">
+      <image class="title-img" src="/images/icons/search_hot.png"  mode="widthFix"></image>
+      <text class="item-title">热门搜索</text>
+    </view>
+    <view class="list-area clearfix">
+    <text class="search-item">gujing</text>
+    <text class="search-item">飞天茅台</text>
+    <text class="search-item">老八大</text>
+    </view>
+  </view>
+</view>

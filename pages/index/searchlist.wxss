@@ -1,4 +1,4 @@
-/* pages/cate/cate.wxss */
+/* pages/index/searchlist.wxss */
 .top-area{
   width:100%;
   padding-bottom: 20rpx;
