@@ -1,5 +1,9 @@
 {
   "pages": [
+    "pages/user/orderlist",
+    "pages/cart/cart",
+    "pages/index/searchlist",
+    "pages/cart/order",
     "pages/index/search",
     "pages/prize/takelist",
     "pages/prize/profit",
@@ -10,15 +14,13 @@
     "pages/user/user",
     "pages/cart/addressAdd",
     "pages/cart/address",
-    "pages/cart/order",
     "pages/cart/pay",
-    "pages/cart/cart",
     "pages/cart/shop",
     "pages/index/detail",
     "pages/index/index",
     "pages/cate/cate",
-    "pages/logs/logs",
-    "pages/index/searchlist"
+    "pages/logs/logs"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

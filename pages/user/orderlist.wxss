@@ -1,0 +1,145 @@
+/* pages/user/orderlist.wxss */
+page{
+  background:#efefef;
+}
+/* 头部选择 */
+.top-wrap{
+  position: fixed;
+  z-index: 9999;
+  background: rgba(255,255,255,0.8);
+  height:80rpx;
+}
+
+
+.top-item{
+  width:25%;
+  padding:0 5%;
+  position: relative;
+  display: inline-block;
+  text-align:center;
+  height:100%;
+  line-height:80rpx;
+}
+.top-line{
+  position:absolute;
+  height:2px;
+  background: #d00912;
+  bottom:0;
+  width: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display:none;
+}
+.top-item.common-color .top-line{
+  display:block;
+}
+/* 酒品列表 */
+.wine-wrap{
+  margin-top:80rpx;
+}
+.wine-list{
+  background:#fff;
+  margin-bottom:14rpx;
+}
+.wine-list:last-child{
+  margin-bottom:0rpx;
+}
+.wine-head{
+  padding:20rpx 2.5%;
+  font-size: 24rpx;
+
+}
+.head-img{
+  display:inline-block;
+  width:26rpx;
+  position: relative;
+  top: 4rpx;
+
+}
+.head-title{
+  color:#666;
+  line-height: 40rpx;
+  margin-left: 14rpx;
+
+}
+.head-status{
+  float:right;
+}
+.status-success{
+  color:#67b466;
+}
+.status-pay{
+  color:#b3a905;
+}
+.status-unpay{
+  color:#d00912;
+}
+.status-cancel{
+  color:#ddd;
+}
+.wine-num{
+  position:absolute;
+}
+.foot-item{
+  padding:20rpx 2.5%;
+  text-align:right;
+  color:#666;
+  font-size: 24rpx;
+
+}
+.order-time{
+  float:left;
+}
+.order-btn{
+  display:inline-block;
+  width:140rpx;
+  text-align:center;
+  padding:10rpx;
+  border-radius:20rpx;
+  margin-right:20rpx;
+  font-size:24rpx;
+}
+.go-cancel{
+  background:#fff;
+  border:1px solid #ddd;
+}
+.go-pay{
+  color:#fff;
+}
+.wine-item{
+  position:relative;
+  padding:30rpx 2.5% 30rpx 240rpx;
+  height:262rpx;
+  background:#f7f7f7;
+}
+.img-area{
+  position:absolute;
+  width:200rpx;
+  height:200rpx;
+  top:0;
+  bottom:0;
+  margin:auto;
+  left:20rpx;
+}
+.wine-img{
+  height:100%;
+  border:1px solid #ddd;
+  border-radius:5rpx;
+}
+.wine-title{
+  height:80rpx;
+  line-height:40rpx;
+  margin-bottom:5rpx;
+}
+.wine-style{
+  margin-bottom:20rpx;
+  color:#aaa;
+}
+.item-tx{
+  height:30rpx;
+  line-height:30rpx;
+}
+.mall-price{
+  margin-bottom:5rpx;
+}

@@ -11,4 +11,39 @@
       <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search"></input>
     </view>
   </view>
+  <!-- 列表区域 -->
+  <view class="wine-wrap bg-white">
+   <view class="wine-item line-shadow">
+      <view class="img-area">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+      </view>
+      <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+      <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
+      <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
+      <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
+    </view>
+
+    <view class="wine-item line-shadow">
+      <view class="img-area">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+      </view>
+      <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+      <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
+      <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
+      <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
+    </view>
+
+    <view class="wine-item line-shadow">
+      <view class="img-area">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+      </view>
+      <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+      <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
+      <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
+      <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
+    </view>
+  </view>
 </view>

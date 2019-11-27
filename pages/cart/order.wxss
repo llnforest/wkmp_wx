@@ -50,9 +50,8 @@ page{
 /* 酒品列表 */
 .wine-item{
   position:relative;
-  border-bottom:1px solid #ddd;
-  padding:20rpx 2.5% 20rpx 240rpx;
-  height:242rpx;
+  padding:30rpx 2.5% 30rpx 240rpx;
+  height:262rpx;
 }
 .img-area{
   position:absolute;
@@ -145,7 +144,6 @@ page{
 
 .select-area{
   padding-left:10%;
-  border-bottom:1px solid #ddd;
 }
 .select-area .item-name{
   font-weight:100;

@@ -1,0 +1,98 @@
+<!--pages/user/orderlist.wxml-->
+<view class="container">
+<!-- 头部选择 -->
+<view class="top-wrap line-shadow">
+  <view class="top-item common-color">全部
+    <view class="top-line"></view>
+  </view>
+  <view class="top-item">待付款
+    <view class="top-line"></view>
+  </view>
+  <view class="top-item">已付款
+    <view class="top-line"></view>
+  </view>
+  <view class="top-item">已完成
+    <view class="top-line"></view>
+  </view>
+</view>
+<!-- 列表区域 -->
+  <view class="wine-wrap">
+    <view class="wine-list">
+      <view class="wine-head">
+        <image class="head-img" src="/images/icons/order_icon.png"  mode="widthFix"></image>
+        <text class="head-title">订单编号：2019920324842342</text>
+        <text class="head-status status-unpay">去付款</text>
+      </view>
+      <view class="wine-item">
+        <view class="img-area">
+          <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+          <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        </view>
+        <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
+        <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
+        <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
+      </view>
+      <view class="wine-foot bg-white">
+        <view class="foot-item line-shadow">
+          <text class="order-time">2019-10-10 11:00:00</text>
+          订单总额：<text class="order-money common-color">¥120</text>
+        </view>
+        <view class="foot-item">
+          <view class="order-btn go-cancel">
+          取消订单
+          </view>
+          <view class="order-btn common-bg go-pay">
+          去付款
+          </view>
+        </view>
+      </view> 
+    </view>
+     
+    <view class="wine-list">
+      <view class="wine-head">
+        <image class="head-img" src="/images/icons/order_icon.png"  mode="widthFix"></image>
+        <text class="head-title">订单编号：2019920324842342</text>
+        <text class="head-status status-success">已完成</text>
+      </view>
+      <view class="wine-item">
+        <view class="img-area">
+          <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+          <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        </view>
+        <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
+        <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
+        <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
+      </view>
+      <view class="wine-foot bg-white">
+        <view class="foot-item line-shadow">
+          订单总额：<text class="order-money common-color">¥120</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="wine-list">
+      <view class="wine-head">
+        <image class="head-img" src="/images/icons/order_icon.png"  mode="widthFix"></image>
+        <text class="head-title">订单编号：2019920324842342</text>
+        <text class="head-status status-pay">已付款</text>
+      </view>
+      <view class="wine-item">
+        <view class="img-area">
+          <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+          <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        </view>
+        <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
+        <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
+        <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
+      </view>
+      <view class="wine-foot bg-white">
+        <view class="foot-item line-shadow">
+          订单总额：<text class="order-money common-color">¥120</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

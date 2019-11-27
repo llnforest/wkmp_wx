@@ -10,7 +10,7 @@
   float:right;
   margin-right:2.5%;
   text-align:center;
-  background:#b1070f;
+  background:#d00912;
   border-radius:12rpx;
   font-size:26rpx;
 }
@@ -18,8 +18,8 @@
 .wine-item{
   position:relative;
   border-bottom:1px solid #ddd;
-  padding:20rpx 2.5% 20rpx 300rpx;
-  height:242rpx;
+  padding:30rpx 2.5% 30rpx 300rpx;
+  height:262rpx;
 }
 .img-area{
   position:absolute;
