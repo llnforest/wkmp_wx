@@ -48,6 +48,7 @@ page{
 .wine-head{
   padding:20rpx 2.5%;
   font-size: 24rpx;
+  border-bottom: 1px solid #ddd;
 
 }
 .head-img{
@@ -112,6 +113,18 @@ page{
   padding:30rpx 2.5% 30rpx 240rpx;
   height:262rpx;
   background:#f7f7f7;
+  border-bottom: 1px solid #ddd;
+
+}
+.wine-num{
+  position:absolute;
+  right:2.5%;
+  bottom:30rpx;
+  line-height:30rpx;
+  color:#666;
+}
+.wine-num-icon{
+  font-size:20rpx;
 }
 .img-area{
   position:absolute;

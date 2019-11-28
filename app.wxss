@@ -5,6 +5,9 @@ view{
   width:100%;
   font-size:26rpx;
 }
+text{
+  box-sizing:border-box;
+}
 image{
   width:100%;
   display: block;

@@ -11,4 +11,95 @@
       <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search"></input>
     </view>
   </view>
+  <!-- 左侧固定区域 -->
+  <view class="left-wrap">
+    <view class="cate-item">
+      <view class="cate-name">白酒</view>
+      <view class="cate-line common-bg"></view>
+    </view>
+    <view class="cate-item active">
+      <view class="cate-name">红酒</view>
+      <view class="cate-line common-bg"></view>
+    </view>
+    <view class="cate-item">
+      <view class="cate-name">啤酒</view>
+      <view class="cate-line common-bg"></view>
+    </view>
+    <view class="cate-item">
+      <view class="cate-name">洋酒</view>
+      <view class="cate-line common-bg"></view>
+    </view>
+  </view>
+  <!-- 右侧固定区域 -->
+  <view class="right-wrap">
+    <view class="price-area clearfix">
+      <text class="price-item">200以内</text>
+      <text class="price-item">200-500</text>
+      <text class="price-item common-bg">500-1000</text>
+      <text class="price-item">1000以上</text>
+    </view>
+    <view class="brand-name">
+    罗曼蒂克
+    </view>
+    <view class="wine-rap clearfix">
+      <view class="hot-item">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        
+        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      </view>
+      <view class="hot-item no-margin">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        
+        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      </view>
+      <view class="hot-item">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        
+        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      </view>
+    </view>
+
+    <view class="brand-name">
+    罗曼蒂克
+    </view>
+    <view class="wine-rap clearfix">
+      <view class="hot-item">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        
+        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      </view>
+      <view class="hot-item no-margin">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        
+        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      </view>
+      <view class="hot-item">
+        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        
+        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      </view>
+
+      
+    </view>
+
+  </view>
+  
 </view>
