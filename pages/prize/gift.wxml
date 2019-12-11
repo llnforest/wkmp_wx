@@ -1,0 +1,28 @@
+<!--pages/prize/gift.wxml-->
+<view class="container">
+  <image class="bg-img" src="/images/icons/gift_bg.jpg" mode="widthFix"></image>
+  <image class="bg-text" src="/images/icons/gift_text.jpg" mode="widthFix" ></image>
+  <view class="level-top">
+    <view class="level-line">
+    </view>
+    <view class="level-text">
+    会员等级
+    </view>
+    <view class="level-line">
+    </view>
+  </view>
+  <view class="level-area">
+    <view class="level-item">
+    <image class="level-icon" src="/images/icons/level_vip.png" mode="widthFix"></image>
+    VIP会员
+    </view>
+    <view class="level-item">
+    <image class="level-icon" src="/images/icons/level_tuiguang.png" mode="widthFix"></image>
+    推广顾问
+    </view>
+    <view class="level-item">
+    <image class="level-icon" src="/images/icons/level_gaoji.png" mode="widthFix"></image>
+    高级顾问
+    </view>
+  </view>
+</view>
