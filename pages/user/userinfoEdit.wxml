@@ -13,8 +13,9 @@
     <view class="order-item">
       <view class="item-name">验证码</view>
       <input class="item-dec short-input" placeholder="请填写手机验证码">
-      <view class="send-code common-bg">发送验证码</view>
+      
       </input>
+      <view class="send-code common-bg">发送验证码</view>
     </view>
   </view>
 <view class="bottom-nav llg-tx">确认保存</view>

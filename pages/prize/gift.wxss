@@ -9,7 +9,7 @@
 }
 .level-top{
   width:400rpx;
-  margin-top:60rpx;
+  margin-top:40rpx;
 }
 .level-top view{
   display:inline-block;
@@ -34,13 +34,13 @@
 }
 .level-area{
   margin-top:30rpx;
-  width:500rpx;
+  width:600rpx;
 
 }
 .level-item{
   display:inline-block;
   width:33.333%;
-  padding-left:60rpx;
+  padding-left:50rpx;
   color:#e9e9e9;
   position:relative;
 }
@@ -51,4 +51,103 @@
   top:0;
   bottom:0;
   margin:auto;
+}
+/* 商品列表 */
+.goods-wrap{
+  margin-top:50rpx;
+  width:80%;
+}
+.goods-list{
+  width:50%;
+  display:inline-block;
+}
+.img-area{
+  width:90%;
+  margin:auto;
+  border:1px solid #fdd1b3;
+  border-radius: 20rpx;
+  position:relative;
+  height:300rpx;
+}
+.goods-img{
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:100%;
+  margin:auto;
+  left:0;
+  right:0;
+
+}
+.goods-title{
+  color:#e9e9e9;
+  position:relative;
+  padding-left:80rpx;
+  margin-top:20rpx;
+  width: 80%;
+
+}
+.select-icon{
+  width:30rpx;
+  height:30rpx;
+  position:absolute;
+  left:35rpx;
+  margin:auto;
+  top:0;
+  bottom:0;
+  border:1px solid #fdd1b3;
+  border-radius:50%;
+}
+.select-icon.active{
+  background: #fdd1b3;
+}
+.select-icon image{
+  height:100%;
+}
+/* 表框信息 */
+.user-info{
+  width:90%;
+  margin: 40rpx auto 0;
+}
+.input-item{
+  background:#fff;
+  margin-bottom:30rpx;
+  width:100%;
+  height:80rpx;
+  padding:0 10rpx;
+
+}
+.go-buy{
+  background:#ff1016;
+  text-align:center;
+  height:80rpx;
+  line-height:80rpx;
+  font-size:32rpx;
+  width:90%;
+  margin:0 auto;
+  color:#fff;
+}
+.info{
+  color:#e9e9e9;
+  text-align: center;
+  margin-top:20rpx;
+
+}
+
+.user-item{
+  position:relative;
+}
+.send-code{
+  width:300rpx;
+  height:80rpx;
+  position:absolute;
+  right:0;
+  text-align:center;
+  color:#fff;
+  top:0;
+  line-height:80rpx;
+  background:#ff1016;
+}
+.short-input{
+  width:240rpx;
 }

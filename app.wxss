@@ -1,6 +1,6 @@
 /**app.wxss**/
 
-view{
+input,view{
   box-sizing: border-box;
   width:100%;
   font-size:26rpx;
