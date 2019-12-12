@@ -1,26 +1,37 @@
 {
   "pages": [
     
-    "pages/prize/gift",
-    "pages/cate/cate",
-    "pages/cart/cart",
-    "pages/user/orderlist",
-    "pages/index/searchlist",
-    "pages/cart/order",
-    "pages/index/search",
+    
+    
+   
+
+    "pages/prize/prize",
+    "pages/prize/team",
+    
+    
     "pages/prize/takelist",
     "pages/prize/profit",
-    "pages/prize/team",
-    "pages/prize/prize",
-    "pages/user/userinfo",
-    "pages/user/userinfoEdit",
-    "pages/user/user",
+    
+    "pages/cart/cart",
     "pages/cart/addressAdd",
     "pages/cart/address",
     "pages/cart/pay",
     "pages/cart/shop",
-    "pages/index/detail",
-    "pages/index/index",
+    
+    "pages/cart/order",
+    
+    "pages/prize/gift",
+   
+    "pages/user/orderlist",
+    "pages/user/userinfo",
+    "pages/user/userinfoEdit",
+    "pages/user/user",
+
+"pages/cate/cate",
+"pages/index/detail",
+"pages/index/index",
+"pages/index/searchlist",
+"pages/index/search",
     "pages/logs/logs"
     
   ],
