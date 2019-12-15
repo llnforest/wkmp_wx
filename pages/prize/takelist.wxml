@@ -7,27 +7,45 @@
     </view>
   </view>
   <!-- 列表 -->
-  <view class="list-wrap bg-white">
-    <view class="list-title line-shadow">
-      <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
-      <text class="item-title common-color">1000元</text>
-      <text class="item-time">2019-11-21 08:21:44</text>
+  <view class="list-wrap">
+    <view class="list-item m-b-7">
+      <view class="list-head line-shadow">
+        <text class="item-time">2019-11-21 08:21:44</text>
+        <text class="item-fee success">提现成功</text>
+        
+      </view>
+      <view class="list-title">
+        <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
+        <text class="item-title common-color">1000元</text>
+        <text class="item-fee">手续费：5元</text>
+      </view>
     </view>
-    <view class="list-title line-shadow">
-      <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
-      <text class="item-title common-color">1000元</text>
-      <text class="item-time">2019-11-21 08:21:44</text>
+    <view class="list-item m-b-7">
+      <view class="list-head line-shadow">
+        <text class="item-time">2019-11-21 08:21:44</text>
+        <text class="item-fee success">提现成功</text>
+        
+      </view>
+      <view class="list-title">
+        <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
+        <text class="item-title common-color">1000元</text>
+        <text class="item-fee">手续费：5元</text>
+      </view>
     </view>
-    <view class="list-title line-shadow">
-      <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
-      <text class="item-title common-color">1000元</text>
-      <text class="item-time">2019-11-21 08:21:44</text>
+    <view class="list-item m-b-7">
+      <view class="list-head line-shadow">
+        <text class="item-time">2019-11-21 08:21:44</text>
+        <text class="item-fee success">提现成功</text>
+        
+      </view>
+      <view class="list-title">
+        <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
+        <text class="item-title common-color">1000元</text>
+        <text class="item-fee">手续费：5元</text>
+      </view>
     </view>
-    <view class="list-title line-shadow">
-      <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
-      <text class="item-title common-color">1000元</text>
-      <text class="item-time">2019-11-21 08:21:44</text>
-    </view>
+    
+    
   </view>
 
   

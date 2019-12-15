@@ -1,4 +1,7 @@
 /* pages/prize/takelist.wxss */
+page{
+  background:#efefef;
+}
 .money-wrap{
   margin:0 auto;
   padding:20rpx 2.5%;
@@ -23,21 +26,29 @@
 .list-wrap{
   
 }
+.list-item{
+  background:#fff;
+}
 .list-wrap:last-child{
   margin-bottom:0;
 }
-.list-title{
-  padding:30rpx 2.5% 30rpx 80rpx;
+.list-head{
+  padding:20rpx 2.5% 10rpx 2.5%;
   position:relative;
-  height:110rpx;
+  height:80rpx;
+  line-height:50rpx;
+}
+.list-title{
+  padding:10rpx 2.5% 20rpx 80rpx;
+  position:relative;
+  height:80rpx;
   line-height:50rpx;
 }
 .title-img{
   width:55rpx;
   position:absolute;
   margin:auto;
-  top:0rpx;
-  bottom:0;
+  top:10rpx;
   left:2.5%;
 }
 .item-title{
@@ -45,7 +56,21 @@
   font-size: 30rpx;
   
 }
-.item-time{
+.item-fee{
+  float:left;
+  color:#666;
+}
+.item-fee{
   float:right;
   color:#666;
 }
+.success{
+  color:#67b466;
+}
+.uncheck{
+  color:#b3a905;
+}
+.fail{
+  color:#ddd;
+}
+

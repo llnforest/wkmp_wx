@@ -5,12 +5,17 @@
     
    
 
-    "pages/prize/prize",
-    "pages/prize/team",
     
     
-    "pages/prize/takelist",
-    "pages/prize/profit",
+    
+    
+    
+    "pages/user/userinfoEdit",
+    "pages/user/orderlist",
+    
+    
+    
+    
     
     "pages/cart/cart",
     "pages/cart/addressAdd",
@@ -20,13 +25,15 @@
     
     "pages/cart/order",
     
-    "pages/prize/gift",
-   
-    "pages/user/orderlist",
-    "pages/user/userinfo",
-    "pages/user/userinfoEdit",
-    "pages/user/user",
+    
+   "pages/user/userinfo",
+   "pages/user/user",
 
+"pages/prize/profit",
+"pages/prize/takelist",
+"pages/prize/team",
+    "pages/prize/gift",
+"pages/prize/prize",
 "pages/cate/cate",
 "pages/index/detail",
 "pages/index/index",
