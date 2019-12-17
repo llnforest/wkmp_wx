@@ -21,10 +21,10 @@
     
     
     "pages/cart/pay",
-    "pages/cart/shop",
+    
     
     "pages/cart/order",
-    
+    "pages/cart/shop",
     "pages/user/orderlist",
     "pages/user/userinfoEdit",
    "pages/user/userinfo",
