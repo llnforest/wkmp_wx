@@ -10,25 +10,29 @@
     
     
     
-    "pages/user/userinfoEdit",
-    "pages/user/orderlist",
     
     
     
     
     
-    "pages/cart/cart",
-    "pages/cart/addressAdd",
-    "pages/cart/address",
+    
+    
+    
+    
+    
     "pages/cart/pay",
     "pages/cart/shop",
     
     "pages/cart/order",
     
-    
+    "pages/user/orderlist",
+    "pages/user/userinfoEdit",
    "pages/user/userinfo",
    "pages/user/user",
 
+"pages/cart/address",
+"pages/cart/addressAdd",
+"pages/cart/cart",
 "pages/prize/profit",
 "pages/prize/takelist",
 "pages/prize/team",
