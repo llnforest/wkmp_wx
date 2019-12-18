@@ -7,42 +7,44 @@ Page({
     bannerList: [],
     labelList:[],
     centerBanner:{},
+    wineList:[],
+    brandList:[],
+    siteInfo:{}
   },
   onLoad: function () {
     var that = this;
-    wx.request({
-      url: app.data.url + '/index/index/index',
-      method: 'post',
-      data: {
-      },
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        console.log(res.data);
-        var _data = res.data.data;
-        if(res.data.code == 0){
-          that.setData({
-            bannerList: _data.bannerList,
-            labelList:_data.labelList,
-            centerBanner:_data.centerBanner,
-          });
-        }else{
-          console.log('error')
-        }
-
-
-        
-
-        
-
-      },
-      fail: function (e) {
-        wx.showToast({
-          title: '网络异常！',
-          duration: 2000
-        });
-      },
+    app.requestFunc('index/index',{},function sucFunc(d){
+      let _data = d.data;
+      that.setData({
+        bannerList: _data.bannerList,
+        labelList: _data.labelList,
+        centerBanner: _data.centerBanner,
+        wineList: _data.wineList,
+        brandList: _data.brandList,
+        siteInfo: _data.siteInfo
+      });
+    });
+  },
+  //点击酒品
+  clickWine: function (e) {
+    let data = e.currentTarget.dataset;
+    console.log(data);
+    wx.navigateTo({
+      url: '/pages/index/detail?id=' + data.id,
+    })
+  },
+  //点击品牌
+  clickBrand: function (e) {
+    let data = e.currentTarget.dataset;
+    console.log(data);
+    wx.navigateTo({
+      url: '/pages/index/searchlist?brand_id=' + data.id,
+    })
+  },
+  //点击搜索
+  clickSearch: function (e) {
+    wx.navigateTo({
+      url: '/pages/index/search',
     })
   },
   getUserInfo: function(e) {

@@ -4,29 +4,32 @@
   <!-- 头部区域 -->
   <view class="top-area display-flex common-bg">
     <!-- 搜索区域 -->
-    <view class="search-area">
+    <view class="search-area" bindtap="clickSearch">
       <view class="search-icon">
       <image class="search-img" src="/images/icons/search.png"></image>
       </view>
-      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search"></input>
+      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search" disabled="true"></input>
     </view>
     
     
     <!-- /首页轮播图/ -->
     <swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="5000" duration="500" indicator-active-color="rgba(245,204,204,0.8)" indicator-color="rgba(245,126,126,0.5)"> 
-      <block wx:for="{{bannerList}}" wx:key="banner" >
-        <navigator url='{{item.url}}'>
+      <block wx:for="{{bannerList}}" wx:key="id" >
+        <navigator url='{{item.url}}' wx:if="{{item.url != ''}}">
           <swiper-item>
             <image src="{{item.img}}" id="{{item.id}}" class="slide-image" width="100%" />
           </swiper-item>
         </navigator>
+        <swiper-item wx:else>
+            <image src="{{item.img}}" id="{{item.id}}" class="slide-image" width="100%" />
+          </swiper-item>
       </block>
     </swiper>
   </view>
 
 <!-- 标签区域 -->
   <view class="label-area">
-    <navigator class="label-item" url='{{item.url}}'  wx:for="{{labelList}}" wx:key="label">
+    <navigator class="label-item" url='{{item.url}}'  wx:for="{{labelList}}" wx:key="id" open-type="switchTab" hover-class="none">
  
       <image class="label-img" src="{{item.img}}"></image>
       <view class="label-name">{{item.title}}</view>
@@ -46,37 +49,12 @@
       <text>爆款热推</text>
     </view>
     <view class="hot-list clearfix">
-      <view class="hot-item">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        
-        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
-      </view>
-      <view class="hot-item">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        
-        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
-      </view>
-      <view class="hot-item no-margin">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        
-        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
-      </view>
-      <view class="hot-item">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        
-        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      <view class="hot-item {{index % 3 == 2?'no-margin':''}}"  wx:for="{{wineList}}" wx:key="id" bindtap="clickWine" data-id="{{item.id}}">
+        <image class="icon-cate" src="/images/icons/{{item.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
+        <image class="wine-img" src="{{item.img}}"></image>
+        <view class="hot-title lines-limit">{{item.wine_name}}</view>
+        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥{{item.mall_price}}</text></view>
+        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥{{item.vip_price}}</text></view>
       </view>
     </view>
   </view>
@@ -87,56 +65,36 @@
       <view class="area-title"><text>精选品牌</text></view>
     </view>
     <view class="brand-list clearfix">
-      <view class="brand-item">
-        <image class="brand-img" src="/images/img/wine_brand.png"></image>
-        <view class="brand-name limit-text">古井贡酒</view>
-      </view>
-      <view class="brand-item">
-        <image class="brand-img" src="/images/img/wine_brand.png"></image>
-        <view class="brand-name limit-text">古井贡酒</view>
-      </view>
-      <view class="brand-item">
-        <image class="brand-img" src="/images/img/wine_brand.png"></image>
-        <view class="brand-name limit-text">古井贡酒</view>
-      </view>
-      <view class="brand-item">
-        <image class="brand-img" src="/images/img/wine_brand.png"></image>
-        <view class="brand-name limit-text">古井贡酒</view>
-      </view>
-      <view class="brand-item">
-        <image class="brand-img" src="/images/img/wine_brand.png"></image>
-        <view class="brand-name limit-text">古井贡酒</view>
-      </view>
-      <view class="brand-item">
-        <image class="brand-img" src="/images/img/wine_brand.png"></image>
-        <view class="brand-name limit-text">古井贡酒</view>
+      <view class="brand-item {{index%5 == 4?'no-margin':''}}" wx:for="{{brandList}}" wx:key="id" bindtap="clickBrand" data-id="{{item.id}}">
+        <image class="brand-img" src="{{item.img}}"></image>
+        <view class="brand-name limit-text">{{item.brand_name}}</view>
       </view>
     </view>
   </view>
 
   <!-- 官网信息 -->
   <view class="site-area">
-    <view class="site-title">生活的多种味道，名品汇里来寻找</view>
-    <view class="site-title-sub">带来不经意的生活品味，提升美好生活品质</view>
+    <view class="site-title">{{siteInfo.title}}</view>
+    <view class="site-title-sub">{{siteInfo.sub_title}}</view>
     <view class="site-center">
-      <image class="site_img" src="/images/img/site_img.png"></image>
-      <view class="site-content">生活的多种味道，名品汇里来寻找，带来不经意的生活品味，提升美好生活品质         </view>
+      <image class="site_img" src="{{siteInfo.img}}"></image>
+      <view class="site-content">{{siteInfo.description}}</view>
     </view>
     <view class="site-bottom clearfix">
       <view class="site-item">
-        <image class="sub-img" src="/images/img/site_sub.png"></image>
-        <view class="bottom-title">办公室</view>
-        <view class="bottom-title-sub">OFFICE</view>
+        <image class="sub-img" src="{{siteInfo.fir_img}}"></image>
+        <view class="bottom-title">{{siteInfo.fir_name}}</view>
+        <view class="bottom-title-sub">{{siteInfo.fir_name_eng}}</view>
       </view>
       <view class="site-item">
-        <image class="sub-img" src="/images/img/site_sub.png"></image>
-        <view class="bottom-title">办公室</view>
-        <view class="bottom-title-sub">OFFICE</view>
+        <image class="sub-img" src="{{siteInfo.sec_img}}"></image>
+        <view class="bottom-title">{{siteInfo.sec_name}}</view>
+        <view class="bottom-title-sub">{{siteInfo.sec_name_eng}}</view>
       </view>
       <view class="site-item no-margin">
-        <image class="sub-img" src="/images/img/site_sub.png"></image>
-        <view class="bottom-title">办公室</view>
-        <view class="bottom-title-sub">OFFICE</view>
+        <image class="sub-img" src="{{siteInfo.thr_img}}"></image>
+        <view class="bottom-title">{{siteInfo.thr_name}}</view>
+        <view class="bottom-title-sub">{{siteInfo.thr_name_eng}}</view>
       </view>
     </view>
   </view>

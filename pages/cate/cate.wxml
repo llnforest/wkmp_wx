@@ -8,7 +8,7 @@
       <view class="search-icon">
       <image class="search-img" src="/images/icons/search.png"></image>
       </view>
-      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search"></input>
+      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search" placeholder-class="placeholder-center"></input>
     </view>
   </view>
   <!-- 左侧固定区域 -->

@@ -1,7 +1,37 @@
 //app.js
 App({
   data:{
-    url:'http://admin.99wukong.test',
+    url:'http://api.99wukong.test/',
+  },
+  requestFunc: function(url,data,sucFunc){
+    var that = this;
+    wx.request({
+      url: that.data.url + url,
+      method: 'post',
+      'data': data,
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        
+        var _data = res.data;
+        console.log(_data);
+        if (res.data.code == 0) {
+          sucFunc(_data);
+        } else {
+          wx.showToast({
+            title: _data.msg,
+            duration: 2000
+          });
+        }
+      },
+      fail: function (e) {
+        wx.showToast({
+          title: '网络异常！',
+          duration: 2000
+        });
+      },
+    });
   },
   onLaunch: function () {
     // 展示本地存储能力
@@ -38,5 +68,12 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  onPageScroll: function (e) {
+    if (e.scrollTop < 0) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    }
   }
 })
