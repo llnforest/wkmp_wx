@@ -3,7 +3,14 @@ App({
   data:{
     url:'http://api.99wukong.test/',
   },
-  requestFunc: function(url,data,sucFunc){
+  /**
+   * 
+   * url:地址
+   * data：传递数据
+   * sucFunc:成功回调函数
+   * is_toast:操作成功是否弹框
+   */
+  requestFunc: function(url,data,sucFunc,is_suc_toast = false){
     var that = this;
     wx.request({
       url: that.data.url + url,
@@ -17,11 +24,20 @@ App({
         var _data = res.data;
         console.log(_data);
         if (res.data.code == 0) {
+          if(is_suc_toast){
+            wx.showToast({
+              title: _data.msg,
+              duration: 3000,
+              icon: 'none',
+            });
+          }
           sucFunc(_data);
+          
         } else {
           wx.showToast({
             title: _data.msg,
-            duration: 2000
+            duration: 2000,
+            icon: 'none',
           });
         }
       },

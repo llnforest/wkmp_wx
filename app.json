@@ -1,7 +1,10 @@
 {
   "pages": [
-    
+    "pages/index/searchlist",
+    "pages/index/search",
     "pages/index/index",
+
+
     "pages/cate/cate",
 
     
@@ -40,8 +43,7 @@
 
 "pages/index/detail",
 
-"pages/index/searchlist",
-"pages/index/search",
+
     "pages/logs/logs"
     
   ],

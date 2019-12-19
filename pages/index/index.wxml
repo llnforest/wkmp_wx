@@ -65,7 +65,7 @@
       <view class="area-title"><text>精选品牌</text></view>
     </view>
     <view class="brand-list clearfix">
-      <view class="brand-item {{index%5 == 4?'no-margin':''}}" wx:for="{{brandList}}" wx:key="id" bindtap="clickBrand" data-id="{{item.id}}">
+      <view class="brand-item {{index%5 == 4?'no-margin':''}}" wx:for="{{brandList}}" wx:key="id" bindtap="clickBrand" data-keywords="{{item.brand_name}}">
         <image class="brand-img" src="{{item.img}}"></image>
         <view class="brand-name limit-text">{{item.brand_name}}</view>
       </view>

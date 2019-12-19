@@ -5,10 +5,10 @@
   <view class="top-area display-flex common-bg">
     <!-- 搜索区域 -->
     <view class="search-area">
-      <view class="search-icon">
+      <view class="search-icon" bindtap="clickSearch">
       <image class="search-img" src="/images/icons/search.png"></image>
       </view>
-      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search" auto-focus="true" focus="true" placeholder-class="placeholder-center"></input>
+      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="clickSearch" bindinput="searchinput" class="search-input" confirmType="search" auto-focus="true" focus="true" placeholder-class="placeholder-center"></input>
     </view>
   </view>
   <!-- 列表 -->
@@ -16,27 +16,17 @@
     <view class="list-title">
       <image class="title-img" src="/images/icons/search_time.png"  mode="widthFix"></image>
       <text class="item-title">最近搜索</text>
-      <image class="del-img" src="/images/icons/search_del.png"  mode="widthFix"></image>
+      <image class="del-img" src="/images/icons/search_del.png"  mode="widthFix" wx:if="{{show_search}}" bindtap="delSearch"></image>
     </view>
-    <view class="list-area clearfix">
-    <text class="search-item">gujing</text>
-    <text class="search-item">飞天茅台</text>
-    <text class="search-item">老八大</text>
-    <text class="search-item">gujing</text>
-    <text class="search-item">飞天茅台</text>
-    <text class="search-item">老八大</text>
-    <text class="search-item">gujing</text>
-    <text class="search-item">飞天茅台</text>
-    <text class="search-item">老八大</text>
+    <view class="list-area clearfix" wx:if="{{show_search}}">
+    <text class="search-item" wx:for="{{searchList}}" wx:key="id" data-keywords="{{item.keywords}}" bindtap="clickSearchItem">{{item.keywords}}</text>
     </view>
     <view class="list-title">
       <image class="title-img" src="/images/icons/search_hot.png"  mode="widthFix"></image>
       <text class="item-title">热门搜索</text>
     </view>
-    <view class="list-area clearfix">
-    <text class="search-item">gujing</text>
-    <text class="search-item">飞天茅台</text>
-    <text class="search-item">老八大</text>
+    <view class="list-area clearfix" wx:if="{{show_hot}}">
+    <text class="search-item" wx:for="{{hotList}}" wx:key="id" data-keywords="{{item.keywords}}" bindtap="clickSearchItem">{{item.keywords}}</text>
     </view>
   </view>
 </view>

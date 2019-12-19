@@ -28,7 +28,6 @@ Page({
   //点击酒品
   clickWine: function (e) {
     let data = e.currentTarget.dataset;
-    console.log(data);
     wx.navigateTo({
       url: '/pages/index/detail?id=' + data.id,
     })
@@ -36,9 +35,8 @@ Page({
   //点击品牌
   clickBrand: function (e) {
     let data = e.currentTarget.dataset;
-    console.log(data);
     wx.navigateTo({
-      url: '/pages/index/searchlist?brand_id=' + data.id,
+      url: '/pages/index/searchlist?keywords=' + data.keywords,
     })
   },
   //点击搜索
