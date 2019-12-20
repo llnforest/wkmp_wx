@@ -1,41 +1,43 @@
 <!--pages/index/detail.wxml-->
-<view class="container">
+<view class="container" wx:if="{{!empty}}">
   <!-- /轮播图/ -->
   <view class="top-area">
-    <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
+    <image class="icon-cate" src="/images/icons/{{item.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
     <swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="5000" duration="500" indicator-active-color="rgba(245,204,204,0.8)" indicator-color="rgba(245,126,126,0.5)"> 
-          <swiper-item>
-            <image src="/images/img/wine_detail1.jpg" class="slide-image" />
-          </swiper-item>
-          <swiper-item>
-            <image src="/images/img/wine_detail3.jpg" class="slide-image"/>
+          <swiper-item wx:for="{{jptList}}" wx:key="id">
+            <image src="{{item.img}}" class="slide-image" />
           </swiper-item>
     </swiper>
-    <view class="wine-name lines-limit lb-width">意大利进口葡萄酒意大利进口葡萄酒意大利进口葡萄酒意大利进口葡萄酒</view>
-    <view class="mall-price grey-color lb-width">市场价：<text class="common-color">¥120</text></view>
-    <view class="vip-price grey-color lb-width">会员价：<text class="common-color">¥90</text></view>
+    <view class="wine-name lines-limit lb-width">{{info.wine_name}}</view>
+    <view class="mall-price grey-color lb-width">市场价：<text class="common-color">¥{{info.mall_price}}</text></view>
+    <view class="vip-price grey-color lb-width">会员价：<text class="common-color">¥{{info.vip_price}}</text></view>
   </view>
   <!-- 详情介绍 -->
   <view class="detail-area bg-white">
-    <view class="detail-item"><view class="item-name">品牌</view><text class="detail-name">伊卡特</text></view>
-    <view class="detail-item"><view class="item-name">分类</view><text class="detail-name">红酒</text></view>
-    <view class="detail-item"><view class="item-name">规格</view><text class="detail-name">6*1*1瓶</text></view>
+    <view class="detail-item"><view class="item-name">品牌</view><text class="detail-name">{{info.brand_name}}</text></view>
+    <view class="detail-item"><view class="item-name">分类</view><text class="detail-name">{{info.wine_cate_text}}</text></view>
+    <view class="detail-item"><view class="item-name">规格</view><text class="detail-name">{{info.wine_size_text}}</text></view>
   </view>
   <!-- 详情图 -->
   <view class="img-area bg-white">
-    <image src="{{item}}" bindload="imageLoad" data-index="{{ index }}" 
-style="width:{{ images[index].width }}rpx; height:{{ images[index].height }}rpx;" wx:for="{{imgList}}"></image>
+    <image src="{{item.img}}" bindload="imageLoad" data-index="{{ index }}" 
+style="width:{{ images[index].width }}rpx; height:{{ images[index].height }}rpx;" wx:for="{{xqtList}}" wx:key="id"></image>
   </view>
   <!-- 底部菜单 -->
   <view class="bottom-nav">
     <view class="go-cart bottom-item">
-      <view class="go-cart-icon">
+      <view class="go-cart-icon" bindtap="goCart">
         <image src="/images/nav/cart.png" mode="widthFix"></image>
-        <view class="common-bg cart-num">2</view>
+        <view class="common-bg cart-num" wx:if="{{cart_num > 0}}">{{cart_num}}</view>
       </view>
     </view>
-    <view class="add-cart bottom-item">加入购物车</view>
-    <view class="go-buy bottom-item">立即购买</view>
+    <view class="add-cart bottom-item" bindtap="addCart">加入购物车</view>
+    <image src="{{info.img}}" class="move-img" animation="{{ani}}" mode="widthFix" style="display:{{is_img_show}};"></image>
+    <view class="go-buy bottom-item" bindtap="goBuy">立即购买</view>
   </view>
 
+</view>
+<view class="no-content" wx:else>
+  <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+  <view class="no-content-text">{{empty_msg}}</view>
 </view>

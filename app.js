@@ -1,7 +1,8 @@
 //app.js
 App({
   data:{
-    url:'http://api.99wukong.test/',
+    // url:'http://api.99wukong.test/',
+    url:'http://192.168.100.62/wkmp/public/index/'
   },
   /**
    * 
@@ -10,7 +11,7 @@ App({
    * sucFunc:成功回调函数
    * is_toast:操作成功是否弹框
    */
-  requestFunc: function(url,data,sucFunc,is_suc_toast = false){
+  requestFunc: function(url,data,sucFunc,is_suc_toast = false,errFunc = false){
     var that = this;
     wx.request({
       url: that.data.url + url,
@@ -34,11 +35,16 @@ App({
           sucFunc(_data);
           
         } else {
-          wx.showToast({
-            title: _data.msg,
-            duration: 2000,
-            icon: 'none',
-          });
+          if(errFunc){
+            errFunc(_data);
+          }else{
+            wx.showToast({
+              title: _data.msg,
+              duration: 2000,
+              icon: 'none',
+            });
+          }
+          
         }
       },
       fail: function (e) {

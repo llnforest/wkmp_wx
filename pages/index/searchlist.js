@@ -22,7 +22,6 @@ Page({
     })
     this.renderWine();
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -121,9 +120,17 @@ Page({
           })
         }
       }else{
-        that.setData({
-          wineList: that.data.wineList.concat(_data.wineList)
-        });
+        if(that.data.page == 1){
+          that.setData({
+            wineList: _data.wineList,
+            empty:that.data.empty
+          });
+        }else{
+          that.setData({
+            wineList: that.data.wineList.concat(_data.wineList)
+          });
+        }
+        
       }
       
     });
@@ -139,15 +146,22 @@ Page({
   skipSearch: function () {
     let that = this;
     let keywords = this.data.keywords.replace(/(^\s)|(\s$)/g, "");
-    app.requestFunc('index/searchAdd', { keywords: keywords }, function sucFunc(d) {
-      if (d.data.result.id != undefined) {
-        that.data.searchList.push({ id: d.data.result.id, keywords: keywords })
-        that.setData({
-          searchList: that.data.searchList,
-          show_search: true
-        })
-      }
-    });
+    if(keywords != ''){
+      app.requestFunc('index/searchAdd', { keywords: keywords }, function sucFunc(d) {
+        if (d.data.result.id != undefined) {
+          that.data.searchList.push({ id: d.data.result.id, keywords: keywords })
+          that.setData({
+            searchList: that.data.searchList,
+            show_search: true
+          })
+        }
+      });
+    }
+    this.data.page = 1;
+    this.data.canReach = true;
+    this.data.empty = false;
+    this.data.maxIndex = 0;
+
     this.renderWine();
   },
   //点击酒品

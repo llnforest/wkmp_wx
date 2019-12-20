@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/index/detail",
+    "pages/index/index",
     "pages/index/searchlist",
     "pages/index/search",
-    "pages/index/index",
+    
 
 
     "pages/cate/cate",
@@ -41,7 +43,7 @@
     "pages/prize/gift",
 "pages/prize/prize",
 
-"pages/index/detail",
+
 
 
     "pages/logs/logs"

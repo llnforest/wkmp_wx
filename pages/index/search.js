@@ -6,8 +6,8 @@ Page({
   data: {
     searchList: [],
     hotList: [],
-    show_search:true,
-    show_hot:true,
+    show_search:false,
+    show_hot:false,
     keywords:'',
   },
   onLoad: function () {
@@ -97,15 +97,17 @@ Page({
   skipSearch: function(){
     let that = this;
     let keywords = this.data.keywords.replace(/(^\s)|(\s$)/g, "");
-    app.requestFunc('index/searchAdd', { keywords: keywords}, function sucFunc(d) {
-      if(d.data.result.id != undefined){
-        that.data.searchList.push({ id: d.data.result.id, keywords: keywords})
-        that.setData({
-          searchList: that.data.searchList,
-          show_search:true
-        })
-      }
-    });
+    if(keywords != ''){
+      app.requestFunc('index/searchAdd', { keywords: keywords }, function sucFunc(d) {
+        if (d.data.result.id != undefined) {
+          that.data.searchList.push({ id: d.data.result.id, keywords: keywords })
+          that.setData({
+            searchList: that.data.searchList,
+            show_search: true
+          })
+        }
+      });
+    }
     wx.navigateTo({
       url: '/pages/index/searchlist?keywords=' + keywords,
     })

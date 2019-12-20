@@ -110,7 +110,7 @@ image{
   left:0;
   background:#d00912;
   text-align:center;
-  
+  z-index:999;
   color:#fff;
   line-height:100rpx;
 }

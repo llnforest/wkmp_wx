@@ -86,3 +86,12 @@ page{
 .bottom-item{
   float:left;
 }
+.move-img{
+  width:60rpx;
+  position:absolute;
+  top:0;
+  left:45rpx;
+  
+  opacity: 0.2;
+
+}

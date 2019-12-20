@@ -8,7 +8,14 @@ Page({
    */
   data: {
     images: {},
-    imgList: ['/images/img/detail1.jpg', '/images/img/detail2.jpg']
+    imgList: ['/images/img/detail1.jpg', '/images/img/detail2.jpg'],
+    empty:false,
+    empty_msg:'',
+    info:{},
+    xqtList:[],
+    jptList:[],
+    cat_num:0,
+    is_img_show:"none"
   },
   imageLoad:function(e){
     common.imageLoad(e,this);
@@ -17,7 +24,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    options.id = 6;
+    app.requestFunc('index/detail', {id:options.id}, function sucFunc(d) {
+      let _data = d.data;
+      that.setData({
+        xqtList: _data.xqtList,
+        jptList: _data.jptList,
+        info: _data.wineInfo,
+        cart_num: _data.cart_num
+      });
+    }
+    ,false
+    ,function errFunc(d) {
+      that.setData({
+        empty: true,
+        empty_msg: d.msg
+      });
+    });
   },
 
   /**
@@ -67,5 +91,45 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  //点击加入购物车
+  addCart: function (e) {
+    let that = this;
+    app.requestFunc('index/cartAdd', { wine_id: that.data.info.id }, function sucFunc(d) {
+      let _data = d.data;
+      that.setData({
+        is_img_show: "block"
+      })
+      var animation = wx.createAnimation({
+        duration: 700,
+        timingFunction: 'ease',
+        delay: 100
+      });
+      animation.opacity(0.5).scale(1.2).translate(0, -90).step();
+      animation.opacity(0.2).scale(0.5).translate(0, 90).step();
+      // this.setData({
+        
+      // })
+      that.setData({
+        cart_num: that.data.cart_num + _data.num,
+        ani: animation.export(),
+      });
+    },true);
+    
+
+  
+  },
+  //点击立即购买
+  goBuy: function (e) {
+    let that = this;
+    wx.navigateTo({
+      url: '/pages/cart/order?ids=' + that.data.info.id,
+    })
+  },
+  //点击购物车
+  goCart: function (e) {
+    wx.navigateTo({
+      url: '/pages/cart/cart',
+    })
+  },
 })
