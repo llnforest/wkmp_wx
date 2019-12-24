@@ -29,12 +29,12 @@
 
 <!-- 标签区域 -->
   <view class="label-area">
-    <navigator class="label-item" url='{{item.url}}'  wx:for="{{labelList}}" wx:key="id" open-type="switchTab" hover-class="none">
+    <view class="label-item"  wx:for="{{labelList}}" data-id="{{item.url}}" bindtap="goCate" wx:key="id">
  
       <image class="label-img" src="{{item.img}}"></image>
       <view class="label-name">{{item.title}}</view>
 
-    </navigator>
+    </view>
   </view>
 <!-- 中间广告 -->
   <view class="banner-area">

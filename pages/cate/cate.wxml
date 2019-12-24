@@ -13,22 +13,11 @@
   </view>
   <!-- 左侧固定区域 -->
   <view class="left-wrap">
-    <view class="cate-item">
-      <view class="cate-name">白酒</view>
+    <view class="cate-item {{cate_id == item.val_code?'active':''}}" wx:for="{{cateList}}" wx:key="val_code">
+      <view class="cate-name">{{item.val_name}}</view>
       <view class="cate-line common-bg"></view>
     </view>
-    <view class="cate-item active">
-      <view class="cate-name">红酒</view>
-      <view class="cate-line common-bg"></view>
-    </view>
-    <view class="cate-item">
-      <view class="cate-name">啤酒</view>
-      <view class="cate-line common-bg"></view>
-    </view>
-    <view class="cate-item">
-      <view class="cate-name">洋酒</view>
-      <view class="cate-line common-bg"></view>
-    </view>
+    
   </view>
   <!-- 右侧固定区域 -->
   <view class="right-wrap">

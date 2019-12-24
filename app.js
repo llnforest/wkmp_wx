@@ -89,7 +89,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    cate_id:1
   },
   onPageScroll: function (e) {
     if (e.scrollTop < 0) {

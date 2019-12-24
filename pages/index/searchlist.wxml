@@ -8,7 +8,7 @@
       <view class="search-icon" bindtap="clickSearch">
       <image class="search-img" src="/images/icons/search.png"></image>
       </view>
-      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="clickSearch" bindinput="searchinput" class="search-input" confirmType="search" auto-focus="true" focus="true" placeholder-class="placeholder-center" value="{{keywords}}"></input>
+      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="clickSearch" bindinput="searchinput" class="search-input" confirmType="search" placeholder-class="placeholder-center" value="{{keywords}}"></input>
     </view>
   </view>
   <!-- 列表区域 -->
@@ -16,7 +16,7 @@
    <view class="wine-item line-shadow" wx:for="{{wineList}}" wx:key="id" bindtap="clickWine" data-id="{{item.id}}">
       <view class="img-area">
         <image class="icon-cate" src="/images/icons/{{item.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
-        <image class="wine-img" src="{{ listIndex > index ? item.img : '' }}"></image>
+        <image class="wine-img" src="{{ listIndex > index ? item.img : '/images/icons/img_default.jpg' }}"></image>
       </view>
       <view class="wine-title lines-limit">{{item.wine_name}}</view>
       <view class="wine-style line-limit sm-tx item-tx">{{item.wine_size_text}}</view>

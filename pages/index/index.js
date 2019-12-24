@@ -45,6 +45,14 @@ Page({
       url: '/pages/index/search',
     })
   },
+  //点击分类
+  goCate: function (e) {
+    let data = e.currentTarget.dataset;
+    app.globalData.cate_id = data.id;
+    wx.switchTab({
+      url: '/pages/cate/cate',
+    })
+  },
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

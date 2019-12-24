@@ -91,23 +91,6 @@ Page({
   onShareAppMessage: function () {
 
   },
-  //点击搜索项
-  clickSearchItem: function (e) {
-    let data = e.currentTarget.dataset;
-    wx.navigateTo({
-      url: '/pages/index/searchlist?keywords=' + data.keywords,
-    })
-  },
-  //点击删除最近搜索
-  delSearch: function (e) {
-    var that = this;
-    app.requestFunc('index/searchDel', {}, function sucFunc(d) {
-      that.setData({
-        searchList: [],
-        show_search: false
-      });
-    }, true);
-  },
   renderWine: function(){
     let that = this;
     app.requestFunc('index/searchList', { page:that.data.page,keywords: that.data.keywords }, function sucFunc(d) {

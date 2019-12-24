@@ -18,7 +18,7 @@ page{
   margin:20rpx auto;
   height: 90rpx;
   line-height: 45rpx;
-
+  color:#333;
 }
 .mall-price{
   margin: 0 auto 10rpx;
@@ -35,7 +35,6 @@ page{
 .detail-item{
   position: relative;
   padding-left:150rpx;
-  border-bottom: 1px solid #ddd;
   height:72rpx;
 }
 .detail-item:last-child{

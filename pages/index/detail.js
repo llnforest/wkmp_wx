@@ -25,7 +25,6 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    options.id = 6;
     app.requestFunc('index/detail', {id:options.id}, function sucFunc(d) {
       let _data = d.data;
       that.setData({
@@ -128,7 +127,7 @@ Page({
   },
   //点击购物车
   goCart: function (e) {
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/cart/cart',
     })
   },

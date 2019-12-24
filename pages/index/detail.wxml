@@ -14,9 +14,9 @@
   </view>
   <!-- 详情介绍 -->
   <view class="detail-area bg-white">
-    <view class="detail-item"><view class="item-name">品牌</view><text class="detail-name">{{info.brand_name}}</text></view>
-    <view class="detail-item"><view class="item-name">分类</view><text class="detail-name">{{info.wine_cate_text}}</text></view>
-    <view class="detail-item"><view class="item-name">规格</view><text class="detail-name">{{info.wine_size_text}}</text></view>
+    <view class="detail-item line-shadow"><view class="item-name">品牌</view><text class="detail-name">{{info.brand_name}}</text></view>
+    <view class="detail-item line-shadow"><view class="item-name">分类</view><text class="detail-name">{{info.wine_cate_text}}</text></view>
+    <view class="detail-item line-shadow"><view class="item-name">规格</view><text class="detail-name">{{info.wine_size_text}}</text></view>
   </view>
   <!-- 详情图 -->
   <view class="img-area bg-white">
