@@ -80,6 +80,12 @@
   display:block;
 }
 /* 右侧区域 */
+.show-wrap{
+  display:none;
+}
+.show-wrap.active{
+  display:block;
+}
 .right-wrap{
   padding:25rpx 30rpx;
   margin-left:200rpx;

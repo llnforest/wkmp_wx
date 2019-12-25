@@ -13,7 +13,7 @@
   </view>
   <!-- 左侧固定区域 -->
   <view class="left-wrap">
-    <view class="cate-item {{cate_id == item.val_code?'active':''}}" wx:for="{{cateList}}" wx:key="val_code">
+    <view class="cate-item {{cate_id == item.val_code?'active':''}}" wx:for="{{cateList}}" wx:key="val_code" bindtap="clickCate" data-id="{{item.val_code}}">
       <view class="cate-name">{{item.val_name}}</view>
       <view class="cate-line common-bg"></view>
     </view>
@@ -27,68 +27,91 @@
       <text class="price-item common-bg">500-1000</text>
       <text class="price-item">1000以上</text>
     </view>
-    <view class="brand-name">
-    罗曼蒂克
-    </view>
-    <view class="wine-rap clearfix">
-      <view class="hot-item">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        
-        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+    <view class="show-wrap {{cate_id == 1?'active':''}}">
+      <block wx:for="{{baiList}}"  wx:key="id">
+      <view class="brand-name">
+      {{item.brand_name}}
       </view>
-      <view class="hot-item no-margin">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        
-        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      <view class="wine-rap clearfix">
+        <view class="hot-item {{sub_index % 2 == 1?'no-margin':''}}" wx:for="{{item.sublist}}" wx:key="id" wx:for-item="sub"  wx:for-index="sub_index" bindtap="clickWine" data-id="{{sub.id}}">
+          <image class="icon-cate" src="/images/icons/{{sub.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
+          <image class="wine-img" src="{{ baiIndex > sub_index ? sub.img : '/images/icons/img_default.jpg' }}"></image>
+          
+          <view class="hot-title lines-limit">{{sub.wine_name}}</view>
+          <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥{{sub.mall_price}}</text></view>
+          <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥{{sub.vip_price}}</text></view>
+        </view>
       </view>
-      <view class="hot-item">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        
-        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      </block>
+      <view class="no-content" wx:if="{{ bai_empty }}">
+        <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+        <view class="no-content-text">没找到相关酒水哦！换个搜法试试</view>
       </view>
     </view>
-
-    <view class="brand-name">
-    罗曼蒂克
+    <view class="show-wrap {{cate_id == 2?'active':''}}">
+      <block wx:for="{{hongList}}"  wx:key="id">
+      <view class="brand-name">
+      {{item.brand_name}}
+      </view>
+      <view class="wine-rap clearfix">
+        <view class="hot-item {{sub_index % 2 == 1?'no-margin':''}}" wx:for="{{item.sublist}}" wx:key="id" wx:for-item="sub"  wx:for-index="sub_index" bindtap="clickWine" data-id="{{sub.id}}">
+          <image class="icon-cate" src="/images/icons/{{sub.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
+          <image class="wine-img" src="{{ hongIndex > sub_index ? sub.img : '/images/icons/img_default.jpg' }}"></image>
+          
+          <view class="hot-title lines-limit">{{sub.wine_name}}</view>
+          <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥{{sub.mall_price}}</text></view>
+          <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥{{sub.vip_price}}</text></view>
+        </view>
+      </view>
+      </block>
+      <view class="no-content" wx:if="{{ hong_empty }}">
+        <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+        <view class="no-content-text">没找到相关酒水哦！换个搜法试试</view>
+      </view>
     </view>
-    <view class="wine-rap clearfix">
-      <view class="hot-item">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        
-        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+    <view class="show-wrap {{cate_id == 3?'active':''}}">
+      <block wx:for="{{piList}}"  wx:key="id">
+      <view class="brand-name">
+      {{item.brand_name}}
       </view>
-      <view class="hot-item no-margin">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        
-        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      <view class="wine-rap clearfix">
+        <view class="hot-item {{sub_index % 2 == 1?'no-margin':''}}" wx:for="{{item.sublist}}" wx:key="id" wx:for-item="sub"  wx:for-index="sub_index" bindtap="clickWine" data-id="{{sub.id}}">
+          <image class="icon-cate" src="/images/icons/{{sub.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
+          <image class="wine-img" src="{{sub.img}}"></image>
+          
+          <view class="hot-title lines-limit">{{sub.wine_name}}</view>
+          <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥{{sub.mall_price}}</text></view>
+          <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥{{sub.vip_price}}</text></view>
+        </view>
       </view>
-      <view class="hot-item">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        
-        <view class="hot-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥120</text></view>
-        <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥90</text></view>
+      </block>
+      <view class="no-content" wx:if="{{ pi_empty }}">
+        <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+        <view class="no-content-text">没找到相关酒水哦！换个搜法试试</view>
       </view>
-
-      
     </view>
-
+    <view class="show-wrap {{cate_id == 4?'active':''}}">
+      <block wx:for="{{yangList}}"  wx:key="id">
+      <view class="brand-name">
+      {{item.brand_name}}
+      </view>
+      <view class="wine-rap clearfix">
+        <view class="hot-item {{sub_index % 2 == 1?'no-margin':''}}" wx:for="{{item.sublist}}" wx:key="id" wx:for-item="sub"  wx:for-index="sub_index" bindtap="clickWine" data-id="{{sub.id}}">
+          <image class="icon-cate" src="/images/icons/{{sub.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
+          <image class="wine-img" src="{{sub.img}}"></image>
+          
+          <view class="hot-title lines-limit">{{sub.wine_name}}</view>
+          <view class="mall-price grey-color sm-tx">市场价：<text class="common-color">¥{{sub.mall_price}}</text></view>
+          <view class="vip-price grey-color sm-tx">会员价：<text class="common-color">¥{{sub.vip_price}}</text></view>
+        </view>
+      </view>
+      </block>
+      <view class="no-content" wx:if="{{ yang_empty }}">
+        <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+        <view class="no-content-text">没找到相关酒水哦！换个搜法试试</view>
+      </view>
+     
+    </view>
   </view>
   
 </view>

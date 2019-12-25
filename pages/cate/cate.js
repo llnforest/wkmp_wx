@@ -10,7 +10,20 @@ Page({
     cateList:[],
     cate_id:'',
     min:0,
-    max:0
+    max:0,
+    baiList:[],
+    hongList: [],
+    piList: [],
+    yangList: [],
+    bai_empty:false,
+    hong_empty: false,
+    pi_empty: false,
+    yang_empty: false,
+    baiIndex:0,
+    hongIndex: 0,
+    piIndex: 0,
+    yangIndex: 0,
+
   },
 
   /**
@@ -30,7 +43,7 @@ Page({
 
     this.renderWine();
   },
-
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -42,9 +55,39 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
-  },
+    //获取屏幕尺寸
+    const screenWidth = wx.getSystemInfoSync().windowWidth;
+    const screenHeight = wx.getSystemInfoSync().windowHeight - 185;
+    this.data.screenHeight = screenHeight;
+    this.data.screenWidth = screenWidth;
+    this.data.maxIndex = screenHeight / (screenWidth * 0.262) * 2;
+    console.log(screenHeight);
+    console.log(screenHeight - 185);
+    console.log(this.data.maxIndex);
+    this.setData({
+      //获取页面初始状态图片数量，0.63为图片容器的高度值(63vw)，将代码中0.63改为你的容器对应高度
+      baiIndex: this.data.maxIndex,
+      hongIndex: this.data.maxIndex,
+      yangIndex: this.data.maxIndex,
+      piIndex: this.data.maxIndex,
 
+    })
+  },
+  // 滚动事件 
+  onPageScroll(e) {
+    //滚动距离+屏幕高度换算vw倍数
+    let listIndex = (e.scrollTop + this.data.screenHeight) / (this.data.screenWidth * 0.262) * 2
+    if (listIndex > this.data.maxIndex) {
+      this.data.maxIndex = listIndex;
+      this.setData({
+        baiIndex: this.data.maxIndex,
+        hongIndex: this.data.maxIndex,
+        yangIndex: this.data.maxIndex,
+        piIndex: this.data.maxIndex,
+      })
+    }
+
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -83,26 +126,33 @@ Page({
     let that = this;
     app.requestFunc('cate/searchList', { cate_id: that.data.cate_id, keywords: that.data.keywords, min: that.data.min, max: that.data.max }, function sucFunc(d) {
       let _data = d.data;
-      if (_data.wineList.length == 0) {
-        that.data.canReach = false;
-        if (that.data.page == 1) {
-          that.setData({
-            empty: true
-          })
-        }
-      } else {
-        if (that.data.page == 1) {
-          that.setData({
-            wineList: _data.wineList,
-            empty: that.data.empty
-          });
-        } else {
-          that.setData({
-            wineList: that.data.wineList.concat(_data.wineList)
-          });
-        }
-
+      let _empty = false;
+      if (_data.brandList.length == 0) {
+        _empty = true;
       }
+      //根据cate_id 判断每个页面的数据
+      if(that.data.cate_id == 1){
+        that.setData({
+          bai_empty: _empty,
+          baiList:_data.brandList
+        })
+      } else if(that.data.cate_id == 2){
+        that.setData({
+          hong_empty: _empty,
+          hongList: _data.brandList
+        })
+      } else if (that.data.cate_id == 3) {
+        that.setData({
+          pi_empty: _empty,
+          piList: _data.brandList
+        })
+      }else{
+        that.setData({
+          yang_empty: _empty,
+          yangList: _data.brandList
+        })
+      }
+     
 
     });
   },
@@ -141,5 +191,12 @@ Page({
     wx.navigateTo({
       url: '/pages/index/detail?id=' + data.id,
     })
+  },
+  //点击分类
+  clickCate: function (e) {
+    this.setData({
+      cate_id: e.currentTarget.dataset.id
+    })
+    this.renderWine();
   },
 })
