@@ -15,7 +15,6 @@ Page({
     canReach:true,
   },
   onLoad: function (options) {
-    console.log(options);
     let keywords = options.keywords != undefined?options.keywords:'';
     this.setData({
       keywords: keywords
@@ -124,20 +123,14 @@ Page({
   },
   //input获取
   searchinput: function (e) {
-    this.data.keywords = e.detail.value;
+    this.data.keywords = e.detail.value.replace(/(^\s)|(\s$)/g, "");
+    return this.data.keywords;
   },
   skipSearch: function () {
     let that = this;
-    let keywords = this.data.keywords.replace(/(^\s)|(\s$)/g, "");
-    if(keywords != ''){
-      app.requestFunc('index/searchAdd', { keywords: keywords }, function sucFunc(d) {
-        if (d.data.result.id != undefined) {
-          that.data.searchList.push({ id: d.data.result.id, keywords: keywords })
-          that.setData({
-            searchList: that.data.searchList,
-            show_search: true
-          })
-        }
+    if (this.data.keywords != ''){
+      app.requestFunc('index/searchAdd', { keywords: this.data.keywords }, function sucFunc(d) {
+        
       });
     }
     this.data.page = 1;

@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/cart/cart",
+    "pages/cate/cate",
     "pages/index/index",
     "pages/index/detail",
     
@@ -8,7 +10,7 @@
     
 
 
-    "pages/cate/cate",
+    
 
     
     
@@ -37,7 +39,7 @@
 
 "pages/cart/address",
 "pages/cart/addressAdd",
-"pages/cart/cart",
+
 "pages/prize/profit",
 "pages/prize/takelist",
 "pages/prize/team",

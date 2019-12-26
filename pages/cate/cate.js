@@ -9,8 +9,8 @@ Page({
     keywords:'',
     cateList:[],
     cate_id:'',
-    min:0,
-    max:0,
+    price:{0:{min:0,max:0},1:{min:0,max:200},2:{min:200,max:500},3:{min:500,max:1000},4:{min:1000,max:0}},
+    priceStatus:0,
     baiList:[],
     hongList: [],
     piList: [],
@@ -23,7 +23,12 @@ Page({
     hongIndex: 0,
     piIndex: 0,
     yangIndex: 0,
-
+    bai_scroll:0,
+    hong_scroll: 0,
+    pi_scroll: 0,
+    yang_scroll: 0,
+    is_render:true,
+    searchKeywords:''
   },
 
   /**
@@ -61,9 +66,6 @@ Page({
     this.data.screenHeight = screenHeight;
     this.data.screenWidth = screenWidth;
     this.data.maxIndex = screenHeight / (screenWidth * 0.262) * 2;
-    console.log(screenHeight);
-    console.log(screenHeight - 185);
-    console.log(this.data.maxIndex);
     this.setData({
       //获取页面初始状态图片数量，0.63为图片容器的高度值(63vw)，将代码中0.63改为你的容器对应高度
       baiIndex: this.data.maxIndex,
@@ -76,14 +78,35 @@ Page({
   // 滚动事件 
   onPageScroll(e) {
     //滚动距离+屏幕高度换算vw倍数
-    let listIndex = (e.scrollTop + this.data.screenHeight) / (this.data.screenWidth * 0.262) * 2
-    if (listIndex > this.data.maxIndex) {
-      this.data.maxIndex = listIndex;
+    let listIndex = (e.scrollTop + this.data.screenHeight) / (this.data.screenWidth * 0.262) * 2;
+    //保存滚动位置
+    // if (this.data.cate_id == 1) {
+    //   this.data.bai_scroll = e.scrollTop;
+    // } else if (this.data.cate_id == 2) {
+    //   this.data.hong_scroll = e.scrollTop;
+    // } else if (this.data.cate_id == 3) {
+    //   this.data.pi_scroll = e.scrollTop;
+    // } else if (this.data.cate_id == 4) {
+    //   this.data.yang_scroll = e.scrollTop;
+    // }
+
+    //懒加载图片
+    if (this.data.cate_id == 1 && listIndex > this.data.baiIndex) {
       this.setData({
-        baiIndex: this.data.maxIndex,
-        hongIndex: this.data.maxIndex,
-        yangIndex: this.data.maxIndex,
-        piIndex: this.data.maxIndex,
+        baiIndex: listIndex,
+      })
+    } else if (this.data.cate_id == 2 && listIndex > this.data.hongIndex) {
+      this.setData({
+        hongIndex: listIndex,
+      })
+    } else if (this.data.cate_id == 3 && listIndex > this.data.piIndex) {
+      this.setData({
+        piIndex: listIndex,
+        
+      })
+    } else if (this.data.cate_id == 4 && listIndex > this.data.yangIndex) {
+      this.setData({
+        yangIndex: listIndex,
       })
     }
 
@@ -124,12 +147,14 @@ Page({
   },
   renderWine: function () {
     let that = this;
-    app.requestFunc('cate/searchList', { cate_id: that.data.cate_id, keywords: that.data.keywords, min: that.data.min, max: that.data.max }, function sucFunc(d) {
+   
+    app.requestFunc('cate/searchList', { cate_id: that.data.cate_id, keywords: that.data.searchKeywords, min: that.data.price[that.data.priceStatus].min, max: that.data.price[that.data.priceStatus].max }, function sucFunc(d) {
       let _data = d.data;
       let _empty = false;
       if (_data.brandList.length == 0) {
         _empty = true;
       }
+      that.data.is_render = false;
       //根据cate_id 判断每个页面的数据
       if(that.data.cate_id == 1){
         that.setData({
@@ -162,26 +187,19 @@ Page({
   },
   //input获取
   searchinput: function (e) {
-    this.data.keywords = e.detail.value;
+    this.data.keywords = e.detail.value.replace(/(^\s)|(\s$)/g, "");
+    return this.data.keywords;
   },
   skipSearch: function () {
     let that = this;
-    let keywords = this.data.keywords.replace(/(^\s)|(\s$)/g, "");
-    if (keywords != '') {
-      app.requestFunc('index/searchAdd', { keywords: keywords }, function sucFunc(d) {
-        if (d.data.result.id != undefined) {
-          that.data.searchList.push({ id: d.data.result.id, keywords: keywords })
-          that.setData({
-            searchList: that.data.searchList,
-            show_search: true
-          })
-        }
+    this.data.searchKeywords = this.data.keywords;
+    console.log(this.data.searchKeywords);
+    if (this.data.searchKeywords != '') {
+      app.requestFunc('index/searchAdd', { keywords: that.data.searchKeywords }, function sucFunc(d) {
+        
       });
     }
-    this.data.page = 1;
-    this.data.canReach = true;
-    this.data.empty = false;
-    this.data.maxIndex = 0;
+    
 
     this.renderWine();
   },
@@ -194,9 +212,48 @@ Page({
   },
   //点击分类
   clickCate: function (e) {
+    if (this.data.cate_id == e.currentTarget.dataset.id) return false;
     this.setData({
       cate_id: e.currentTarget.dataset.id
     })
-    this.renderWine();
+    // let scrollTop = 0;
+
+    if (!this.data.is_render && this.data.cate_id == 1 && Object.keys(this.data.baiList).length > 0){
+      // scrollTop = this.data.bai_scroll;
+    } else if (!this.data.is_render && this.data.cate_id == 2 && Object.keys(this.data.hongList).length > 0) {
+      // scrollTop = this.data.hong_scroll;
+    } else if (!this.data.is_render && this.data.cate_id == 3 && Object.keys(this.data.piList).length > 0) {
+      // scrollTop = this.data.pi_scroll;
+    } else if (!this.data.is_render && this.data.cate_id == 4 && Object.keys(this.data.yangList).length > 0) {
+      // scrollTop = this.data.yang_scroll;
+    }else{
+      this.renderWine();
+    }
+    
   },
+  //点击价格
+  clickPrice: function(e){
+    let status = e.currentTarget.dataset.status;
+    if (this.data.priceStatus == status){
+      status = 0;
+    }
+    this.setData({
+      priceStatus:status,
+      baiIndex: this.data.maxIndex,
+      hongIndex: this.data.maxIndex,
+      yangIndex: this.data.maxIndex,
+      piIndex: this.data.maxIndex,
+      // bai_scroll: 0,
+      // hong_scroll: 0,
+      // pi_scroll: 0,
+      // yang_scroll: 0,
+      is_render:true,
+      baiList:[],
+      hongList: [],
+      piList: [],
+      yangList: [],
+    })
+    this.renderWine();
+
+  }
 })

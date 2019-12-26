@@ -130,3 +130,7 @@
 .all-text{
   margin-left:25rpx;
 }
+.del-btn{
+  border:1px solid #999;
+  color:#999;
+}

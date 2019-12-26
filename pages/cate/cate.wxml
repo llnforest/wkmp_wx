@@ -5,10 +5,10 @@
   <view class="top-area display-flex common-bg">
     <!-- 搜索区域 -->
     <view class="search-area">
-      <view class="search-icon">
+      <view class="search-icon" bindtap="clickSearch">
       <image class="search-img" src="/images/icons/search.png"></image>
       </view>
-      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="inputConfirm" bindfocus="inputFocus" class="search-input" confirmType="search" placeholder-class="placeholder-center"></input>
+      <input type="text" placeholder="请输入酒品名称进行搜索" bindblur="inputBlur" name='search_value' bindconfirm="clickSearch" bindinput="searchinput" class="search-input" confirmType="search" placeholder-class="placeholder-center" value="{{keywords}}"></input>
     </view>
   </view>
   <!-- 左侧固定区域 -->
@@ -22,10 +22,10 @@
   <!-- 右侧固定区域 -->
   <view class="right-wrap">
     <view class="price-area clearfix">
-      <text class="price-item">200以内</text>
-      <text class="price-item">200-500</text>
-      <text class="price-item common-bg">500-1000</text>
-      <text class="price-item">1000以上</text>
+      <text class="price-item {{priceStatus == 1?'common-bg':''}}" bindtap="clickPrice" data-status="1">200以内</text>
+      <text class="price-item {{priceStatus == 2?'common-bg':''}}" bindtap="clickPrice" data-status="2">200-500</text>
+      <text class="price-item {{priceStatus == 3?'common-bg':''}}" bindtap="clickPrice" data-status="3">500-1000</text>
+      <text class="price-item {{priceStatus == 4?'common-bg':''}}" bindtap="clickPrice" data-status="4">1000以上</text>
     </view>
     <view class="show-wrap {{cate_id == 1?'active':''}}">
       <block wx:for="{{baiList}}"  wx:key="id">
