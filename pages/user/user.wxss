@@ -36,8 +36,7 @@ page{
 }
 .vip-area{
   width:90%;
-  margin-top:60rpx;
-  margin:60rpx 5%;
+  margin:60rpx 5% 30rpx;
   height:120rpx;
   background:#fff;
   position: relative;

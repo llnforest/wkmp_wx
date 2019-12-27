@@ -13,7 +13,9 @@ Page({
     delIds:[],
     editModel:false,
     selectAll:true,
-    dataIds:[]
+    dataIds:[],
+    listIndex: 0,
+    maxIndex: 0,
   },
 
   /**
@@ -35,6 +37,28 @@ Page({
    */
   onShow: function () {
     this.renderCart();
+    //获取屏幕尺寸
+    const screenWidth = wx.getSystemInfoSync().windowWidth;
+    const screenHeight = wx.getSystemInfoSync().windowHeight - 37;
+    this.data.screenHeight = screenHeight;
+    this.data.screenWidth = screenWidth;
+    this.data.maxIndex = screenHeight / (screenWidth * 0.35);
+    this.setData({
+      //获取页面初始状态图片数量，0.63为图片容器的高度值(63vw)，将代码中0.63改为你的容器对应高度
+      listIndex: this.data.maxIndex,
+    })
+  },
+  // 滚动事件 
+  onPageScroll(e) {
+    //滚动距离+屏幕高度换算vw倍数
+    let listIndex = (e.scrollTop + this.data.screenHeight) / (this.data.screenWidth * 0.35)
+    if (listIndex > this.data.maxIndex) {
+      this.data.maxIndex = listIndex;
+      this.setData({
+        listIndex: listIndex
+      })
+    }
+
   },
 
   /**
@@ -81,6 +105,7 @@ Page({
           })
       } else {
         let dataIds = [];
+        let cartData = [];
         _data.cartList.forEach(function(item,i){
           dataIds.push(item.id);
         })
@@ -91,9 +116,6 @@ Page({
           dataIds:dataIds,
           buyIds:dataIds
         });
-        console.log(dataIds);
-        
-
       }
 
     });
@@ -109,7 +131,8 @@ Page({
       }else{
         this.setData({
           buyIds: [],
-          selectAll: false
+          selectAll: false,
+          total_money: 0
         })
       }
     }else{
@@ -121,8 +144,10 @@ Page({
       } else {
         this.setData({
           buyIds: this.data.dataIds,
-          selectAll: true
+          selectAll: true,
+          
         })
+        this.rederTotalMoney();
       }
     }
   },
@@ -135,7 +160,8 @@ Page({
         editModel: true,
         buyIds:[],
         delIds: [],
-        selectAll: false
+        selectAll: false,
+        total_money:0
       })
     } else {
       this.setData({
@@ -171,7 +197,7 @@ Page({
         buyIds:ids,
         selectAll:selectAll
       })
-      console.log(ids);
+      this.rederTotalMoney();
     } else {
       this.setData({
         delIds: ids,
@@ -234,5 +260,41 @@ Page({
       }
 
     },true);
+  },
+  rederTotalMoney:function(){
+    let that = this;
+    let total_money = 0;
+    this.data.cartList.forEach((item,i) => {
+      let index = that.data.buyIds.indexOf(item.id);
+      if(index > -1){
+        total_money += item.quantity * item.mall_price
+      }
+    })
+    this.setData({
+      total_money:total_money
+    })
+  },
+  clickOperate:function(e){
+    let data = e.currentTarget.dataset;
+    this.data.cartList.forEach((item, i) => {
+      if (item.id == data.id) {
+        if(data.type == 1){//增加
+          if (item.quantity >= 100) {
+            return false;
+          }
+          item.quantity = item.quantity + 1;
+        }else{//减少
+          if(item.quantity <= 1){
+            return false;
+          }
+          item.quantity = item.quantity - 1;
+        }
+      }
+    })
+    this.setData({
+      cartList: this.data.cartList
+    })
+    
+    this.rederTotalMoney();
   }
 })

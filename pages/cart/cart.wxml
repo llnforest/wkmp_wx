@@ -22,20 +22,20 @@
       <view class="select-icon {{tools.fn(buyIds,item.id).indexOf ?'active':''}} 2" bindtap="clickSelect" data-id="{{item.id}}" wx:else>
         <image src="/images/icons/selected.png"></image>
       </view>
-      <view class="img-area">
+      <view class="img-area" bindtap="clickWine" data-id="{{item.wine_id}}">
         <image class="icon-cate" src="/images/icons/{{item.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
         <image class="wine-img" src="{{ listIndex > index ? item.img : '/images/icons/img_default.jpg' }}"></image>
       </view>
-      <view class="wine-title lines-limit">{{item.wine_name}}</view>
-      <view class="wine-style line-limit sm-tx item-tx">{{item.wine_size_text}}</view>
+      <view class="wine-title lines-limit"  bindtap="clickWine" data-id="{{item.wine_id}}">{{item.wine_name}}</view>
+      <view class="wine-style line-limit sm-tx item-tx"  bindtap="clickWine" data-id="{{item.wine_id}}">{{item.wine_size_text}}</view>
       <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">{{item.mall_price}}</text></text></view>
         <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">{{item.vip_price}}</text></text></view>
       <view class="num-area clearfix">
-        <view class="o-inc num-item">
+        <view class="o-inc num-item" bindtap="clickOperate" data-id="{{item.id}}" data-type="1">
         <image class="o-img-item" src="/images/icons/jia.png"></image>
         </view>
         <view class="cart-num num-item">{{item.quantity}}</view>
-        <view class="o-dec num-item">
+        <view class="o-dec num-item" bindtap="clickOperate" data-id="{{item.id}}" data-type="2">
         <image class="o-img-item " src="/images/icons/jian.png"></image></view>
       </view>
     </view>
