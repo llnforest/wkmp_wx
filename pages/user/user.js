@@ -78,6 +78,7 @@ Page({
     let that = this;
     app.requestFunc('user/user', {}, function sucFunc(d) {
       let _data = d.data;
+      app.globalData.user = _data.userInfo;
         that.setData({
           userInfo: _data.userInfo
         })
@@ -118,13 +119,19 @@ Page({
   //点击立即开通
   goAddress: function (e) {
     wx.navigateTo({
-      url: '/pages/user/userinfo',
+      url: '/pages/cart/address',
     })
   },
   //点击立即开通
   goUserInfo: function (e) {
     wx.navigateTo({
-      url: '/pages/cart/address',
+      url: '/pages/user/userinfo',
+    })
+  },
+  //点击立即开通
+  editUser: function (e) {
+    wx.navigateTo({
+      url: '/pages/user/userinfoEdit',
     })
   },
 })

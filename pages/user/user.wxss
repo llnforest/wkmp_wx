@@ -151,3 +151,38 @@ page{
   right:20rpx;
   position: absolute;
 }
+
+/* 弹框 */
+.shadow-box{
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  margin:auto;
+  right:0;
+  background:rgba(50, 50, 50, 0.8);
+  z-index:999999;
+}
+.model-box{
+  position:absolute;
+  width:70%;
+  margin:auto;
+  left:0;
+  right:0;
+  height:300rpx;
+  top:0;
+  bottom:0;
+  background:#fff;
+  border-radius:25rpx;
+}
+.model-text{
+  height:200rpx;
+  padding:60rpx 15rpx;
+  line-height:40rpx;
+}
+.model-btn{
+  height:100rpx;
+  line-height:100rpx;
+  text-align:center;
+  font-size:30rpx;
+}

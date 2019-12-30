@@ -1,7 +1,16 @@
 <!--pages/user/user.wxml-->
 <view class="container">
 <!-- 顶部 -->
-  
+  <view class="shadow-box" wx:if="{{userInfo.phone == ''}}">
+    <view class="model-box">
+      <view class="model-text line-shadow">
+      对不起！您还没有完善个人信息，请先完善个人信息
+      </view>
+      <view class="model-btn common-color" bindtap="editUser">
+        立即完善
+      </view>
+    </view>
+  </view>
   <view class="top-area m-b-7 bg-white">
     <image class="top-bg" src="/images/icons/top_bg.jpg" mode="widthFix"></image>
     <view class="user-info">

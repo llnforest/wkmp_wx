@@ -1,18 +1,26 @@
 // pages/user/userinfo.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.globalData.user);
+    console.log(app.globalData.user.headimgurl);
+    console.log(app.globalData.user.name);
+    console.log(app.globalData.user.phone);
 
+    this.setData({
+      userInfo: app.globalData.user
+    })
   },
 
   /**
@@ -62,5 +70,11 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  //点击修改信息
+  editUser: function (e) {
+    wx.navigateTo({
+      url: '/pages/user/userinfoEdit',
+    })
+  },
 })

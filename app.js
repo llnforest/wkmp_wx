@@ -1,8 +1,8 @@
 //app.js
 App({
   data:{
-    // url:'http://api.99wukong.test/',
-    url:'http://192.168.100.62/wkmp/public/index/'
+    url:'http://api.99wukong.test/',
+    // url:'http://192.168.100.62/wkmp/public/index/'
   },
   /**
    * 
@@ -89,8 +89,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null,
-    cate_id:1
+    userInfo: [],
+    cate_id:1,
+    user:[],
   },
   onPageScroll: function (e) {
     if (e.scrollTop < 0) {
