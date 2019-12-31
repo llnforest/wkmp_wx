@@ -2,19 +2,19 @@
 <view class="order-wrap bg-white m-b-7">
     <view class="order-item">
       <view class="item-name">联系人名</view>
-      <input class="item-dec" placeholder="请填写联系人名">
+      <input class="item-dec" placeholder="请填写联系人名" value="{{name}}"  bindinput="nameinput">
         
       </input>
     </view>
     <view class="order-item">
       <view class="item-name">联系电话</view>
-      <input type="number" class="item-dec" placeholder="请填写联系电话">
+      <input type="number" class="item-dec" placeholder="请填写联系电话" value="{{phone}}" bindinput="phoneinput">
       </input>
     </view>
     <view class="order-item">
       <view class="item-name">详细地址</view>
-      <input class="item-dec" placeholder="请填写详细地址">
+      <input class="item-dec" placeholder="请填写详细地址" value="{{address}}" bindinput="addressinput" bindconfirm="sureSubmit" confirm-type="done">
       </input>
     </view>
   </view>
-<view class="bottom-nav llg-tx">确认保存</view>
+<view class="bottom-nav llg-tx" bindtap="sureSubmit">确认保存</view>

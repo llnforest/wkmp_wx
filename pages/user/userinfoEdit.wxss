@@ -31,3 +31,6 @@
 .short-input{
   width:250rpx;
 }
+.unable-bg{
+  background:#ff7882;
+}

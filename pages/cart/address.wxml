@@ -1,21 +1,27 @@
 <!--pages/cart/address.wxml-->
 <view class="container">
-<!-- 地址 -->
-<scroll-view scroll-y="{{isScroll}}" style='height:{{windowHeight}}px;margin-bottom:100rpx'>
-  <block wx:key="item" wx:for="{{data}}">
-  <view data-index='{{index}}' class="address-wrap" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx">
-    <view class="select-icon">
-      <image src="/images/icons/selected.png"></image>
+  <view class="container" wx:if="{{empty}}">
+    <view class="no-content">
+      <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+      <view class="no-content-text">小主人，还没您使用过的地址哦！</view>
     </view>
-    <view class="contact-name address-title-item line-limit">周子馨</view>
-    <view class="contact-phone address-title-item line-limit">13223123463</view>
-    <view class="cf"></view>
-    <view class="address-info">
-    安徽省合肥市蜀山区东流路32号鑫海大厦1409室
-    </view>
-    <view class="remove common-bg" bindtap="delItem">删除 </view>
   </view>
-  </block>
-</scroll-view>
-  <view class="bottom-nav llg-tx">添加地址</view>
+  <!-- 地址 -->
+  <scroll-view scroll-y="{{isScroll}}" style='height:{{windowHeight}}px;margin-bottom:100rpx' wx:else>
+    <block wx:key="item" wx:for="{{addressList}}">
+    <view data-index='{{index}}' class="address-wrap" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx">
+      <view class="select-icon {{item.is_default == 1?'active':''}}" bindtap="clickDefault" data-id="{{item.id}}">
+        <image src="/images/icons/selected.png"></image>
+      </view>
+      <view class="contact-name address-title-item line-limit">{{item.contact_name}}</view>
+      <view class="contact-phone address-title-item line-limit">{{item.contact_phone}}</view>
+      <view class="cf"></view>
+      <view class="address-info">
+      {{item.address}}
+      </view>
+      <view class="remove common-bg" bindtap="delItem" data-id="{{item.id}}" data-index="{{index}}">删除 </view>
+    </view>
+    </block>
+  </scroll-view>
+  <view class="bottom-nav llg-tx" bindtap="addAddress">添加地址</view>
 </view>
