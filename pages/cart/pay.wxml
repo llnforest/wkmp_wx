@@ -2,17 +2,17 @@
 <view class="container">
 <!-- 酒品 -->
   <view class="wine-wrap bg-white m-b-7">
-   <view class="wine-item">
+   <view class="wine-item" wx:for="{{wineList}}" wx:key="id">
       <view class="img-area">
-        <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-        <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+        <image class="icon-cate" src="/images/icons/{{item.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
+        <image class="wine-img" src="{{item.img}}"></image>
       </view>
-      <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-      <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
-      <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
-      <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
+      <view class="wine-title lines-limit">{{item.wine_name}}</view>
+      <view class="wine-style line-limit sm-tx item-tx">{{item.wine_size_text}}</view>
+      <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">{{item.mall_price}}</text></text></view>
+      <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">{{item.vip_price}}</text></text></view>
       <view class="num-area clearfix">
-        <text style="font-size: 20rpx;">X</text> 1
+        <text style="font-size: 20rpx;">X</text> {{item.quantity}}
       </view>
     </view>
     
@@ -21,35 +21,36 @@
 <!-- 订单 -->
   <view class="order-wrap bg-white m-b-7">
     <view class="order-item">
-      <view class="item-name">收货信息</view>
+      <view class="item-name" wx:if="{{orderInfo.express_type == 1}}">收货信息</view>
+      <view class="item-name" wx:else>取货信息</view>
       <view class="item-dec">
-        <text class="contact-phone address-title-item m-l-10">13223123463</text>
-        <text class="contact-name address-title-item">周子馨</text>
+        <text class="contact-phone address-title-item m-l-10">{{orderInfo.address_phone}}</text>
+        <text class="contact-name address-title-item">{{orderInfo.address_name}}</text>
         <view class="cf"></view>
         <view class="address-info">
-        安徽省合肥市蜀山区东流路32号鑫海大厦1409室
+        {{orderInfo.address_address}}
         </view>
       </view>
     </view>
     <view class="order-item">
       <view class="item-name">配送方式</view>
       <view class="item-dec">
-        快递邮寄
+        {{orderInfo.express_type_text}}
       </view>
     </view>
     <view class="order-item">
       <view class="item-name">买家留言</view>
       <view class="item-dec">
-        请将包装包的精美点，注意不要摔碎
+        {{orderInfo.user_remark == ''?'无':orderInfo.user_remark}}
       </view>
     </view>
   </view>
 
-  <view class="order-wrap bg-white m-b-50">
+  <view class="order-wrap bg-white m-b-50" wx:if="{{orderInfo.express_type == 1}}">
     <view class="order-item">
       <view class="item-name">配送费用</view>
       <view class="item-dec common-color">
-        ¥<text class="m-l-5">10</text>
+        ¥<text class="m-l-5">{{orderInfo.express_price}}</text>
       </view>
     </view>
   </view>
@@ -58,14 +59,14 @@
   <view class="bottom-nav">
   <view class="nav-info">
     <view class="nav-text-total">
-    合计：<text class="common-color">¥250</text>
+    合计：<text class="common-color">¥{{orderInfo.total_money}}</text>
     </view>
     <view class="nav-text">
-    会员返现：¥60
+    会员省 ¥{{orderInfo.mall_wine_money - orderInfo.vip_wine_money}}
     </view>
   </view>
   <view class="go-pay">
-    <image class="pay-icon" src="/images/icons/pay.png"></image>
+    <image class="pay-icon" src="/images/icons/pay.png" bindtap="sureSubmit"></image>
     微信支付
   </view>
   </view>

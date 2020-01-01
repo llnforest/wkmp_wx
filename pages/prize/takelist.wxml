@@ -3,48 +3,30 @@
   <!-- 金额区域 -->
   <view class="money-wrap clearfix common-bg">
     <view class="money-item">
-      <view class="money-text">您已成功提现<text class="show-money">10000</text>元</view>
+      <view class="money-text">您已成功提现<text class="show-money">{{takeMoney}}</text>元</view>
+    </view>
+  </view>
+  <view class="container" wx:if="{{empty}}">
+    <view class="no-content">
+      <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+      <view class="no-content-text">小主人，您还没有提现记录哦！</view>
     </view>
   </view>
   <!-- 列表 -->
-  <view class="list-wrap">
-    <view class="list-item m-b-7">
+  <view class="list-wrap" wx:else>
+    <view class="list-item m-b-7" wx:for="{{takeList}}" wx:key="id">
       <view class="list-head line-shadow">
-        <text class="item-time">2019-11-21 08:21:44</text>
-        <text class="item-fee success">提现成功</text>
-        
+        <text class="item-time">{{item.create_time}}</text>
+        <text class="item-fee success" wx:if="{{item.status == 1}}">{{item.status_text}}</text>
+        <text class="item-fee uncheck" wx:elif="{{item.status == 0}}">{{item.status_text}}</text>
+        <text class="item-fee fail" wx:else>{{item.status_text}}</text>
       </view>
       <view class="list-title">
         <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
-        <text class="item-title common-color">1000元</text>
-        <text class="item-fee">手续费：5元</text>
+        <text class="item-title common-color">{{item.money}}元</text>
+        <text class="item-fee">手续费：{{item.handle_fee}}元</text>
       </view>
     </view>
-    <view class="list-item m-b-7">
-      <view class="list-head line-shadow">
-        <text class="item-time">2019-11-21 08:21:44</text>
-        <text class="item-fee success">提现成功</text>
-        
-      </view>
-      <view class="list-title">
-        <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
-        <text class="item-title common-color">1000元</text>
-        <text class="item-fee">手续费：5元</text>
-      </view>
-    </view>
-    <view class="list-item m-b-7">
-      <view class="list-head line-shadow">
-        <text class="item-time">2019-11-21 08:21:44</text>
-        <text class="item-fee success">提现成功</text>
-        
-      </view>
-      <view class="list-title">
-        <image class="title-img" src="/images/icons/take_icon.png"  mode="widthFix"></image>
-        <text class="item-title common-color">1000元</text>
-        <text class="item-fee">手续费：5元</text>
-      </view>
-    </view>
-    
     
   </view>
 

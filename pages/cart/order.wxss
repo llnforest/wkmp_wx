@@ -165,7 +165,7 @@ page{
 .select-icon image{
   height:100%;
 }
-.select-icon.active{
+.order-item.active .select-icon{
   border:1px solid #d00912;
   background:#d00912;
 }
@@ -195,5 +195,11 @@ page{
 }
 .bottom-nav{
   font-size:32rpx;
+}
+.item-text{
+  float: right;
+  margin-right: 120rpx;
+  color: #666;
+
 }
 

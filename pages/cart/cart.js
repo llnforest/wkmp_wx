@@ -8,7 +8,8 @@ Page({
   data: {
     empty:false,
     cartList:[],
-    total_money:0,
+    total_money: 0,
+    vip_money:0,
     buyIds:[],
     delIds:[],
     editModel:false,
@@ -16,6 +17,7 @@ Page({
     dataIds:[],
     listIndex: 0,
     maxIndex: 0,
+    userLevel:'',
   },
 
   /**
@@ -112,9 +114,12 @@ Page({
 
         that.setData({
           cartList: _data.cartList,
-          total_money:_data.total_money,
+          total_money: _data.total_money,
+          vip_money:_data.vip_money,
           dataIds:dataIds,
-          buyIds:dataIds
+          buyIds:dataIds,
+          // userLevel: app.globalData.user.level,
+          userLevel: 0,
         });
       }
 
@@ -225,7 +230,7 @@ Page({
     }
     let that = this;
     wx.navigateTo({
-      url: '/pages/cart/order?ids=' + that.data.buyIds.join(','),
+      url: '/pages/cart/order?ids=' + that.data.buyIds.join(',') + '&type=1',
     })
   },
   delCart:function(e){
@@ -261,19 +266,28 @@ Page({
 
     },true);
   },
+  /**
+   * 计算总价格
+   */
   rederTotalMoney:function(){
     let that = this;
     let total_money = 0;
+    let vip_money = 0;
     this.data.cartList.forEach((item,i) => {
       let index = that.data.buyIds.indexOf(item.id);
       if(index > -1){
         total_money += item.quantity * item.mall_price
+        vip_money += item.quantity * item.vip_price
       }
     })
     this.setData({
-      total_money:total_money
+      total_money:total_money,
+      vip_money:vip_money
     })
   },
+  /**
+   * 加减数量事件
+   */
   clickOperate:function(e){
     let data = e.currentTarget.dataset;
     this.data.cartList.forEach((item, i) => {

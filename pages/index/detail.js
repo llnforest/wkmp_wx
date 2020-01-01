@@ -122,7 +122,7 @@ Page({
   goBuy: function (e) {
     let that = this;
     wx.navigateTo({
-      url: '/pages/cart/order?ids=' + that.data.info.id,
+      url: '/pages/cart/order?ids=' + that.data.info.id + '&type=0',
     })
   },
   //点击购物车

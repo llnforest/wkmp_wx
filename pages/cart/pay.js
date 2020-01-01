@@ -1,18 +1,21 @@
 // pages/cart/pay.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    wineList:[],
+    orderInfo:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    options.order_id = '2019090112320923';
+    this.renderPay(options.order_id);
   },
 
   /**
@@ -62,5 +65,23 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  /**
+   * 渲染支付
+   */
+  renderPay: function (order_id) {
+    let that = this;
+    app.requestFunc('cart/pay', {id:order_id}, function sucFunc(d) {
+      let _data = d.data;
+      that.setData({
+        orderInfo: _data.orderInfo,
+        wineList: _data.wineList
+      })
+    });
+  },
+  //支付
+  sureSubmit: function (e) {
+    var that = this;
+    
+  },
 })

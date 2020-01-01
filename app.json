@@ -1,15 +1,22 @@
 {
   "pages": [
-    "pages/user/user",
+    "pages/user/orderlist",
+    "pages/cart/order",
     
     "pages/cart/cart",
+    "pages/cart/shop",
+    "pages/user/user",
+    
     "pages/cate/cate",
     "pages/index/index",
     "pages/index/detail",
     
     "pages/index/searchlist",
     "pages/index/search",
-    
+    "pages/user/userinfoEdit",
+    "pages/user/userinfo",
+    "pages/cart/address",
+    "pages/cart/addressAdd",
 
 
     
@@ -31,15 +38,9 @@
     "pages/cart/pay",
     
     
-    "pages/cart/order",
-    "pages/cart/shop",
-    "pages/user/orderlist",
-    "pages/user/userinfoEdit",
-   "pages/user/userinfo",
-   
-
-"pages/cart/address",
-"pages/cart/addressAdd",
+    
+    
+    
 
 "pages/prize/profit",
 "pages/prize/takelist",

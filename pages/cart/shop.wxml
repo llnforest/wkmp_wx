@@ -1,55 +1,28 @@
 <!--pages/cart/shop.wxml-->
-<view class="container">
+<view class="container" wx:if="{{empty}}">
+  <view class="no-content">
+    <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+    <view class="no-content-text">小主人，没有门店可选择哦！</view>
+  </view>
+</view>
+<view class="container" wx:else>
   <view class="shop-area">
-    <view class="shop-item">
-      <view class="select-icon">
+    <view class="shop-item" wx:for="{{shopList}}" wx:key="id">
+      <view class="select-icon {{defaultId == item.id ? 'active' : ''}}" bindtap="clickDefault" data-id="{{item.id}}" data-name="{{item.shop_name}}">
         <image src="/images/icons/selected.png"></image>
       </view>
       <view class="img-area">
-        <image class="shop-img" src="/images/img/wine_img.jpg"></image>
+        <image class="shop-img" src="{{item.img}}"></image>
       </view>
-      <view class="shop-title line-limit">悟空名品高新分店</view>
+      <view class="shop-title line-limit">{{item.shop_name}}</view>
       <view class="shop-style line-limit">
         <image class="item-icon" src="/images/icons/shop_phone.png"></image>
-      0551-8782123
+      {{item.phone}}
       </view>
       <view class="shop-style lines-limit">
         <image class="item-icon" src="/images/icons/shop_address.png"></image>
-      安徽省合肥市蜀山区东流路与南二环交口西南角</view>
+      {{item.address}}
+      </view>
     </view>
-    
-    <view class="shop-item">
-      <view class="select-icon">
-        <image src="/images/icons/selected.png"></image>
-      </view>
-      <view class="img-area">
-        <image class="shop-img" src="/images/img/wine_img.jpg"></image>
-      </view>
-      <view class="shop-title line-limit">悟空名品高新分店</view>
-      <view class="shop-style line-limit">
-        <image class="item-icon" src="/images/icons/shop_phone.png"></image>
-      0551-8782123
-      </view>
-      <view class="shop-style lines-limit">
-        <image class="item-icon" src="/images/icons/shop_address.png"></image>
-      安徽省合肥市蜀山区东流路与南二环交口西南角</view>
-    </view>
-
-    <view class="shop-item">
-      <view class="select-icon active">
-        <image src="/images/icons/selected.png"></image>
-      </view>
-      <view class="img-area">
-        <image class="shop-img" src="/images/img/wine_img.jpg"></image>
-      </view>
-      <view class="shop-title line-limit">悟空名品高新分店</view>
-      <view class="shop-style line-limit">
-        <image class="item-icon" src="/images/icons/shop_phone.png"></image>
-      0551-8782123
-      </view>
-      <view class="shop-style lines-limit">
-        <image class="item-icon" src="/images/icons/shop_address.png"></image>
-      安徽省合肥市蜀山区东流路与南二环交口西南角</view>
-    </view>
-    </view>
+  </view> 
 </view>

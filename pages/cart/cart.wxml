@@ -50,7 +50,7 @@
       <text class="all-text">全选</text>
     </view>
     <view class="total-dec" wx:if="{{!editModel}}">
-    合计：<text class="total-info common-color">¥<text class="total-money">{{total_money}}</text></text>
+    合计：<text class="total-info common-color">¥<text class="total-money" wx:if="{{userLevel == 0}}">{{total_money}}</text><text class="total-money" wx:else>{{vip_money}}</text></text>
     </view>
     <view class="go-pay common-bg" bindtap="goBuy"  wx:if="{{!editModel}}">去结算({{buyIds.length}})</view>
     <view class="go-pay del-btn" bindtap="delCart"  wx:else>删除({{delIds.length}})</view>

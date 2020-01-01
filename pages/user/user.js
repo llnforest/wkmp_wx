@@ -34,6 +34,9 @@ Page({
     if(this.data.userInfo.phone){
       this.renderPayNum();
     }
+    this.setData({
+      userInfo:app.globalData.user
+    })
     
   },
 
@@ -116,17 +119,21 @@ Page({
     }
     
   },
-  //点击立即开通
+  //点击地址管理
   goAddress: function (e) {
     wx.navigateTo({
       url: '/pages/cart/address',
     })
   },
-  //点击立即开通
+  //点击我的信息
   goUserInfo: function (e) {
     wx.navigateTo({
       url: '/pages/user/userinfo',
     })
+  },
+  //点击我的客服
+  goService: function (e) {
+    
   },
   //点击立即开通
   editUser: function (e) {

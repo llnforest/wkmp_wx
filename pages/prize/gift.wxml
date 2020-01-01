@@ -1,5 +1,16 @@
 <!--pages/prize/gift.wxml-->
 <view class="container">
+  <view class="shadow-box" wx:if="{{userInfo.phone == ''}}">
+    <view class="model-box">
+      <view class="model-text line-shadow">
+      对不起！您还没有完善个人信息，请先完善个人信息
+      </view>
+      <view class="model-btn common-color" bindtap="editUser">
+        立即完善
+      </view>
+    </view>
+  </view>
+
   <image class="bg-img" src="/images/icons/gift_bg.jpg" mode="widthFix"></image>
   <image class="bg-text" src="/images/icons/gift_text.jpg" mode="widthFix" ></image>
   <view class="level-top">
@@ -28,42 +39,23 @@
 
   <!-- 商品列表 -->
   <view class="goods-wrap">
-    <view class="goods-list">
+    <view class="goods-list" wx:for="{{giftList}}" wx:key="id">
       <view class="img-area">
-        <image class="goods-img" src="/images/icons/goods_img_60.png" mode="widthFix"></image>
+        <image class="goods-img" src="{{item.remark}}" mode="widthFix"></image>
       </view>
-      <view class="goods-title">
-      <view class="select-icon active">
-        <image src="/images/icons/wine_selected.png"></image>
-      </view>
-      百年盛池贡品窖龄60年
+      <view class="goods-title" bindtap="clickItem" data-id="{{item.id}}">
+        <view class="select-icon {{selected == item.id?'active':''}}">
+          <image src="/images/icons/wine_selected.png"></image>
+        </view>
+        {{item.val_name}}
       </view>
     </view>
 
-    <view class="goods-list">
-      <view class="img-area">
-        <image class="goods-img" src="/images/icons/goods_img_26.png" mode="widthFix"></image>
-      </view>
-      <view class="goods-title">
-      <view class="select-icon">
-        <image src="/images/icons/wine_selected.png"></image>
-      </view>
-      百年盛池贡品窖龄26年
-      </view>
-    </view>
+    
     <view class="user-info">
-      <input class="input-item" placeholder="请输入真实姓名"></input>
-      <input class="input-item" placeholder="请输入手机号码"></input>
-      
-      <view class="user-item">
-        <input class="input-item short-input" placeholder="请输入验证码"></input>
-        <view class="send-code">发送验证码</view>
-      </view>
-      
-      
-      <input class="input-item" placeholder="请输入邀请码(邀请人手机号)"></input>
+      <input type="number" class="input-item" placeholder="请输入邀请码(邀请人手机号)" bindinput="phoneinput"></input>
     </view>
-    <view class="btn go-buy">微信支付</view>
+    <view class="btn go-buy" bindtap="goBuy">立即开通</view>
     <view class="info sm-tx">注：请任选一种商品，邀请码为邀请人手机号码</view>
   </view>
 </view>

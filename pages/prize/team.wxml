@@ -1,4 +1,10 @@
 <!--pages/prize/team.wxml-->
+<view class="container" wx:if="{{empty}}">
+  <view class="no-content">
+    <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+    <view class="no-content-text">小主人，您还没有收益哦！</view>
+  </view>
+</view>
 <view class="container">
 <!-- 顶部 -->
   
@@ -10,7 +16,7 @@
       我的团队总人数
       </view>
       <view class="user-team">
-      55人
+      {{userInfo.total_person_num}}人
       </view>
     </view>
 
@@ -18,64 +24,112 @@
   </view>
   <!-- 团队人数 -->
   <view class="money-wrap clearfix common-bg">
-    <view class="money-item">
+    <view class="money-item" bindtap="clickLevel" data-level="1">
       <view class="money-text show-money">VIP会员</view>
-      <view class="money-text">(22人)</view>
-      <image class="sanjiao active" src="/images/icons/sanjiao.png"></image>
+      <view class="money-text">({{userInfo.vip_team_num}}人)</view>
+      <image class="sanjiao {{level ==1 ? 'active' : ''}}" src="/images/icons/sanjiao.png"></image>
     </view>
-    <view class="money-item">
+    <view class="money-item" bindtap="clickLevel" data-level="2">
       <view class="money-text show-money">推广顾问</view>
-      <view class="money-text">(9人)</view>
-      <image class="sanjiao" src="/images/icons/sanjiao.png"></image>
+      <view class="money-text">({{userInfo.tg_team_num}}人)</view>
+      <image class="sanjiao {{level ==2 ? 'active' : ''}}" src="/images/icons/sanjiao.png"></image>
     </view>
-    <view class="money-item">
+    <view class="money-item" bindtap="clickLevel" data-level="3">
       <view class="money-text show-money">高级顾问</view>
-      <view class="money-text">(2人)</view>
-      <image class="sanjiao" src="/images/icons/sanjiao.png"></image>
+      <view class="money-text">({{userInfo.gj_team_num}}人)</view>
+      <image class="sanjiao {{level ==3 ? 'active' : ''}}" src="/images/icons/sanjiao.png"></image>
     </view>
   </view>
   <!-- 列表 -->
-  <view class="list-wrap line-shadow">
-    <view class="list-top">
-    <image class="head-img vip-quan" src="/images/icons/head_img.png"></image>
-    <image class="level-img" src="/images/icons/vip_icon.png"  mode="widthFix"></image>
-    <view class="top-item llg-tx blod">周子欣</view>
-    <view class="bottom-item">加入团队时间：2019-11-11</view>
+  <view class="area-wrap {{level == 1 ? 'active':''}}">
+    <view class="container" wx:if="{{vip_empty}}">
+      <view class="no-content">
+        <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+        <view class="no-content-text">小主人，您还没有VIP会员哦！</view>
+      </view>
     </view>
-    <view class="num-wrap clearfix">
-      <view class="num-item">
-        <view class="num-text num-money"><text class="num-team common-color">2310</text>元</view>
-        <view class="num-text">个人销售额</view>
+    <view class="list-wrap line-shadow" wx:for="{{vipList}}" wx:key="id">
+      <view class="list-top">
+      <image class="head-img vip-quan" src="{{vipMaxIndex > index ?item.headimgurl:''}}"></image>
+      <image class="level-img" src="/images/icons/vip_icon.png"  mode="widthFix"></image>
+      <view class="top-item llg-tx blod">{{item.name}}</view>
+      <view class="bottom-item">加入团队时间：{{item.join_time}}</view>
       </view>
-     <view class="num-item">
-        <view class="num-text num-money"><text class="num-team common-color">2310</text>元</view>
-        <view class="num-text">团队销售额</view>
-      </view>
+      <view class="num-wrap clearfix">
+        <view class="num-item">
+          <view class="num-text num-money"><text class="num-team common-color">{{item.total_sale_user}}</text>元</view>
+          <view class="num-text">个人销售额</view>
+        </view>
       <view class="num-item">
-        <view class="num-text num-money"><text class="num-team common-color">2310</text>元</view>
-        <view class="num-text">团队系列酒销售额</view>
+          <view class="num-text num-money"><text class="num-team common-color">{{item.total_sale_team}}</text>元</view>
+          <view class="num-text">团队销售额</view>
+        </view>
+        <view class="num-item">
+          <view class="num-text num-money"><text class="num-team common-color">{{item.xl_sale_team}}</text>元</view>
+          <view class="num-text">团队系列酒销售额</view>
+        </view>
       </view>
     </view>
   </view>
-  <view class="list-wrap line-shadow">
-    <view class="list-top">
-    <image class="head-img vip-quan" src="/images/icons/head_img.png"></image>
-    <image class="level-img" src="/images/icons/vip_icon.png"  mode="widthFix"></image>
-    <view class="top-item llg-tx blod">周子欣</view>
-    <view class="bottom-item">加入团队时间：2019-11-11</view>
+  
+  <view class="area-wrap {{level == 2 ? 'active':''}}">
+    <view class="container" wx:if="{{tg_empty}}">
+      <view class="no-content">
+        <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+        <view class="no-content-text">小主人，您还没有推广顾问哦！</view>
+      </view>
     </view>
-    <view class="num-wrap clearfix">
-      <view class="num-item">
-        <view class="num-text num-money"><text class="num-team common-color">2310</text>元</view>
-        <view class="num-text">个人销售额</view>
+    <view class="list-wrap line-shadow" wx:for="{{tgList}}" wx:key="id">
+      <view class="list-top">
+      <image class="head-img tui-quan" src="{{tgMaxIndex > index ?item.headimgurl:''}}"></image>
+      <image class="level-img" src="/images/icons/tuiguang_icon.png"  mode="widthFix"></image>
+      <view class="top-item llg-tx blod">{{item.name}}</view>
+      <view class="bottom-item">加入团队时间：{{item.join_time}}</view>
       </view>
-     <view class="num-item">
-        <view class="num-text num-money"><text class="num-team common-color">2310</text>元</view>
-        <view class="num-text">团队销售额</view>
-      </view>
+      <view class="num-wrap clearfix">
+        <view class="num-item">
+          <view class="num-text num-money"><text class="num-team common-color">{{item.total_sale_user}}</text>元</view>
+          <view class="num-text">个人销售额</view>
+        </view>
       <view class="num-item">
-        <view class="num-text num-money"><text class="num-team common-color">2310</text>元</view>
-        <view class="num-text">团队系列酒销售额</view>
+          <view class="num-text num-money"><text class="num-team common-color">{{item.total_sale_team}}</text>元</view>
+          <view class="num-text">团队销售额</view>
+        </view>
+        <view class="num-item">
+          <view class="num-text num-money"><text class="num-team common-color">{{item.xl_sale_team}}</text>元</view>
+          <view class="num-text">团队系列酒销售额</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="area-wrap {{level == 3 ? 'active':''}}">
+    <view class="container" wx:if="{{gj_empty}}">
+      <view class="no-content">
+        <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+        <view class="no-content-text">小主人，您还没有高级顾问哦！</view>
+      </view>
+    </view>
+    <view class="list-wrap line-shadow" wx:for="{{gjList}}" wx:key="id">
+      <view class="list-top">
+      <image class="head-img gao-quan" src="{{gjMaxIndex > index ?item.headimgurl:''}}"></image>
+      <image class="level-img" src="/images/icons/gaoji_icon.png"  mode="widthFix"></image>
+      <view class="top-item llg-tx blod">{{item.name}}</view>
+      <view class="bottom-item">加入团队时间：{{item.join_time}}</view>
+      </view>
+      <view class="num-wrap clearfix">
+        <view class="num-item">
+          <view class="num-text num-money"><text class="num-team common-color">{{item.total_sale_user}}</text>元</view>
+          <view class="num-text">个人销售额</view>
+        </view>
+      <view class="num-item">
+          <view class="num-text num-money"><text class="num-team common-color">{{item.total_sale_team}}</text>元</view>
+          <view class="num-text">团队销售额</view>
+        </view>
+        <view class="num-item">
+          <view class="num-text num-money"><text class="num-team common-color">{{item.xl_sale_team}}</text>元</view>
+          <view class="num-text">团队系列酒销售额</view>
+        </view>
       </view>
     </view>
   </view>

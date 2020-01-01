@@ -1,4 +1,5 @@
 // pages/user/orderlist.js
+const app = getApp();
 Page({
 
   /**

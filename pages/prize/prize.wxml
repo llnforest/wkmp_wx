@@ -1,71 +1,81 @@
 <!--pages/prize/prize.wxml-->
 <view class="container">
 <!-- 顶部 -->
-  
+  <view class="shadow-box" wx:if="{{userInfo.phone == ''}}">
+    <view class="model-box">
+      <view class="model-text line-shadow">
+      对不起！您还没有完善个人信息，请先完善个人信息
+      </view>
+      <view class="model-btn common-color" bindtap="editUser">
+        立即完善
+      </view>
+    </view>
+  </view>
+
   <view class="top-area m-b-7 bg-white">
     <image class="top-bg" src="/images/icons/prize_bg.png" mode="widthFix"></image>
     <view class="user-info">
       <image class="vip-head" src="/images/icons/prize_head.png"></image>
-      <image class="head-img" src="/images/icons/head_img.png"></image>
+      <image class="head-img" src="{{userInfo.headimgurl}}"></image>
       
       <view class="nick-name">
-      周子欣
-      <text class="user-level">高级顾问</text>
+      {{userInfo.name}}
+      <text class="user-level">{{userInfo.user_level_text}}</text>
       </view>
       <view class="user-team">
       <image class="team-icon" src="/images/icons/team_icon.png"  mode="widthFix"></image>
-      团队：5个
+      团队：{{userInfo.total_person_num}}个
       </view>
       <view class="tixian">
         <view class="user-money">¥
-        <text class="money">3000</text>
+        <text class="money">{{userInfo.balance}}</text>
         </view>
-        <view class="go-apply common-color">去提现</view>
+        <view class="go-apply common-color" bindtap="goApply">去提现</view>
       </view>
     </view>
 
     <view class="money-wrap clearfix">
       <view class="money-item">
         <view class="money-text">团队销售总额(元)</view>
-        <view class="money-text show-money">22900</view>
+        <view class="money-text show-money">{{userInfo.total_sale_team}}</view>
       </view>
       <view class="money-item">
         <view class="money-text">个人销售总额(元)</view>
-        <view class="money-text show-money">22900</view>
+        <view class="money-text show-money">{{userInfo.total_sale_user}}</view>
       </view>
       <view class="money-item">
         <view class="money-text">已提现总额(元)</view>
-        <view class="money-text show-money">222900</view>
+        <view class="money-text show-money">{{userInfo.total_profit - userInfo.balance}}</view>
       </view>
     </view>
 
     <view class="vip-area">
       <view class="vip-text1">邀请好友成为您团队的一员</view>
-      <view class="vip-text2">请填写您的手机号 15693279539</view>
+      <view class="vip-text2">请填写您的手机号 <text class="llg-tx">{{userInfo.phone}}</text></view>
     </view>
 
     
     <view class="status-wrap clearfix">
-      <view class="status-item">
+      <view class="status-item" bindtap="goTeam">
         <view class="img-bg">
           <image class="item-img" src="/images/icons/my_team.png" mode="widthFix"></image>
         </view>
         <view class="item-text">我的团队</view>
       </view>
     
-      <view class="status-item">
+      <view class="status-item" bindtap="goProfit">
         <view class="img-bg">
           <image class="item-img" src="/images/icons/my_profit.png" mode="widthFix"></image>
         </view>
         <view class="item-text">我的收益</view>
       </view>
-      <view class="status-item">
+      <view class="status-item" bindtap="goTakeList">
         <view class="img-bg">
           <image class="item-img" src="/images/icons/apply_record.png" mode="widthFix"></image>
         </view>
         <view class="item-text">提现记录</view>
       </view>
-      <view class="status-item">
+      <view class="status-item" bindtap="goService">
         <view class="img-bg">
           <image class="item-img" src="/images/icons/my_service.png"  mode="widthFix"></image>
         </view>
