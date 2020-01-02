@@ -1,6 +1,7 @@
 // pages/user/userinfoEdit.js
 
 const app = getApp();
+const md5 = require('../../utils/md5.js')
 Page({
 
   /**
@@ -88,10 +89,14 @@ Page({
     return this.data.code;
   },
   //发送验证按
+  /**
+   * 
+   */
   sendCode:function(e){
     var that = this;
     var randNum = Math.floor(Math.random()*10000);//产生一个随机数
-    app.requestFunc('sms/SendCode', {phone: that.data.phone,num:randNum}, function sucFunc(d) {
+    var secret = md5.hexMD5(that.data.phone + app.globalData.sms_random + randNum);
+    app.requestFunc('sms/SendCode', {phone: that.data.phone,num:randNum,secret:secret}, function sucFunc(d) {
       that.setData({
         sec: 60
       })

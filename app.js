@@ -92,6 +92,7 @@ App({
     userInfo: [],
     cate_id:1,
     user:[],
+    sms_random:"BVCXa1.4jdPPksMndkE3_oO0*",
   },
   onPageScroll: function (e) {
     if (e.scrollTop < 0) {

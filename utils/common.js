@@ -1,5 +1,5 @@
 var app = getApp();
-var MD5Encode = require("MD5Encode.js");
+var MD5Encode = require("md5.js");
 
 /**
  * 图片长宽同比展示
