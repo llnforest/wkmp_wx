@@ -2,113 +2,83 @@
 <view class="container">
 <!-- 头部选择 -->
 <view class="top-wrap line-shadow">
-  <view class="top-item common-color">全部
+  <view class="top-item {{currentTab == 0 ? 'common-color' : ''}}" data-current="100" bindtap="swichNav">全部
     <view class="top-line"></view>
   </view>
-  <view class="top-item">待付款
+  <view class="top-item {{currentTab == 1 ? 'common-color' : ''}}" data-current="0" bindtap="swichNav">待付款
     <view class="top-line"></view>
   </view>
-  <view class="top-item">已付款
+  <view class="top-item {{currentTab == 2 ? 'common-color' : ''}}" data-current="1,2" bindtap="swichNav">已付款
     <view class="top-line"></view>
   </view>
-  <view class="top-item">已完成
+  <view class="top-item {{currentTab == 3 ? 'common-color' : ''}}" data-current="4" bindtap="swichNav">已完成
+    <view class="top-line"></view>
+  </view>
+  <view class="top-item {{currentTab == 4 ? 'common-color' : ''}}" data-current="3" bindtap="swichNav">已取消
     <view class="top-line"></view>
   </view>
 </view>
+<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+style="height:{{winHeight}}rpx">
+<swiper-item wx:for="{{currentList}}" wx:key="*this" wx:for-index="cur_index" wx:for-item="cur_item">
+<scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="loadMore">
+
 <!-- 列表区域 -->
   <view class="wine-wrap">
-    <view class="wine-list">
-      <view class="wine-head">
+    <view class="no-content" wx:if="{{empty[cur_index]}}">
+      <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+      <view class="no-content-text">小主人，没找到相关订单哦~</view>
+    </view>
+    <view class="wine-list" wx:for="{{orderList[cur_index]}}" wx:key="id">
+      <view class="wine-head" bindtap="goOrderDetail" data-id="{{item.id}}" wx:if="{{item.status != 0}}">
         <image class="head-img" src="/images/icons/order_icon.png"  mode="widthFix"></image>
-        <text class="head-title">订单编号：2019920324842342</text>
-        <text class="head-status status-unpay">去付款</text>
+        <text class="head-title">订单编号：{{item.id}}</text>
+        <text class="head-status status-unpay" wx:if="{{item.status == 0}}">{{item.status_text}}</text>
+        <text class="head-status status-pay" wx:elif="{{item.status == 1}}">{{item.status_text}}</text>
+        <text class="head-status status-send" wx:elif="{{item.status == 2}}">{{item.status_text}}</text>
+        <text class="head-status status-cancel" wx:elif="{{item.status == 3}}">{{item.status_text}}</text>
+        <text class="head-status status-success" wx:else>{{item.status_text}}</text>
       </view>
-      <view class="wine-item">
-        <view class="img-area">
-          <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-          <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        </view>
-        <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
-        <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
-        <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
-        <text class="wine-num"><text class="wine-num-icon">X</text> 2</text>
+      <view class="wine-head" bindtap="goPay" data-id="{{item.id}}" wx:else>
+        <image class="head-img" src="/images/icons/order_icon.png"  mode="widthFix"></image>
+        <text class="head-title">订单编号：{{item.id}}</text>
+        <text class="head-status status-unpay" wx:if="{{item.status == 0}}">{{item.status_text}}</text>
+        <text class="head-status status-pay" wx:elif="{{item.status == 1}}">{{item.status_text}}</text>
+        <text class="head-status status-send" wx:elif="{{item.status == 2}}">{{item.status_text}}</text>
+        <text class="head-status status-cancel" wx:elif="{{item.status == 3}}">{{item.status_text}}</text>
+        <text class="head-status status-success" wx:else>{{item.status_text}}</text>
       </view>
-      <view class="wine-item">
+      <view class="wine-item" wx:for="{{item.wineList}}" wx:key="id" wx:for-item="wine" wx:for-index="wine_index" bindtap="clickWine" data-id="{{wine.id}}">
         <view class="img-area">
-          <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-          <image class="wine-img" src="/images/img/wine_img.jpg"></image>
+          <image class="icon-cate" src="/images/icons/{{wine.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
+          <image class="wine-img" src="{{wine.img}}"></image>
         </view>
-        <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
-        <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
-        <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
-        <text class="wine-num"><text class="wine-num-icon">X</text> 2</text>
+        <view class="wine-title lines-limit">{{wine.wine_name}}</view>
+        <view class="wine-style line-limit sm-tx item-tx">{{wine.wine_size_text}}</view>
+        <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">{{wine.mall_price}}</text></text></view>
+        <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">{{wine.vip_price}}</text></text></view>
+        <text class="wine-num"><text class="wine-num-icon">X</text> {{wine.quantity}}</text>
       </view>
       <view class="wine-foot bg-white">
         <view class="foot-item line-shadow">
-          <text class="order-time">下单时间：2019-10-10 11:00:00</text>
-          订单总额：<text class="order-money common-color">¥120</text>
+          <text class="order-time">下单时间：{{item.create_time}}</text>
+          订单总额：<text class="order-money common-color">¥{{item.total_money}}</text>
         </view>
-        <view class="foot-item">
-          <view class="order-btn go-cancel">
+        <view class="foot-item" wx:if="{{item.status == 0}}">
+          <view class="order-btn go-cancel"  bindtap="doCancel" data-id="{{item.id}}">
           取消订单
           </view>
-          <view class="order-btn common-bg go-pay">
+          <view class="order-btn common-bg go-pay" bindtap="goPay" data-id="{{item.id}}">
           去付款
           </view>
         </view>
       </view> 
     </view>
      
-    <view class="wine-list">
-      <view class="wine-head">
-        <image class="head-img" src="/images/icons/order_icon.png"  mode="widthFix"></image>
-        <text class="head-title">订单编号：2019920324842342</text>
-        <text class="head-status status-success">已完成</text>
-      </view>
-      <view class="wine-item">
-        <view class="img-area">
-          <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-          <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        </view>
-        <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
-        <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
-        <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
-        <text class="wine-num"><text class="wine-num-icon">X</text> 2</text>
-      </view>
-      <view class="wine-foot bg-white">
-        <view class="foot-item line-shadow">
-          <text class="order-time">下单时间：2019-10-10 11:00:00</text>
-          订单总额：<text class="order-money common-color">¥120</text>
-        </view>
-      </view>
-    </view>
     
-    <view class="wine-list">
-      <view class="wine-head">
-        <image class="head-img" src="/images/icons/order_icon.png"  mode="widthFix"></image>
-        <text class="head-title">订单编号：2019920324842342</text>
-        <text class="head-status status-pay">已付款</text>
-      </view>
-      <view class="wine-item">
-        <view class="img-area">
-          <image class="icon-cate" src="/images/icons/wine_liu.png"></image>
-          <image class="wine-img" src="/images/img/wine_img.jpg"></image>
-        </view>
-        <view class="wine-title lines-limit">意大利米兰之花原装进口葡萄酒香槟酒甜酒优质葡萄酒</view>
-        <view class="wine-style line-limit sm-tx item-tx">6*1*1瓶</view>
-        <view class="mall-price grey-color sm-tx item-tx">市场价：<text class="common-color">¥<text class="cm-tx blod m-l-5">120</text></text></view>
-        <view class="vip-price grey-color sm-tx item-tx">会员价：<text class="common-color">¥<text class="cm-tx blod m-l-5">90</text></text></view>
-        <text class="wine-num"><text class="wine-num-icon">X</text> 2</text>
-      </view>
-      <view class="wine-foot bg-white">
-        <view class="foot-item line-shadow">
-          <text class="order-time">下单时间：2019-10-10 11:00:00</text>
-          订单总额：<text class="order-money common-color">¥120</text>
-        </view>
-      </view>
-    </view>
   </view>
+
+  </scroll-view>
+</swiper-item>
+</swiper>
 </view>

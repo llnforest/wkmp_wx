@@ -194,7 +194,7 @@ Page({
     app.requestFunc('cart/makeOrder', { wineList: JSON.stringify(wineList),shop_id: that.data.shop_id,express_type: that.data.express_type, user_remark: that.data.user_remark, address_id: that.data.addressInfo.id }, function sucFunc(d) {
       that.data.isAble = false;
       let _data = d.data;
-      wx.navigateTo({
+      wx.redirectTo({
         url: '/pages/cart/pay?order_id=' + _data.id,
       })
 

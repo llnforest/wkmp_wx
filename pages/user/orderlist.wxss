@@ -12,13 +12,14 @@ page{
 
 
 .top-item{
-  width:25%;
-  padding:0 5%;
+  width:20%;
   position: relative;
   display: inline-block;
   text-align:center;
   height:100%;
   line-height:80rpx;
+  font-size: 24rpx;
+
 }
 .top-line{
   position:absolute;
@@ -36,7 +37,7 @@ page{
 }
 /* 酒品列表 */
 .wine-wrap{
-  margin-top:80rpx;
+  /* margin-top:80rpx; */
 }
 .wine-list{
   background:#fff;
@@ -77,7 +78,10 @@ page{
   color:#d00912;
 }
 .status-cancel{
-  color:#ddd;
+  color:#999;
+}
+.status-send{
+  color:#67e2ea;
 }
 .wine-num{
   position:absolute;
@@ -156,3 +160,6 @@ page{
 .mall-price{
   margin-bottom:5rpx;
 }
+.scoll-h{height: 100%;box-sizing: border-box}
+.tab-content{width:100%;padding-top:80rpx;box-sizing:border-box;}
+.swiper-item{box-sizing: border-box}

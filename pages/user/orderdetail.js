@@ -1,4 +1,4 @@
-// pages/cart/pay.js
+// pages/user/orderdetail.js
 const app = getApp();
 Page({
 
@@ -6,8 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    wineList:[],
-    orderInfo:[],
+    wineList: [],
+    orderInfo: [],
   },
 
   /**
@@ -70,17 +70,12 @@ Page({
    */
   renderPay: function (order_id) {
     let that = this;
-    app.requestFunc('cart/pay', {id:order_id}, function sucFunc(d) {
+    app.requestFunc('user/orderDetail', { id: order_id }, function sucFunc(d) {
       let _data = d.data;
       that.setData({
         orderInfo: _data.orderInfo,
         wineList: _data.wineList
       })
     });
-  },
-  //支付
-  sureSubmit: function (e) {
-    var that = this;
-    
   },
 })

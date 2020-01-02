@@ -1,58 +1,27 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/user/orderlist",
     "pages/cart/order",
-    
     "pages/cart/cart",
     "pages/cart/shop",
     "pages/user/user",
-    
     "pages/cate/cate",
-    "pages/index/index",
     "pages/index/detail",
-    
     "pages/index/searchlist",
     "pages/index/search",
     "pages/user/userinfoEdit",
     "pages/user/userinfo",
     "pages/cart/address",
     "pages/cart/addressAdd",
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     "pages/cart/pay",
-    
-    
-    
-    
-    
-
-"pages/prize/profit",
-"pages/prize/takelist",
-"pages/prize/team",
+    "pages/prize/profit",
+    "pages/prize/takelist",
+    "pages/prize/team",
     "pages/prize/gift",
-"pages/prize/prize",
-
-
-
-
-    "pages/logs/logs"
-    
+    "pages/prize/prize",
+    "pages/logs/logs",
+    "pages/user/orderdetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,4 +1,4 @@
-<!--pages/cart/pay.wxml-->
+<!--pages/user/orderdetail.wxml-->
 <view class="container">
 <!-- 酒品 -->
   <view class="wine-wrap bg-white m-b-7">
@@ -38,36 +38,61 @@
         {{orderInfo.express_type_text}}
       </view>
     </view>
+    <view class="order-item" wx:if="{{orderInfo.express_type == 1}}">
+      <view class="item-name">配送费用</view>
+      <view class="item-dec">
+        {{orderInfo.express_price}}元
+      </view>
+    </view>
     <view class="order-item">
       <view class="item-name">买家留言</view>
       <view class="item-dec">
         {{orderInfo.user_remark == ''?'无':orderInfo.user_remark}}
       </view>
     </view>
-  </view>
-
-  <view class="order-wrap bg-white m-b-50" wx:if="{{orderInfo.express_type == 1}}">
     <view class="order-item">
-      <view class="item-name">配送费用</view>
+      <view class="item-name">订单状态</view>
       <view class="item-dec common-color">
-        ¥<text class="m-l-5">{{orderInfo.express_price}}</text>
+        {{orderInfo.status_text}}
+      </view>
+    </view>
+    <view class="order-item">
+      <view class="item-name">订单总额</view>
+      <view class="item-dec common-color">
+        {{orderInfo.total_money}}元
+      </view>
+    </view>
+    <view class="order-item" wx:if="{{orderInfo.create_time != null}}">
+      <view class="item-name">下单时间</view>
+      <view class="item-dec">
+        {{orderInfo.create_time}}
+      </view>
+    </view>
+    <view class="order-item" wx:if="{{orderInfo.pay_time != null}}">
+      <view class="item-name">支付时间</view>
+      <view class="item-dec">
+        {{orderInfo.pay_time}}
+      </view>
+    </view>
+    <view class="order-item" wx:if="{{orderInfo.send_time != null}}">
+      <view class="item-name">发货时间</view>
+      <view class="item-dec">
+        {{orderInfo.send_time}}
+      </view>
+    </view>
+    <view class="order-item" wx:if="{{orderInfo.success_time != null}}">
+      <view class="item-name">完成时间</view>
+      <view class="item-dec">
+        {{orderInfo.success_time}}
+      </view>
+    </view>
+    <view class="order-item" wx:if="{{orderInfo.cancel_time != null}}">
+      <view class="item-name">取消时间</view>
+      <view class="item-dec">
+        {{orderInfo.cancel_time}}
       </view>
     </view>
   </view>
 
-  <!-- 底部导航 -->
-  <view class="bottom-nav" wx:if="{{orderInfo.status == 0}}">
-    <view class="nav-info">
-      <view class="nav-text-total">
-      合计：<text class="common-color">¥{{orderInfo.total_money}}</text>
-      </view>
-      <view class="nav-text">
-      会员省 ¥{{orderInfo.mall_wine_money - orderInfo.vip_wine_money}}
-      </view>
-    </view>
-    <view class="go-pay">
-      <image class="pay-icon" src="/images/icons/pay.png" bindtap="sureSubmit"></image>
-      微信支付
-    </view>
-  </view>
 </view>
+

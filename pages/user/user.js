@@ -105,19 +105,12 @@ Page({
       url: '/pages/prize/gift',
     })
   },
-  //点击我饿订单项
+  //点击我的订单项
   goOrderList: function (e) {
     let data = e.currentTarget.dataset;
-    if(data.status == undefined){
-      wx.navigateTo({
-        url: '/pages/user/orderlist',
-      })
-    }else{
-      wx.navigateTo({
-        url: '/pages/user/orderlist?status=' + data.status,
-      })
-    }
-    
+    wx.navigateTo({
+      url: '/pages/user/orderlist?status=' + data.status,
+    })
   },
   //点击地址管理
   goAddress: function (e) {
