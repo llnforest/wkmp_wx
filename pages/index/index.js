@@ -12,6 +12,8 @@ Page({
     siteInfo:{}
   },
   onLoad: function () {
+    
+
     var that = this;
     app.requestFunc('index/index',{},function sucFunc(d){
       let _data = d.data;

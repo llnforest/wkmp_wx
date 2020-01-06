@@ -1,5 +1,6 @@
 // pages/cart/pay.js
 const app = getApp();
+var common = require("../../utils/common.js");
 Page({
 
   /**
@@ -78,9 +79,30 @@ Page({
       })
     });
   },
-  //支付
+  /**
+   * 支付
+   */
   sureSubmit: function (e) {
     var that = this;
+    app.requestFunc('wxpay/createOrder', { order_id: order_id, type: 1 }, function sucFunc(d) {
+      let _data = d.data;
+      common.doWechatPay(_data.prepayId,
+      function(){//成功
+        wx.showToast({
+          title: '支付成功',
+        })
+        wx.navigateTo({
+          url: '/pages/user/orderlist?status=1,2',
+        })
+      },function(){//失败
+        wx.showToast({
+          title: '支付失败',
+        })
+      },function(){//完成
+
+      });
+
+    });
     
   },
 })

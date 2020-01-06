@@ -24,6 +24,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     var that = this;
     app.requestFunc('index/detail', {id:options.id}, function sucFunc(d) {
       let _data = d.data;
@@ -42,6 +43,7 @@ Page({
       });
     });
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
