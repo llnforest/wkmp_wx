@@ -24,53 +24,10 @@ Page({
       phone:app.globalData.user.phone
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   },
   //input获取
@@ -88,12 +45,15 @@ Page({
     this.data.code = e.detail.value.replace(/(^\s)|(\s$)/g, "");
     return this.data.code;
   },
-  //发送验证按
   /**
-   * 
+   * 发送验证码
    */
   sendCode:function(e){
     var that = this;
+    if (that.data.phone == app.globalData.userInfo.phone) {
+      app.toast('手机号码未修改');
+      return false;
+    }
     var randNum = Math.floor(Math.random()*10000);//产生一个随机数
     var secret = md5.hexMD5(that.data.phone + app.globalData.sms_random + randNum);
     app.requestFunc('sms/SendCode', {phone: that.data.phone,num:randNum,secret:secret}, function sucFunc(d) {
@@ -114,17 +74,19 @@ Page({
   //确认保存
   sureSubmit:function(e){
     var that = this;
-    if(!that.data.isAble) return false;
     if (that.data.phone == app.globalData.userInfo.phone){
-      wx.showToast({
-        title: '手机号码未修改',
-        duration: 2000,
-        icon: 'none',
-      });
+      app.toast('手机号码未修改');
       return false;
     }
+    if (that.data.phone == "") {
+      app.toast('请填写手机号')
+      return fasle;
+    }
+    if (that.data.code == "") {
+      app.toast('请填写验证码')
+      return fasle;
+    }
     app.requestFunc('user/editUser', {phone:that.data.phone,name:that.data.name,code:that.data.code}, function sucFunc(d) {
-      that.data.isAble = false;
       app.globalData.user.name = that.data.name;
       app.globalData.user.phone = that.data.phone;
       //2s后回退
