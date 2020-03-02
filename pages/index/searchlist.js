@@ -83,13 +83,6 @@ Page({
     }
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
   renderWine: function(){
     let that = this;
     app.requestFunc('index/searchList', { page:that.data.page,keywords: that.data.keywords }, function sucFunc(d) {

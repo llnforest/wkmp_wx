@@ -65,13 +65,6 @@ Page({
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
   //input获取
   nameinput: function (e) {
     this.data.name = e.detail.value.replace(/(^\s)|(\s$)/g, "");

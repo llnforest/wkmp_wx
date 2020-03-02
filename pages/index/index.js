@@ -12,8 +12,6 @@ Page({
     siteInfo:{}
   },
   onLoad: function () {
-    
-
     var that = this;
     app.requestFunc('index/index',{},function sucFunc(d){
       let _data = d.data;
@@ -26,6 +24,12 @@ Page({
         siteInfo: _data.siteInfo
       });
     });
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   },
   //点击酒品
   clickWine: function (e) {

@@ -63,13 +63,6 @@ Page({
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
   //点击搜索项
   clickSearchItem: function (e) {
     let data = e.currentTarget.dataset;

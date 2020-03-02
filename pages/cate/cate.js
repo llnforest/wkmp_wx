@@ -44,8 +44,8 @@ Page({
       that.setData({
         cateList: _data.cateList
       });
-    });
 
+    });
     this.renderWine();
   },
   
@@ -53,13 +53,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    
     //获取屏幕尺寸
     const screenWidth = wx.getSystemInfoSync().windowWidth;
     const screenHeight = wx.getSystemInfoSync().windowHeight - 185;
@@ -147,7 +147,6 @@ Page({
   },
   renderWine: function () {
     let that = this;
-   
     app.requestFunc('cate/searchList', { cate_id: that.data.cate_id, keywords: that.data.searchKeywords, min: that.data.price[that.data.priceStatus].min, max: that.data.price[that.data.priceStatus].max }, function sucFunc(d) {
       let _data = d.data;
       let _empty = false;

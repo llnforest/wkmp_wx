@@ -65,13 +65,7 @@ Page({
     }
 
   },
-
   /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },/**
    * 渲染提现
    */
   renderTakeList: function () {
