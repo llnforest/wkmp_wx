@@ -2,16 +2,17 @@
  <!-- 引入 -->
 <wxs src="../../utils/common.wxs" module="tools" />
 <view class="container" wx:if="{{empty}}">
+  <view class="top-area common-bg clearfix" style="height:{{barHeight + navHeight}}px">
+  </view>
   <view class="no-content">
     <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
     <view class="no-content-text">小主人，您的购物车什么也没有哟！</view>
   </view>
 </view>
 <view class="container" wx:else>
-  <view class="top-area common-bg clearfix">
+  <view class="top-area common-bg clearfix" style="height:{{barHeight + navHeight}}px;padding-top:{{barHeight}}px;">
     <view class="opreate-gl top-item" wx:if="{{!editModel}}" bindtap="changeModel" data-id="1">管理</view>
     <view class="opreate-gl top-item" wx:else  bindtap="changeModel" data-id="0">完成</view>
-
   </view>
   <!-- 酒品列表 -->
   <view class="wine-area">

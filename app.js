@@ -1,6 +1,7 @@
 //app.js
 App({
   data:{
+    // url:'https://api.99wukong.cn/',
     url:'http://api.99wukong.test/',
     // url:'http://192.168.100.62/wkmp/public/index/'
 
@@ -73,27 +74,40 @@ App({
           }
         });
       }
-    })
+    });
     // 获取用户信息
-      wx.getSetting({
-        success: res => {
-          if (res.authSetting['scope.userInfo']) {
-            // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-            wx.getUserInfo({
-              success: res => {
-                // 可以将 res 发送给后台解码出 unionId
-                this.globalData.userInfo = res.userInfo
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              that.globalData.userInfo = res.userInfo
 
-                // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-                // 所以此处加入 callback 以防止这种情况
-                if (this.userInfoReadyCallback) {
-                  this.userInfoReadyCallback(res)
-                }
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
               }
-            })
-          }
+            }
+          })
         }
-      })
+      }
+    });
+    //获取系统信息,计算各部分的高度参数
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res);
+        that.globalData.windowWidth = res.windowWidth;
+        that.globalData.screenRate = 375 / res.windowWidth;
+        that.globalData.barHeight = res.statusBarHeight;
+        that.globalData.navHeight = 44 * that.globalData.screenRate;
+        that.globalData.windowHeight = res.windowHeight;
+        that.globalData.tabHeight = res.screenHeight - res.statusBarHeight - that.globalData.navHeight - res.windowHeight
+
+      }
+    });
   },
   toast: function (msg, timelong = 2000) {
     let duration = timelong || 2000;
@@ -104,6 +118,12 @@ App({
     });
   },
   globalData: {
+    windowWidth: 0,
+    screenRate:1,
+    barHeight:0,
+    navHeight:0,
+    windowHeight:0,
+    tabHeight:0,
     userInfo: [],
     cate_id:1,
     user:[],

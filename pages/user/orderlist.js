@@ -26,16 +26,9 @@ Page({
     }
     this.renderOrder();
     // 高度自适应
-    wx.getSystemInfo({
-      success: function (res) {
-        var clientHeight = res.windowHeight,
-          clientWidth = res.windowWidth,
-          rpxR = 750 / clientWidth;
-        var calc = clientHeight * rpxR;
-        that.setData({
-          winHeight: calc
-        });
-      }
+    
+    that.setData({
+      winHeight: (app.globalData.windowHeight + app.globalData.tabHeight) * (750 / app.globalData.windowWidth)
     });
   },
   // 滚动切换标签样式

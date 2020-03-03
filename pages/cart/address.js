@@ -5,21 +5,13 @@ Page({
     delBtnWidth: 160,
     addressList: [],
     isScroll: true,
-    windowHeight: 0,
+    windowHeight: app.globalData.windowHeight + app.globalData.tabHeight,
     empty:false,
     isSelect:0,
     isBack:0
   },
   onLoad: function (options) {
     if(options.back != undefined) this.data.back = options.back;
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          windowHeight: res.windowHeight
-        });
-      }
-    });
   }, 
   onShow:function(){
     this.renderAddress();
