@@ -17,11 +17,13 @@
   <!-- 酒品列表 -->
   <view class="wine-area">
     <view class="wine-item" wx:for="{{cartList}}" wx:key="id">
-      <view class="select-icon {{tools.fn(delIds,item.id).indexOf ?'active':''}} 1" bindtap="clickSelect" data-id="{{item.id}}" wx:if="{{editModel}}">
-        <image src="/images/icons/selected.png"></image>
-      </view>
-      <view class="select-icon {{tools.fn(buyIds,item.id).indexOf ?'active':''}} 2" bindtap="clickSelect" data-id="{{item.id}}" wx:else>
-        <image src="/images/icons/selected.png"></image>
+      <view class="select-area" bindtap="clickSelect" data-id="{{item.id}}">
+        <view class="select-icon {{tools.fn(delIds,item.id).indexOf ?'active':''}}" wx:if="{{editModel}}">
+          <image src="/images/icons/selected.png"></image>
+        </view>
+        <view class="select-icon {{tools.fn(buyIds,item.id).indexOf ?'active':''}}" wx:else>
+          <image src="/images/icons/selected.png"></image>
+        </view>
       </view>
       <view class="img-area" bindtap="clickWine" data-id="{{item.wine_id}}">
         <image class="icon-cate" src="/images/icons/{{item.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>

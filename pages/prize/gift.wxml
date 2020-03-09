@@ -1,6 +1,6 @@
 <!--pages/prize/gift.wxml-->
 <view class="container">
-  <view class="shadow-box" wx:if="{{userInfo.phone == ''}}">
+  <view class="shadow-box" wx:if="{{userInfo.phone == null}}">
     <view class="model-box">
       <view class="model-text line-shadow">
       对不起！您还没有完善个人信息，请先完善个人信息

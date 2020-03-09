@@ -1,12 +1,15 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/cart/cart",
+    "pages/user/user",
+    
+    "pages/cate/cate",
     "pages/user/orderlist",
     "pages/cart/order",
-    "pages/cart/cart",
     "pages/cart/shop",
-    "pages/user/user",
-    "pages/cate/cate",
+    
+    
     "pages/index/detail",
     "pages/index/searchlist",
     "pages/index/search",

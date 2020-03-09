@@ -9,8 +9,7 @@ Page({
     isAble:true,
     wineList:[],
     empty:false,
-    addressNo:false,
-    addressInfo:[],
+    addressInfo:null,
     express_type:1,
     shop_name:'',
     shop_id:0,
@@ -122,10 +121,7 @@ Page({
     let that = this;
     app.requestFunc('cart/getDefaultAddress', { }, function sucFunc(d) {
       let _data = d.data;
-      if(_data.addressInfo == ""){
-        that.setData({
-          addressNo: true
-        })
+      if(_data.addressInfo == null){
         wx.navigateTo({
           url: '/pages/cart/addressAdd',
         })
@@ -172,20 +168,29 @@ Page({
         wx.navigateTo({
           url: '/pages/cart/shop?id='+this.data.shop_id,
         })
+      }else{
+        this.setData({
+          shop_id:0,
+          shop_name:''
+        })
       }
     }
   },
   //提交订单
   sureSubmit: function (e) {
     var that = this;
-    if (!that.data.isAble) return false;
+    if (that.data.addressInfo == null){
+      app.toast("请先添加地址");
+      return false;
+    }
     let wineList = [];
     that.data.wineList.forEach((item,index) => {
       wineList.push({id:item.id,quantity:item.quantity});
+      console.log(item.id);
     })
-    console.log(JSON.stringify(wineList));
-    app.requestFunc('cart/makeOrder', { wineList: JSON.stringify(wineList),shop_id: that.data.shop_id,express_type: that.data.express_type, user_remark: that.data.user_remark, address_id: that.data.addressInfo.id }, function sucFunc(d) {
-      that.data.isAble = false;
+    console.log(that.data.addressInfo);
+    
+    app.requestClick('cart/makeOrder', { wineList: JSON.stringify(wineList),shop_id: that.data.shop_id,express_type: that.data.express_type, user_remark: that.data.user_remark, address_id: that.data.addressInfo.id }, function sucFunc(d) {
       let _data = d.data;
       wx.redirectTo({
         url: '/pages/cart/pay?order_id=' + _data.id,

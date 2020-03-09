@@ -3,7 +3,7 @@
   <!-- /轮播图/ -->
   <view class="top-area">
     <image class="icon-cate" src="/images/icons/{{item.wine_style == 1?'wine_liu':'wine_xi'}}.png"></image>
-    <swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="5000" duration="500" indicator-active-color="rgba(245,204,204,0.8)" indicator-color="rgba(245,126,126,0.5)"> 
+    <swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="5000" duration="500" indicator-active-color="rgba(239, 46, 46, 0.8)" indicator-color="rgba(245,126,126,0.5)"> 
           <swiper-item wx:for="{{jptList}}" wx:key="id">
             <image src="{{item.img}}" class="slide-image" />
           </swiper-item>

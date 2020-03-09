@@ -1,23 +1,32 @@
 <!--pages/user/userinfoEdit.wxml-->
-<view class="order-wrap bg-white m-b-7">
-    <view class="order-item">
-      <view class="item-name">真实姓名</view>
-      <input type="text" class="item-dec" placeholder="请填写真实姓名"  value="{{name}}" bindinput="nameinput">
-      </input>
-    </view>
-    <view class="order-item">
-      <view class="item-name">手机号码</view>
-      <input type="number" class="item-dec" placeholder="请填写手机号码" value="{{phone}}" bindinput="phoneinput">
-      </input>
-    </view>
-    <view class="order-item">
-      <view class="item-name">验证码</view>
-      <input type="number" class="item-dec short-input" placeholder="请填写手机验证码" bindconfirm="sureSubmit" bindinput="codeinput">
-      
-      </input>
-      <view class="send-code common-bg" bindtap="sendCode" wx:if="{{sec == 0}}">发送验证码</view>
-      <view class="send-code unable-bg" wx:else>{{sec}}s后重新发送</view>
+<view class="head-view" wx:if="{{!isAuth}}">
+    <image class="head-img" src="/images/icons/logo.png" mode="scaleToFill"></image>
+    <view class="title-name">悟空名品</view>
+    <view class="title-text">申请获取以下权限</view>
+    <view class="content-text">获得你的公开信息(昵称,头像等)</view>
+    <button class="auth-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>
 
-    </view>
+<view class="order-wrap bg-white m-b-7" wx:else>
+  <view class="order-item">
+    <view class="item-name">真实姓名</view>
+    <input type="text" class="item-dec" placeholder="请填写真实姓名"  value="{{name}}" bindinput="nameinput">
+    </input>
   </view>
-<view class="bottom-nav llg-tx" bindtap="sureSubmit">确认保存</view>
+  <view class="order-item">
+    <view class="item-name">手机号码</view>
+    <input type="number" class="item-dec" placeholder="请填写手机号码" value="{{phone}}" bindinput="phoneinput">
+    </input>
+  </view>
+  <view class="order-item">
+    <view class="item-name">验证码</view>
+    <input type="number" class="item-dec short-input" placeholder="请填写手机验证码" bindconfirm="sureSubmit" bindinput="codeinput">
+    
+    </input>
+    <view class="send-code common-bg" bindtap="sendCode" wx:if="{{sec == 0}}">发送验证码</view>
+    <view class="send-code unable-bg" wx:else>{{sec}}s后重新发送</view>
+
+  </view>
+  <view class="bottom-nav llg-tx" bindtap="sureSubmit">确认保存</view>
+</view>
+

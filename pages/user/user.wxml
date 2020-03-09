@@ -1,7 +1,7 @@
 <!--pages/user/user.wxml-->
 <view class="container">
 <!-- 顶部 -->
-  <view class="shadow-box" wx:if="{{userInfo.phone == ''}}">
+  <view class="shadow-box" wx:if="{{userInfo.phone == null}}">
     <view class="model-box">
       <view class="model-text line-shadow">
       对不起！您还没有完善个人信息，请先完善个人信息
@@ -14,10 +14,11 @@
   <view class="top-area m-b-7 bg-white">
     <image class="top-bg" src="/images/icons/top_bg.jpg" mode="widthFix"></image>
     <view class="user-info">
-      <image class="head-img" src="{{userInfo.headimgurl}}"></image>
-      
-        <view class="nick-name">{{userInfo.name}}</view>
-        <view class="user-level">{{userInfo.user_level_text}}</view>
+      <view class="head-img">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="nick-name">{{userInfo.name == null ?'--':userInfo.name}}</view>
+      <view class="user-level">{{userInfo.user_level_text}}</view>
       
     </view>
     <view class="vip-area" wx:if="{{userInfo.level == 0}}">

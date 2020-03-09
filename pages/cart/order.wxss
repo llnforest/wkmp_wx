@@ -22,13 +22,14 @@ page{
   height : 100%;
 }
 .address-right{
-  position:absolute;
-  right:30rpx;
-  width:20rpx;
-  height:40rpx;
-  margin:auto;
-  top:0;
-  bottom:0;
+  position: absolute;
+  right: 0;
+  width: 80rpx;
+  height: 80rpx;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  padding: 20rpx 30rpx;
 }
 .right-icon{
   height : 100%;

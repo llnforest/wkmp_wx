@@ -14,7 +14,7 @@ Page({
     info:{},
     xqtList:[],
     jptList:[],
-    cat_num:0,
+    cart_num:0,
     is_img_show:"none"
   },
   imageLoad:function(e){
@@ -96,7 +96,7 @@ Page({
   //点击加入购物车
   addCart: function (e) {
     let that = this;
-    app.requestFunc('index/cartAdd', { wine_id: that.data.info.id }, function sucFunc(d) {
+    app.requestClick('index/cartAdd', { wine_id: that.data.info.id }, function sucFunc(d) {
       let _data = d.data;
       that.setData({
         is_img_show: "block"

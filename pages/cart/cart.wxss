@@ -53,6 +53,15 @@
 .mall-price{
   margin-bottom:5rpx;
 }
+.select-area{
+  width:80rpx;
+  height:50%;
+  position:absolute;
+  left:0;
+  margin:auto;
+  top:0;
+  bottom:0;
+}
 .select-icon{
   width:30rpx;
   height:30rpx;

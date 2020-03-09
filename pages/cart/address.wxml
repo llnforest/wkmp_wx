@@ -10,8 +10,10 @@
   <scroll-view scroll-y="{{isScroll}}" style='height:{{windowHeight}}px;margin-bottom:100rpx' wx:else>
     <block wx:key="item" wx:for="{{addressList}}">
     <view data-index='{{index}}' class="address-wrap" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx">
-      <view class="select-icon {{item.is_default == 1?'active':''}}" bindtap="clickDefault" data-id="{{item.id}}">
-        <image src="/images/icons/selected.png"></image>
+      <view class="select-area"  bindtap="clickDefault" data-id="{{item.id}}">
+        <view class="select-icon {{item.is_default == 1?'active':''}}">
+          <image src="/images/icons/selected.png"></image>
+        </view>
       </view>
       <view class="contact-name address-title-item line-limit">{{item.contact_name}}</view>
       <view class="contact-phone address-title-item line-limit">{{item.contact_phone}}</view>

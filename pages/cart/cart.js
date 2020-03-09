@@ -102,17 +102,19 @@ Page({
           })
       } else {
         let dataIds = [];
-        let cartData = [];
+        let buyIds = [];
         _data.cartList.forEach(function(item,i){
           dataIds.push(item.id);
+          buyIds.push(item.id);
         })
 
         that.setData({
+          empty: false,
           cartList: _data.cartList,
           total_money: _data.total_money,
           vip_money:_data.vip_money,
           dataIds:dataIds,
-          buyIds:dataIds,
+          buyIds:buyIds,
           // userLevel: app.globalData.user.level,
           userLevel: 0,
         });
@@ -136,14 +138,18 @@ Page({
         })
       }
     }else{
+      let ids = [];
+      this.data.cartList.forEach(function (item, i) {
+        ids.push(item.id);
+      })
       if (this.data.editModel) {
         this.setData({
-          delIds: this.data.dataIds,
+          delIds: ids,
           selectAll: true
         })
       } else {
         this.setData({
-          buyIds: this.data.dataIds,
+          buyIds: ids,
           selectAll: true,
           
         })
@@ -238,7 +244,7 @@ Page({
       });
       return false;
     }
-    app.requestFunc('cart/delCart', {ids:that.data.delIds.join(',')}, function sucFunc(d) {
+    app.requestClick('cart/delCart', {ids:that.data.delIds.join(',')}, function sucFunc(d) {
       let _data = d.data;
       if(that.data.selectAll){
         that.setData({

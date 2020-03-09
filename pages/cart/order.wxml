@@ -6,7 +6,7 @@
   </view>
 </view>
 <view class="container"  wx:else>
-  <view class="shadow-box" wx:if="{{addressNo}}">
+  <view class="shadow-box" wx:if="{{addressInfo == null}}">
     <view class="model-box">
       <view class="model-text line-shadow">
       对不起！您还没有添加过地址信息

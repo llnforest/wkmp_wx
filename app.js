@@ -8,7 +8,7 @@ App({
     isCanClick:true,
   },
   /**
-   * 
+   * 公用请求方法
    * url:地址
    * data：传递数据
    * sucFunc:成功回调函数
@@ -16,9 +16,7 @@ App({
    */
   requestFunc: function(url,data = {},sucFunc,is_suc_toast = false,errFunc = false){
     var that = this;
-    if (!that.data.isCanClick) return false;
-    that.data.isCanClick = false;
-    // data.token = that.globalData.token;
+    data.token = that.globalData.token;
     wx.request({
       url: that.data.url + url,
       method: 'post',
@@ -38,6 +36,48 @@ App({
           if(errFunc){
             errFunc(_data);
           }else{
+            that.toast(_data.msg);
+          }
+        }
+      },
+      fail: function (e) {
+        that.toast('网络异常');
+      },
+      complete: function () {
+      }
+    });
+  },
+  /**
+   * 公用请求方法（点击事件）
+   * url:地址
+   * data：传递数据
+   * sucFunc:成功回调函数
+   * is_toast:操作成功是否弹框
+   */
+  requestClick: function (url, data = {}, sucFunc, is_suc_toast = false, errFunc = false) {
+    var that = this;
+    if (!that.data.isCanClick) return false;
+    that.data.isCanClick = false;
+    data.token = that.globalData.token;
+    wx.request({
+      url: that.data.url + url,
+      method: 'post',
+      'data': data,
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        var _data = res.data;
+        console.log(_data);
+        if (res.data.code == 0) {//成功
+          if (is_suc_toast) {//弹框
+            that.toast(_data.msg);
+          }
+          sucFunc(_data);
+        } else {//失败
+          if (errFunc) {
+            errFunc(_data);
+          } else {
             that.toast(_data.msg);
           }
         }
@@ -75,13 +115,16 @@ App({
         });
       }
     });
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log(res);
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              console.log(res);
               // 可以将 res 发送给后台解码出 unionId
               that.globalData.userInfo = res.userInfo
 

@@ -16,10 +16,11 @@
     <image class="top-bg" src="/images/icons/prize_bg.png" mode="widthFix"></image>
     <view class="user-info">
       <image class="vip-head" src="/images/icons/prize_head.png"></image>
-      <image class="head-img" src="{{userInfo.headimgurl}}"></image>
-      
+      <view class="head-img">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
       <view class="nick-name">
-      {{userInfo.name}}
+      {{userInfo.name == null ?'--':userInfo.name}}
       <text class="user-level">{{userInfo.user_level_text}}</text>
       </view>
       <view class="user-team">

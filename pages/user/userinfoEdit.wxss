@@ -34,3 +34,49 @@
 .unable-bg{
   background:#ff7882;
 }
+
+
+.head-view {
+  margin-top: 150rpx;
+}
+
+.head-img{
+  width: 100rpx;
+  height: 100rpx;
+  margin:auto;
+}
+.title-name {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  line-height:40rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #020e0f;
+  text-align: center;
+
+}
+.title-text {
+  margin-top:40rpx;
+  line-height:40rpx;
+  font-size: 28rpx;
+  color: #020e0f;
+  text-align: center;
+
+}
+
+.content-text {
+  line-height:40rpx;
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+
+}
+
+.auth-btn {
+  margin-top:70rpx;
+  margin-left: 25px;
+  margin-right: 25px;
+  height: 45px;
+  font-size: 17.5px;
+
+}

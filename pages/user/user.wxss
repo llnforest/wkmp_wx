@@ -33,6 +33,7 @@ page{
   position:absolute;
   top:0;
   border:1px solid #ddd;
+  overflow: hidden;
 }
 .vip-area{
   width:90%;
