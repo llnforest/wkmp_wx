@@ -9,7 +9,7 @@ Page({
     isAble:true,
     wineList:[],
     empty:false,
-    addressInfo:null,
+    addressInfo:[],
     express_type:1,
     shop_name:'',
     shop_id:0,
@@ -27,8 +27,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
-    options.ids = 6;
     if(options.ids == "" || options.ids == undefined){
       this.setData({
         empty:ture,
@@ -107,8 +105,7 @@ Page({
           expressPrice:baseExpress + perExpress * count,
           vip_money:_data.vip_money,
           total_money:_data.total_money,
-          // userLevel: app.globalData.user.level,
-          userLevel:1
+          userLevel: app.globalData.user.level
         })
         
       }

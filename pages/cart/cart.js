@@ -221,6 +221,7 @@ Page({
   },
   //点击去结算
   goBuy: function (e) {
+    let that = this;
     if (that.data.buyIds.length == 0){
       wx.showToast({
         title: "请先选择要购买商品",
@@ -229,7 +230,6 @@ Page({
       });
       return false;
     }
-    let that = this;
     wx.navigateTo({
       url: '/pages/cart/order?ids=' + that.data.buyIds.join(',') + '&type=1',
     })
