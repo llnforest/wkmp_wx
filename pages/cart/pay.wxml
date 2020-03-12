@@ -65,8 +65,8 @@
       会员省 ¥{{orderInfo.mall_wine_money - orderInfo.vip_wine_money}}
       </view>
     </view>
-    <view class="go-pay">
-      <image class="pay-icon" src="/images/icons/pay.png" bindtap="sureSubmit"></image>
+    <view class="go-pay" bindtap="sureSubmit">
+      <image class="pay-icon" src="/images/icons/pay.png"></image>
       微信支付
     </view>
   </view>

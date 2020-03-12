@@ -117,10 +117,6 @@ Page({
       url: '/pages/user/userinfo',
     })
   },
-  //点击我的客服
-  goService: function (e) {
-    
-  },
   //点击立即开通
   editUser: function (e) {
     wx.navigateTo({

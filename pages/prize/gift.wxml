@@ -43,8 +43,8 @@
       <view class="img-area">
         <image class="goods-img" src="{{item.remark}}" mode="widthFix"></image>
       </view>
-      <view class="goods-title" bindtap="clickItem" data-id="{{item.id}}">
-        <view class="select-icon {{selected == item.id?'active':''}}">
+      <view class="goods-title" bindtap="clickItem" data-id="{{item.val_code}}">
+        <view class="select-icon {{selected == item.val_code?'active':''}}">
           <image src="/images/icons/wine_selected.png"></image>
         </view>
         {{item.val_name}}

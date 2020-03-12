@@ -76,11 +76,12 @@
         </view>
         <view class="item-text">提现记录</view>
       </view>
-      <view class="status-item" bindtap="goService">
+      <view class="status-item">
         <view class="img-bg">
           <image class="item-img" src="/images/icons/my_service.png"  mode="widthFix"></image>
         </view>
         <view class="item-text">专属客服</view>
+        <button open-type="contact" class="service-btn"></button>
       </view>
     </view>
   </view>

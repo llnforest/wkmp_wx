@@ -36,7 +36,7 @@ function isStringEmpty(data) {
  */
 function sentHttpRequestToServer(uri, data, method, successCallback, failCallback, completeCallback) {
     wx.request({
-        url: app.d.hostUrl + uri,
+        url: app.data.url + uri,
         data: data,
         method: method,
         header: {
@@ -83,6 +83,7 @@ function toastSuccess() {
 function doWechatPay(prepayId, successCallback, failCallback, completeCallback) {
     var nonceString = getRandomString();
     var currentTimeStamp = getCurrentTimeStamp();
+    console.log(prepayId);
     var packageName = "prepay_id=" + prepayId;
     var dataMap = {
         timeStamp : currentTimeStamp,
@@ -102,7 +103,7 @@ function doWechatPay(prepayId, successCallback, failCallback, completeCallback) 
  * 获取微信支付签名字符串
  */
 function getWechatPaySign(nonceStr, packageName, timeStamp){
-    var beforMD5 = "appid=" + app.d.appId + "&nonceStr=" + nonceStr + "&package=" + packageName + "&signType=MD5" + "&timeStamp=" + timeStamp + "&key=" + app.d.appKey;
+  var beforMD5 = "appId=" + app.globalData.appId + "&nonceStr=" + nonceStr + "&package=" + packageName + "&signType=MD5" + "&timeStamp=" + timeStamp + "&key=" + app.globalData.key;
     return doMD5Encode(beforMD5).toUpperCase();
 }
 
@@ -118,7 +119,7 @@ function getCurrentTimeStamp() {
  * 获取随机字符串，32位以下
  */
 function getRandomString() {
-    return Math.random().toString(36).substring(3, 8);
+    return Math.random().toString(36).substring(3, 30);
 }
 
 /**

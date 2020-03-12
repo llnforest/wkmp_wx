@@ -172,6 +172,8 @@ App({
     user:[],
     token:"",
     sms_random:"BVCXa1.4jdPPksMndkE3_oO0*",
+    appId: 'wx9e86511465aa9905',
+    key:'923ksdKdjskI9sksdjfsdjksK823Ojk1'
   },
   onPageScroll: function (e) {
     if (e.scrollTop < 0) {

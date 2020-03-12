@@ -77,9 +77,9 @@ Page({
    */
   sureSubmit: function (e) {
     var that = this;
-    app.requestFunc('wxpay/createOrder', { order_id: order_id, type: 1 }, function sucFunc(d) {
+    app.requestClick('wxpay/createOrder', { order_id: that.data.orderInfo.id, type: 1 }, function sucFunc(d) {
       let _data = d.data;
-      common.doWechatPay(_data.prepayId,
+      common.doWechatPay(_data.prepay_id,
       function(){//成功
         wx.showToast({
           title: '支付成功',

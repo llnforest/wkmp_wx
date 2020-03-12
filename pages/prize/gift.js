@@ -1,5 +1,6 @@
 // pages/prize/gift.js
 const app = getApp();
+var common = require("../../utils/common.js");
 Page({
 
   /**
@@ -126,8 +127,33 @@ Page({
       });
       return false;
     }
-    wx.navigateTo({
-      url: '/pages/prize/goBuy?gift_id='+this.data.selected+'&phone='+this.data.phone,
-    })
+
+    let that = this;
+
+
+    app.requestClick('cart/makeOrderGift', { gift_type: this.data.selected, phone: this.data.phone }, function sucFunc(d) {
+      let _data = d.data;
+      app.requestFunc('wxpay/createOrder', { order_id: _data.id, type: 2 }, function sucFunc(d) {
+        let _data = d.data;
+        common.doWechatPay(_data.prepay_id,
+          function () {//成功
+            wx.showToast({
+              title: '支付成功',
+            })
+            wx.navigateTo({
+              url: '/pages/index/index',
+            })
+          }, function () {//失败
+            wx.showToast({
+              title: '支付失败',
+            })
+          }, function () {//完成
+
+          });
+
+      });
+      
+
+    });
   },
 })
