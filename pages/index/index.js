@@ -1,8 +1,9 @@
 //index.js
 //获取应用实例
 const app = getApp()
+import { routerFillter } from '../../utils/router.js';
 
-Page({
+routerFillter({
   data: {
     bannerList: [],
     labelList:[],
@@ -11,8 +12,12 @@ Page({
     brandList:[],
     siteInfo:{}
   },
-  onLoad: function () {
+  onLoad: function (options) {
     var that = this;
+    //更新上级
+    if (options.share_id != undefined) {
+      app.requestFunc('user/renderParentId', { share_id: options.share_id });
+    }
     app.requestFunc('index/index',{},function sucFunc(d){
       let _data = d.data;
       that.setData({
@@ -29,7 +34,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let share_id = app.globalData.user.id;
+    return {
+      title: '悟空名品——首页',
+      path: '/pages/index/index?share_id=' + share.id,
+      success: function (res) { }
+    }
   },
   //点击酒品
   clickWine: function (e) {
@@ -67,4 +77,4 @@ Page({
       hasUserInfo: true
     })
   },
-})
+}, true)

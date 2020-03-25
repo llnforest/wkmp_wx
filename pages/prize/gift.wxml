@@ -53,7 +53,7 @@
 
     
     <view class="user-info">
-      <input type="number" class="input-item" placeholder="请输入邀请码(邀请人手机号)" bindinput="phoneinput"></input>
+      <input type="number" class="input-item" placeholder="请输入邀请码(邀请人手机号)" bindinput="phoneinput" value="{{userInfo.parent_phone}}"></input>
     </view>
     <view class="btn go-buy" bindtap="goBuy">立即开通</view>
     <view class="info sm-tx">注：请任选一种商品，邀请码为邀请人手机号码</view>

@@ -19,7 +19,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.2",
+	"libVersion": "2.10.3",
 	"appid": "wx9e86511465aa9905",
 	"projectname": "wkmp",
 	"isGameTourist": false,

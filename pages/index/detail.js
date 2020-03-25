@@ -1,7 +1,9 @@
 // pages/index/detail.js
 const app = getApp();
 var common = require("../../utils/common.js");
-Page({
+import { routerFillter } from '../../utils/router.js';
+
+routerFillter({
 
   /**
    * 页面的初始数据
@@ -24,8 +26,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
     var that = this;
+    //更新上级
+    if (options.share_id != undefined){
+      app.requestFunc('user/renderParentId',{share_id:options.share_id});
+    }
+
     app.requestFunc('index/detail', {id:options.id}, function sucFunc(d) {
       let _data = d.data;
       that.setData({
@@ -91,7 +97,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let share_id = app.globalData.user.id;
+    let info = this.data.info;
+    return {
+      title: '悟空名品——'+info.wine_name,
+      path: '/pages/index/detail?id='+info.id+'&share_id=' + share.id,
+      success: function (res) { }
+    }
   },
   //点击加入购物车
   addCart: function (e) {
@@ -133,4 +145,4 @@ Page({
       url: '/pages/cart/cart',
     })
   },
-})
+},true)

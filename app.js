@@ -11,10 +11,11 @@ App({
    * 公用请求方法
    * url:地址
    * data：传递数据
-   * sucFunc:成功回调函数
-   * is_toast:操作成功是否弹框
+   * sucFunc:成功回调方法
+   * is_suc_toast:操作成功是否弹框
+   * errFunc:失败回调方法
    */
-  requestFunc: function(url,data = {},sucFunc,is_suc_toast = false,errFunc = false){
+  requestFunc: function(url,data = {},sucFunc = false,is_suc_toast = false,errFunc = false){
     var that = this;
     data.token = that.globalData.token;
     wx.request({
@@ -31,7 +32,7 @@ App({
           if(is_suc_toast){//弹框
             that.toast(_data.msg);
           }
-          sucFunc(_data);
+          if(sucFunc) sucFunc(_data);
         } else {//失败
           if(errFunc){
             errFunc(_data);
@@ -51,8 +52,9 @@ App({
    * 公用请求方法（点击事件）
    * url:地址
    * data：传递数据
-   * sucFunc:成功回调函数
-   * is_toast:操作成功是否弹框
+   * sucFunc:成功回调方法
+   * is_suc_toast:操作成功是否弹框
+   * errFunc:失败回调方法
    */
   requestClick: function (url, data = {}, sucFunc, is_suc_toast = false, errFunc = false) {
     var that = this;
@@ -73,7 +75,7 @@ App({
           if (is_suc_toast) {//弹框
             that.toast(_data.msg);
           }
-          sucFunc(_data);
+          if (sucFunc) sucFunc(_data);
         } else {//失败
           if (errFunc) {
             errFunc(_data);
@@ -88,6 +90,35 @@ App({
       complete: function () {
         that.data.isCanClick = true;
       }
+    });
+  },
+  //自动登录
+  userLogin: function () {
+    //定义promise方法
+    var that = this;
+    return new Promise(function (resolve, reject) {
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          wx.request({
+            url: that.data.url + 'api/getToken',
+            method: 'post',
+            'data': { code: res.code },
+            header: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            success: function (res) {
+              if (res.data.code == 0) {
+                that.globalData.token = res.data.data.token;
+                that.globalData.openid = res.data.data.openid;
+                resolve(res.data);
+              } else {
+                reject(res);
+              }
+            }
+          });
+        }
+      });
     });
   },
   onLaunch: function () {
@@ -109,8 +140,13 @@ App({
             'Content-Type': 'application/x-www-form-urlencoded'
           },
           success: function (res) {
-            that.globalData.user = res.data.data;
-            that.globalData.token = res.data.data.token;
+            if (res.data.code == 0) {
+              that.globalData.user = res.data.data;
+              that.globalData.token = res.data.data.token;
+            }else{
+              console.log(res);
+              getApp().toast('网络异常')
+            }
           }
         });
       }

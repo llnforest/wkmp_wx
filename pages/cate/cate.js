@@ -1,6 +1,8 @@
 // pages/cate/cate.js
 const app = getApp()
-Page({
+import { routerFillter } from '../../utils/router.js';
+
+routerFillter({
 
   /**
    * 页面的初始数据
@@ -36,6 +38,10 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
+    //更新上级
+    if (options.share_id != undefined) {
+      app.requestFunc('user/renderParentId', { share_id: options.share_id });
+    }
     that.setData({
       cate_id: app.globalData.cate_id
     });
@@ -143,7 +149,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    let share_id = app.globalData.user.id;
+    return {
+      title: '悟空名品——分类',
+      path: '/pages/cate/cate?share_id=' + share.id,
+      success: function (res) { }
+    }
   },
   renderWine: function () {
     let that = this;
@@ -255,4 +266,4 @@ Page({
     this.renderWine();
 
   }
-})
+},true)

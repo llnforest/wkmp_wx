@@ -1,7 +1,8 @@
 // pages/prize/gift.js
 const app = getApp();
 var common = require("../../utils/common.js");
-Page({
+import { routerFillter } from '../../utils/router.js';
+routerFillter({
 
   /**
    * 页面的初始数据
@@ -17,6 +18,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //更新上级
+    if (options.share_id != undefined) {
+      app.requestFunc('user/renderParentId', { share_id: options.share_id });
+    }
     this.renderGift();
   },
 
@@ -66,7 +71,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let share_id = app.globalData.user.id;
+    return {
+      title: '悟空名品——会员礼包',
+      path: '/pages/prize/gift?share_id=' + share.id,
+      success: function (res) { }
+    }
   },
   /**
    * 点击立即开通
@@ -80,10 +90,12 @@ Page({
    * 渲染个人信息
    */
   renderUser: function () {
-    console.log(app.globalData.user);
-    this.setData({
-      userInfo: app.globalData.user
-    })
+    let that = this;
+    app.requestFunc('prize/getGiftUserInfo', {},function(d){
+      that.setData({
+        userInfo: d.data.userInfo
+      })
+    });
   },
   /**
    * 渲染礼品
@@ -156,4 +168,4 @@ Page({
 
     });
   },
-})
+},true)
