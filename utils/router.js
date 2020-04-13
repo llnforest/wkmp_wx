@@ -14,7 +14,7 @@ exports.routerFillter = function (pageObj, flag = false) {
       if (appGlobalData.token == "") {
         //判断获取token是否完成
         getApp().userLogin().then((res) => {
-          _onLoad.call(that);
+          _onLoad.call(that,options);
         },(res) => {
           console.log(res);
           getApp().toast('网络异常')
