@@ -125,7 +125,8 @@ page{
 }
 .item-name{
   position:absolute;
-  left:2.5%;
+  padding-left:2.5%;
+  left:0;
   line-height: 100rpx;
   font-weight:700;
 }
@@ -184,6 +185,15 @@ page{
   bottom:0;
   left:20rpx;
   position: absolute;
+}
+.right-click{
+  position:absolute;
+  right:0;
+  width:80rpx;
+  top:0;
+  bottom:0;
+  margin:auto;
+
 }
 .common-right-icon{
   width:15rpx;

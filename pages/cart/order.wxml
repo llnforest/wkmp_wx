@@ -90,7 +90,10 @@
   <view class="notice-wrap bg-white m-b-50" wx:if="{{userLevel == 0}}">
     <image class="notice-icon" src="/images/icons/notice.png"></image>
   总计<text class="common-color" wx:if="{{express_type == 1}}"><text class="total-money m-l-5">{{total_money + expressPrice}}</text>元</text><text class="common-color" wx:else><text class="total-money m-l-5">{{total_money}}</text>元</text>，成为会员将省    <text class="common-color"><text class="back-money m-l-5">{{total_money - vip_money}}</text>元</text>
-    <image class="common-right-icon" src="/images/icons/right.png" bindtap="goGift"></image>
+    <view class="right-click" bindtap="goGift">
+      <image class="common-right-icon" src="/images/icons/right.png" ></image>
+    </view>
+    
   </view>
   <view class="notice-wrap bg-white m-b-50" wx:else>
     <image class="notice-icon" src="/images/icons/notice.png"></image>

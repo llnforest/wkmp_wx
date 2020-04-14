@@ -137,7 +137,8 @@ page{
 }
 .item-name{
   position:absolute;
-  left:2.5%;
+  padding-left:2.5%;
+  left:0;
   line-height: 100rpx;
   font-weight:700;
 }

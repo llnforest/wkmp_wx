@@ -1,8 +1,8 @@
 //app.js
 App({
   data:{
-    // url:'https://api.99wukong.cn/',
-    url:'http://api.99wukong.test/',
+    url:'https://api.99wukong.cn/',
+    // url:'http://api.99wukong.test/',
     // url:'http://192.168.100.62/wkmp/public/index/'
 
     isCanClick:true,

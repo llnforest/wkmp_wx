@@ -8,7 +8,7 @@
             <image src="{{item.img}}" class="slide-image" />
           </swiper-item>
     </swiper>
-    <view class="wine-name lines-limit lb-width">{{info.wine_name}}</view>
+    <view class="wine-name lines-limit lb-width"><text>{{info.wine_name}}</text></view>
     <view class="mall-price grey-color lb-width">市场价：<text class="common-color">¥{{info.mall_price}}</text></view>
     <view class="vip-price grey-color lb-width">会员价：<text class="common-color">¥{{info.vip_price}}</text></view>
   </view>

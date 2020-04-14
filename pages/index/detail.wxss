@@ -14,11 +14,12 @@ page{
   height:100%;
 }
 .wine-name{
-  font-size:28rpx;
+  font-size:30rpx;
   margin:20rpx auto;
   height: 90rpx;
   line-height: 45rpx;
   color:#333;
+  font-weight:700;
 }
 .mall-price{
   margin: 0 auto 10rpx;
@@ -42,7 +43,8 @@ page{
 }
 .item-name{
   position:absolute;
-  left:2.5%;
+  left:0;
+  padding-left:2.5%;
   line-height: 70rpx;
   color:#666;
 }
